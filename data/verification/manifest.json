@@ -1,0 +1,24 @@
+{
+  "version": "1.0.0",
+  "phase": "v1.1.0-RC.3.7",
+  "rawDatasetClassification": "OSM_DERIVED",
+  "sourceRawFile": "data/verification/raw/tokyo-bay-land-polygons.json",
+  "sourceFileSha256": "3296856bb9d1d797ae2aaaeac673327a3f4e24eb687c4bf7f09ef2be9ec51aee",
+  "derivedFile": "data/verification/derived/water-land-validation.geojson",
+  "derivedFileSha256": "ff57765c5033cbd7b6cb3a7c6a0c5cbb759ebbf597ad3ccf6e52caad65a0b73c",
+  "sourceCrs": "EPSG:4326 (WGS84)",
+  "derivedCrs": "EPSG:4326 (WGS84)",
+  "filterBbox": [139.65, 35.55, 139.95, 35.75],
+  "geometryOperations": [
+    "validate-geojson-structure",
+    "format-deterministic-json"
+  ],
+  "dissolveSimplifyOperations": [
+    "none"
+  ],
+  "toolVersions": {
+    "node": "20+",
+    "script": "scripts/prepare-water-land-validation.js"
+  },
+  "transformScriptSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

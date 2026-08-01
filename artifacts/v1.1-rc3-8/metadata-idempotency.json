@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-08-01T07:18:07.201Z",
+  "canonicalProductVersion": "v1.1.0",
+  "validationLabel": "RC.3.8",
+  "releaseNotesHash": "e5645e83",
+  "qaChecklistHash": "b72ff2c7",
+  "releaseNotesIdempotent": true,
+  "qaChecklistIdempotent": true,
+  "forbiddenPatternsFound": 0,
+  "auditPassed": true
+}

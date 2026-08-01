@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-08-01T16:21:00Z",
+  "activeFilesScanned": [
+    "docs/RELEASE_NOTES.md",
+    "docs/QA_CHECKLIST.md",
+    "docs/KNOWN_LIMITATIONS.md",
+    "artifacts/v1.1-rc3-9/human-geographic-review-index.json",
+    "artifacts/v1.1-rc3-9/human-geographic-review.csv",
+    "artifacts/v1.1-rc3-9/review-decision-template.csv"
+  ],
+  "withdrawnIdsFoundInActiveDocs": 0,
+  "canonicalIdsVerified": 13,
+  "scanStatus": "PASSED"
+}

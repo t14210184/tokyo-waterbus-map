@@ -1,0 +1,364 @@
+[
+  {
+    "reviewId": "RGR-sumida-river-13",
+    "routeId": "sumida-river",
+    "segmentIndex": 13,
+    "routeName": "隅田川線",
+    "start": [
+      139.76495,
+      35.6601
+    ],
+    "end": [
+      139.7635,
+      35.658
+    ],
+    "lengthMeters": 268,
+    "scopeClassification": "coastal-bay-supported",
+    "intersectionPoints": [
+      [
+        139.7644666666667,
+        35.65940000000003
+      ]
+    ],
+    "boundaryTouchCount": 0,
+    "landInteriorPartCount": 1,
+    "terminalExemption": null,
+    "validatorDataset": "OSM_DERIVED land polygons",
+    "validatorLimitations": "Coastline-derived land boundaries; inner river/canal细节未完全捕捉",
+    "geometryClassification": "approximate-reference",
+    "initialDecision": "NEEDS_HUMAN_GEOGRAPHIC_REVIEW"
+  },
+  {
+    "reviewId": "RGR-sumida-river-14",
+    "routeId": "sumida-river",
+    "segmentIndex": 14,
+    "routeName": "隅田川線",
+    "start": [
+      139.7635,
+      35.658
+    ],
+    "end": [
+      139.761,
+      35.6558
+    ],
+    "lengthMeters": 333,
+    "scopeClassification": "coastal-bay-supported",
+    "intersectionPoints": [],
+    "boundaryTouchCount": 0,
+    "landInteriorPartCount": 1,
+    "terminalExemption": null,
+    "validatorDataset": "OSM_DERIVED land polygons",
+    "validatorLimitations": "Coastline-derived land boundaries; inner river/canal细节未完全捕捉",
+    "geometryClassification": "approximate-reference",
+    "initialDecision": "NEEDS_HUMAN_GEOGRAPHIC_REVIEW"
+  },
+  {
+    "reviewId": "RGR-asakusa-odaiba-direct-11",
+    "routeId": "asakusa-odaiba-direct",
+    "segmentIndex": 11,
+    "routeName": "淺草－台場直達線",
+    "start": [
+      139.7645,
+      35.656
+    ],
+    "end": [
+      139.7571,
+      35.65175
+    ],
+    "lengthMeters": 819,
+    "scopeClassification": "coastal-bay-supported",
+    "intersectionPoints": [
+      [
+        139.75862698412698,
+        35.65262698412698
+      ]
+    ],
+    "boundaryTouchCount": 0,
+    "landInteriorPartCount": 0,
+    "terminalExemption": null,
+    "validatorDataset": "OSM_DERIVED land polygons",
+    "validatorLimitations": "Coastline-derived land boundaries; inner river/canal细节未完全捕捉",
+    "geometryClassification": "approximate-reference",
+    "initialDecision": "NEEDS_HUMAN_GEOGRAPHIC_REVIEW"
+  },
+  {
+    "reviewId": "RGR-asakusa-odaiba-direct-12",
+    "routeId": "asakusa-odaiba-direct",
+    "segmentIndex": 12,
+    "routeName": "淺草－台場直達線",
+    "start": [
+      139.7571,
+      35.65175
+    ],
+    "end": [
+      139.7595,
+      35.645
+    ],
+    "lengthMeters": 781,
+    "scopeClassification": "coastal-bay-supported",
+    "intersectionPoints": [
+      [
+        139.7572704918033,
+        35.65127049180328
+      ]
+    ],
+    "boundaryTouchCount": 0,
+    "landInteriorPartCount": 0,
+    "terminalExemption": null,
+    "validatorDataset": "OSM_DERIVED land polygons",
+    "validatorLimitations": "Coastline-derived land boundaries; inner river/canal细节未完全捕捉",
+    "geometryClassification": "approximate-reference",
+    "initialDecision": "NEEDS_HUMAN_GEOGRAPHIC_REVIEW"
+  },
+  {
+    "reviewId": "RGR-hinode-odaiba-3",
+    "routeId": "hinode-odaiba",
+    "segmentIndex": 3,
+    "routeName": "日之出－台場線",
+    "start": [
+      139.7685,
+      35.6312
+    ],
+    "end": [
+      139.7719,
+      35.62885
+    ],
+    "lengthMeters": 403,
+    "scopeClassification": "coastal-bay-supported",
+    "intersectionPoints": [
+      [
+        139.77,
+        35.630163235294106
+      ]
+    ],
+    "boundaryTouchCount": 0,
+    "landInteriorPartCount": 1,
+    "terminalExemption": null,
+    "validatorDataset": "OSM_DERIVED land polygons",
+    "validatorLimitations": "Coastline-derived land boundaries; inner river/canal细节未完全捕捉",
+    "geometryClassification": "approximate-reference",
+    "initialDecision": "NEEDS_HUMAN_GEOGRAPHIC_REVIEW"
+  },
+  {
+    "reviewId": "RGR-hinode-odaiba-4",
+    "routeId": "hinode-odaiba",
+    "segmentIndex": 4,
+    "routeName": "日之出－台場線",
+    "start": [
+      139.7719,
+      35.62885
+    ],
+    "end": [
+      139.781,
+      35.6245
+    ],
+    "lengthMeters": 954,
+    "scopeClassification": "coastal-bay-supported",
+    "intersectionPoints": [],
+    "boundaryTouchCount": 0,
+    "landInteriorPartCount": 1,
+    "terminalExemption": null,
+    "validatorDataset": "OSM_DERIVED land polygons",
+    "validatorLimitations": "Coastline-derived land boundaries; inner river/canal细节未完全捕捉",
+    "geometryClassification": "approximate-reference",
+    "initialDecision": "NEEDS_HUMAN_GEOGRAPHIC_REVIEW"
+  },
+  {
+    "reviewId": "RGR-hamarikyu-6",
+    "routeId": "hamarikyu",
+    "segmentIndex": 6,
+    "routeName": "濱離宮線",
+    "start": [
+      139.76495,
+      35.6601
+    ],
+    "end": [
+      139.7635,
+      35.658
+    ],
+    "lengthMeters": 268,
+    "scopeClassification": "inner-harbor-limited",
+    "intersectionPoints": [
+      [
+        139.7644666666667,
+        35.65940000000003
+      ]
+    ],
+    "boundaryTouchCount": 0,
+    "landInteriorPartCount": 1,
+    "terminalExemption": null,
+    "validatorDataset": "OSM_DERIVED land polygons",
+    "validatorLimitations": "Coastline-derived land boundaries; inner river/canal细节未完全捕捉",
+    "geometryClassification": "approximate-reference",
+    "initialDecision": "NEEDS_HUMAN_GEOGRAPHIC_REVIEW"
+  },
+  {
+    "reviewId": "RGR-hamarikyu-7",
+    "routeId": "hamarikyu",
+    "segmentIndex": 7,
+    "routeName": "濱離宮線",
+    "start": [
+      139.7635,
+      35.658
+    ],
+    "end": [
+      139.761,
+      35.6558
+    ],
+    "lengthMeters": 333,
+    "scopeClassification": "inner-harbor-limited",
+    "intersectionPoints": [],
+    "boundaryTouchCount": 0,
+    "landInteriorPartCount": 1,
+    "terminalExemption": null,
+    "validatorDataset": "OSM_DERIVED land polygons",
+    "validatorLimitations": "Coastline-derived land boundaries; inner river/canal细节未完全捕捉",
+    "geometryClassification": "approximate-reference",
+    "initialDecision": "NEEDS_HUMAN_GEOGRAPHIC_REVIEW"
+  },
+  {
+    "reviewId": "RGR-mizube-line-1",
+    "routeId": "mizube-line",
+    "segmentIndex": 1,
+    "routeName": "東京水辺ライン (廣域水路)",
+    "start": [
+      139.795,
+      35.704
+    ],
+    "end": [
+      139.8005,
+      35.7111
+    ],
+    "lengthMeters": 933,
+    "scopeClassification": "riverbank-limited",
+    "intersectionPoints": [
+      [
+        139.79631236442515,
+        35.70569414316704
+      ]
+    ],
+    "boundaryTouchCount": 0,
+    "landInteriorPartCount": 1,
+    "terminalExemption": null,
+    "validatorDataset": "OSM_DERIVED land polygons",
+    "validatorLimitations": "Coastline-derived land boundaries; inner river/canal细节未完全捕捉",
+    "geometryClassification": "approximate-reference",
+    "initialDecision": "NEEDS_HUMAN_GEOGRAPHIC_REVIEW"
+  },
+  {
+    "reviewId": "RGR-mizube-line-2",
+    "routeId": "mizube-line",
+    "segmentIndex": 2,
+    "routeName": "東京水辺ライン (廣域水路)",
+    "start": [
+      139.8005,
+      35.7111
+    ],
+    "end": [
+      139.7998,
+      35.7138
+    ],
+    "lengthMeters": 307,
+    "scopeClassification": "riverbank-limited",
+    "intersectionPoints": [
+      [
+        139.79985848563967,
+        35.713574412532644
+      ]
+    ],
+    "boundaryTouchCount": 0,
+    "landInteriorPartCount": 1,
+    "terminalExemption": null,
+    "validatorDataset": "OSM_DERIVED land polygons",
+    "validatorLimitations": "Coastline-derived land boundaries; inner river/canal细节未完全捕捉",
+    "geometryClassification": "approximate-reference",
+    "initialDecision": "NEEDS_HUMAN_GEOGRAPHIC_REVIEW"
+  },
+  {
+    "reviewId": "RGR-mizube-line-9",
+    "routeId": "mizube-line",
+    "segmentIndex": 9,
+    "routeName": "東京水辺ライン (廣域水路)",
+    "start": [
+      139.765,
+      35.638
+    ],
+    "end": [
+      139.7719,
+      35.62885
+    ],
+    "lengthMeters": 1193,
+    "scopeClassification": "coastal-bay-supported",
+    "intersectionPoints": [
+      [
+        139.77027868852457,
+        35.631
+      ]
+    ],
+    "boundaryTouchCount": 0,
+    "landInteriorPartCount": 0,
+    "terminalExemption": null,
+    "validatorDataset": "OSM_DERIVED land polygons",
+    "validatorLimitations": "Coastline-derived land boundaries; inner river/canal细节未完全捕捉",
+    "geometryClassification": "approximate-reference",
+    "initialDecision": "NEEDS_HUMAN_GEOGRAPHIC_REVIEW"
+  },
+  {
+    "reviewId": "RGR-mizube-line-10",
+    "routeId": "mizube-line",
+    "segmentIndex": 10,
+    "routeName": "東京水辺ライン (廣域水路)",
+    "start": [
+      139.7719,
+      35.62885
+    ],
+    "end": [
+      139.795,
+      35.626
+    ],
+    "lengthMeters": 2112,
+    "scopeClassification": "coastal-bay-supported",
+    "intersectionPoints": [
+      [
+        139.782,
+        35.62760389610389
+      ]
+    ],
+    "boundaryTouchCount": 0,
+    "landInteriorPartCount": 0,
+    "terminalExemption": null,
+    "validatorDataset": "OSM_DERIVED land polygons",
+    "validatorLimitations": "Coastline-derived land boundaries; inner river/canal细节未完全捕捉",
+    "geometryClassification": "approximate-reference",
+    "initialDecision": "NEEDS_HUMAN_GEOGRAPHIC_REVIEW"
+  },
+  {
+    "reviewId": "RGR-mizube-line-11",
+    "routeId": "mizube-line",
+    "segmentIndex": 11,
+    "routeName": "東京水辺ライン (廣域水路)",
+    "start": [
+      139.795,
+      35.626
+    ],
+    "end": [
+      139.825,
+      35.632
+    ],
+    "lengthMeters": 2792,
+    "scopeClassification": "coastal-bay-supported",
+    "intersectionPoints": [
+      [
+        139.80666666666667,
+        35.62833333333333
+      ]
+    ],
+    "boundaryTouchCount": 0,
+    "landInteriorPartCount": 1,
+    "terminalExemption": null,
+    "validatorDataset": "OSM_DERIVED land polygons",
+    "validatorLimitations": "Coastline-derived land boundaries; inner river/canal细节未完全捕捉",
+    "geometryClassification": "approximate-reference",
+    "initialDecision": "NEEDS_HUMAN_GEOGRAPHIC_REVIEW"
+  }
+]

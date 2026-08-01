@@ -1,0 +1,356 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "reviewId": "RGR-sumida-river-13",
+        "routeId": "sumida-river",
+        "segmentIndex": 13,
+        "featureRole": "needs-review-segment",
+        "scopeClassification": "coastal-bay-supported",
+        "geometryClassification": "approximate-reference",
+        "sourceDataset": "OpenStreetMap Land Polygons / MLIT Japan",
+        "sourceLicense": "ODbL / Government of Japan Open Data Terms",
+        "reviewStatus": "NEEDS_HUMAN_GEOGRAPHIC_REVIEW"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            139.76495,
+            35.6601
+          ],
+          [
+            139.7635,
+            35.658
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "reviewId": "RGR-sumida-river-14",
+        "routeId": "sumida-river",
+        "segmentIndex": 14,
+        "featureRole": "needs-review-segment",
+        "scopeClassification": "coastal-bay-supported",
+        "geometryClassification": "approximate-reference",
+        "sourceDataset": "OpenStreetMap Land Polygons / MLIT Japan",
+        "sourceLicense": "ODbL / Government of Japan Open Data Terms",
+        "reviewStatus": "NEEDS_HUMAN_GEOGRAPHIC_REVIEW"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            139.7635,
+            35.658
+          ],
+          [
+            139.761,
+            35.6558
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "reviewId": "RGR-asakusa-odaiba-direct-11",
+        "routeId": "asakusa-odaiba-direct",
+        "segmentIndex": 11,
+        "featureRole": "needs-review-segment",
+        "scopeClassification": "coastal-bay-supported",
+        "geometryClassification": "approximate-reference",
+        "sourceDataset": "OpenStreetMap Land Polygons / MLIT Japan",
+        "sourceLicense": "ODbL / Government of Japan Open Data Terms",
+        "reviewStatus": "NEEDS_HUMAN_GEOGRAPHIC_REVIEW"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            139.7645,
+            35.656
+          ],
+          [
+            139.7571,
+            35.65175
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "reviewId": "RGR-asakusa-odaiba-direct-12",
+        "routeId": "asakusa-odaiba-direct",
+        "segmentIndex": 12,
+        "featureRole": "needs-review-segment",
+        "scopeClassification": "coastal-bay-supported",
+        "geometryClassification": "approximate-reference",
+        "sourceDataset": "OpenStreetMap Land Polygons / MLIT Japan",
+        "sourceLicense": "ODbL / Government of Japan Open Data Terms",
+        "reviewStatus": "NEEDS_HUMAN_GEOGRAPHIC_REVIEW"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            139.7571,
+            35.65175
+          ],
+          [
+            139.7595,
+            35.645
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "reviewId": "RGR-hinode-odaiba-3",
+        "routeId": "hinode-odaiba",
+        "segmentIndex": 3,
+        "featureRole": "needs-review-segment",
+        "scopeClassification": "coastal-bay-supported",
+        "geometryClassification": "approximate-reference",
+        "sourceDataset": "OpenStreetMap Land Polygons / MLIT Japan",
+        "sourceLicense": "ODbL / Government of Japan Open Data Terms",
+        "reviewStatus": "NEEDS_HUMAN_GEOGRAPHIC_REVIEW"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            139.7685,
+            35.6312
+          ],
+          [
+            139.7719,
+            35.62885
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "reviewId": "RGR-hinode-odaiba-4",
+        "routeId": "hinode-odaiba",
+        "segmentIndex": 4,
+        "featureRole": "needs-review-segment",
+        "scopeClassification": "coastal-bay-supported",
+        "geometryClassification": "approximate-reference",
+        "sourceDataset": "OpenStreetMap Land Polygons / MLIT Japan",
+        "sourceLicense": "ODbL / Government of Japan Open Data Terms",
+        "reviewStatus": "NEEDS_HUMAN_GEOGRAPHIC_REVIEW"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            139.7719,
+            35.62885
+          ],
+          [
+            139.781,
+            35.6245
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "reviewId": "RGR-hamarikyu-6",
+        "routeId": "hamarikyu",
+        "segmentIndex": 6,
+        "featureRole": "needs-review-segment",
+        "scopeClassification": "inner-harbor-limited",
+        "geometryClassification": "approximate-reference",
+        "sourceDataset": "OpenStreetMap Land Polygons / MLIT Japan",
+        "sourceLicense": "ODbL / Government of Japan Open Data Terms",
+        "reviewStatus": "NEEDS_HUMAN_GEOGRAPHIC_REVIEW"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            139.76495,
+            35.6601
+          ],
+          [
+            139.7635,
+            35.658
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "reviewId": "RGR-hamarikyu-7",
+        "routeId": "hamarikyu",
+        "segmentIndex": 7,
+        "featureRole": "needs-review-segment",
+        "scopeClassification": "inner-harbor-limited",
+        "geometryClassification": "approximate-reference",
+        "sourceDataset": "OpenStreetMap Land Polygons / MLIT Japan",
+        "sourceLicense": "ODbL / Government of Japan Open Data Terms",
+        "reviewStatus": "NEEDS_HUMAN_GEOGRAPHIC_REVIEW"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            139.7635,
+            35.658
+          ],
+          [
+            139.761,
+            35.6558
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "reviewId": "RGR-mizube-line-1",
+        "routeId": "mizube-line",
+        "segmentIndex": 1,
+        "featureRole": "needs-review-segment",
+        "scopeClassification": "riverbank-limited",
+        "geometryClassification": "approximate-reference",
+        "sourceDataset": "OpenStreetMap Land Polygons / MLIT Japan",
+        "sourceLicense": "ODbL / Government of Japan Open Data Terms",
+        "reviewStatus": "NEEDS_HUMAN_GEOGRAPHIC_REVIEW"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            139.795,
+            35.704
+          ],
+          [
+            139.8005,
+            35.7111
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "reviewId": "RGR-mizube-line-2",
+        "routeId": "mizube-line",
+        "segmentIndex": 2,
+        "featureRole": "needs-review-segment",
+        "scopeClassification": "riverbank-limited",
+        "geometryClassification": "approximate-reference",
+        "sourceDataset": "OpenStreetMap Land Polygons / MLIT Japan",
+        "sourceLicense": "ODbL / Government of Japan Open Data Terms",
+        "reviewStatus": "NEEDS_HUMAN_GEOGRAPHIC_REVIEW"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            139.8005,
+            35.7111
+          ],
+          [
+            139.7998,
+            35.7138
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "reviewId": "RGR-mizube-line-9",
+        "routeId": "mizube-line",
+        "segmentIndex": 9,
+        "featureRole": "needs-review-segment",
+        "scopeClassification": "coastal-bay-supported",
+        "geometryClassification": "approximate-reference",
+        "sourceDataset": "OpenStreetMap Land Polygons / MLIT Japan",
+        "sourceLicense": "ODbL / Government of Japan Open Data Terms",
+        "reviewStatus": "NEEDS_HUMAN_GEOGRAPHIC_REVIEW"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            139.765,
+            35.638
+          ],
+          [
+            139.7719,
+            35.62885
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "reviewId": "RGR-mizube-line-10",
+        "routeId": "mizube-line",
+        "segmentIndex": 10,
+        "featureRole": "needs-review-segment",
+        "scopeClassification": "coastal-bay-supported",
+        "geometryClassification": "approximate-reference",
+        "sourceDataset": "OpenStreetMap Land Polygons / MLIT Japan",
+        "sourceLicense": "ODbL / Government of Japan Open Data Terms",
+        "reviewStatus": "NEEDS_HUMAN_GEOGRAPHIC_REVIEW"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            139.7719,
+            35.62885
+          ],
+          [
+            139.795,
+            35.626
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "reviewId": "RGR-mizube-line-11",
+        "routeId": "mizube-line",
+        "segmentIndex": 11,
+        "featureRole": "needs-review-segment",
+        "scopeClassification": "coastal-bay-supported",
+        "geometryClassification": "approximate-reference",
+        "sourceDataset": "OpenStreetMap Land Polygons / MLIT Japan",
+        "sourceLicense": "ODbL / Government of Japan Open Data Terms",
+        "reviewStatus": "NEEDS_HUMAN_GEOGRAPHIC_REVIEW"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            139.795,
+            35.626
+          ],
+          [
+            139.825,
+            35.632
+          ]
+        ]
+      }
+    }
+  ]
+}

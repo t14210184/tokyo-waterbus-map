@@ -1,0 +1,14 @@
+reviewId,routeId,segmentIndex,routeName,scopeClassification,lengthMeters,initialDecision
+RGR-sumida-river-13,sumida-river,13,"隅田川線",coastal-bay-supported,268,NEEDS_HUMAN_GEOGRAPHIC_REVIEW
+RGR-sumida-river-14,sumida-river,14,"隅田川線",coastal-bay-supported,333,NEEDS_HUMAN_GEOGRAPHIC_REVIEW
+RGR-asakusa-odaiba-direct-11,asakusa-odaiba-direct,11,"淺草－台場直達線",coastal-bay-supported,819,NEEDS_HUMAN_GEOGRAPHIC_REVIEW
+RGR-asakusa-odaiba-direct-12,asakusa-odaiba-direct,12,"淺草－台場直達線",coastal-bay-supported,781,NEEDS_HUMAN_GEOGRAPHIC_REVIEW
+RGR-hinode-odaiba-3,hinode-odaiba,3,"日之出－台場線",coastal-bay-supported,403,NEEDS_HUMAN_GEOGRAPHIC_REVIEW
+RGR-hinode-odaiba-4,hinode-odaiba,4,"日之出－台場線",coastal-bay-supported,954,NEEDS_HUMAN_GEOGRAPHIC_REVIEW
+RGR-hamarikyu-6,hamarikyu,6,"濱離宮線",inner-harbor-limited,268,NEEDS_HUMAN_GEOGRAPHIC_REVIEW
+RGR-hamarikyu-7,hamarikyu,7,"濱離宮線",inner-harbor-limited,333,NEEDS_HUMAN_GEOGRAPHIC_REVIEW
+RGR-mizube-line-1,mizube-line,1,"東京水辺ライン (廣域水路)",riverbank-limited,933,NEEDS_HUMAN_GEOGRAPHIC_REVIEW
+RGR-mizube-line-2,mizube-line,2,"東京水辺ライン (廣域水路)",riverbank-limited,307,NEEDS_HUMAN_GEOGRAPHIC_REVIEW
+RGR-mizube-line-9,mizube-line,9,"東京水辺ライン (廣域水路)",coastal-bay-supported,1193,NEEDS_HUMAN_GEOGRAPHIC_REVIEW
+RGR-mizube-line-10,mizube-line,10,"東京水辺ライン (廣域水路)",coastal-bay-supported,2112,NEEDS_HUMAN_GEOGRAPHIC_REVIEW
+RGR-mizube-line-11,mizube-line,11,"東京水辺ライン (廣域水路)",coastal-bay-supported,2792,NEEDS_HUMAN_GEOGRAPHIC_REVIEW

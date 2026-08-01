@@ -1,0 +1,175 @@
+/* Tokyo Waterbus Atlas - Layout Styles */
+
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background: var(--ink-950);
+}
+
+/* Header Bar */
+.app-header {
+  height: var(--header-height);
+  background: var(--surface-dark);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.25rem;
+  z-index: 1000;
+  flex-shrink: 0;
+}
+
+.brand-area {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand-icon {
+  width: 34px;
+  height: 34px;
+  background: radial-gradient(circle at 30% 30%, var(--ocean-300), var(--ocean-700));
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 14px rgba(19, 185, 199, 0.4);
+  color: #ffffff;
+}
+
+.brand-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.brand-subtitle {
+  font-size: 0.76rem;
+  color: var(--ink-400);
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .brand-subtitle { display: inline-block; }
+}
+
+/* Main Body Layout */
+.app-body {
+  flex: 1;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Left Sidebar Control Center */
+.control-sidebar {
+  width: var(--sidebar-width);
+  height: 100%;
+  background: var(--surface-dark);
+  backdrop-filter: blur(16px);
+  border-right: 1px solid var(--glass-border);
+  display: flex;
+  flex-direction: column;
+  z-index: 500;
+  flex-shrink: 0;
+  transition: transform var(--transition-normal);
+}
+
+/* Navigation Tabs */
+.sidebar-tabs {
+  display: flex;
+  background: rgba(7, 25, 35, 0.85);
+  border-bottom: 1px solid var(--glass-border);
+  padding: 0.35rem 0.35rem 0 0.35rem;
+  gap: 0.2rem;
+}
+
+.tab-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.2rem 0.4rem 0.2rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--ink-400);
+  border-radius: var(--border-radius-sm) var(--border-radius-sm) 0 0;
+  transition: all var(--transition-fast);
+  border: 1px solid transparent;
+}
+
+.tab-btn:hover {
+  color: var(--ocean-200);
+  background: rgba(19, 185, 199, 0.08);
+}
+
+.tab-btn.active {
+  color: #ffffff;
+  background: var(--surface-dark-elevated);
+  border-color: var(--glass-border);
+  border-bottom-color: var(--surface-dark-elevated);
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.tab-icon {
+  margin-bottom: 0.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Sidebar Tab Content Area */
+.sidebar-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem 1.15rem;
+}
+
+/* Right Map Canvas Container */
+.map-canvas-container {
+  flex: 1;
+  height: 100%;
+  position: relative;
+  background: #0a1e2b;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Floating Map Overlay Controls (Top-Right) */
+.map-overlay-controls {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 400;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Status Gateway Bar at Bottom Left/Center (Leaves Bottom-Right for Leaflet Attribution) */
+.status-bar-footer {
+  height: var(--status-bar-height);
+  background: var(--ink-950);
+  border-top: 1px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  font-size: 0.75rem;
+  color: var(--ink-400);
+  z-index: 900;
+  flex-shrink: 0;
+}

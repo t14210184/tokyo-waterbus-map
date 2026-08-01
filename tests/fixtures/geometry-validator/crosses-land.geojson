@@ -1,0 +1,21 @@
+{
+  "name": "crosses-land",
+  "expectedOutcome": "NEEDS_REVIEW",
+  "landPolygon": {
+    "type": "Feature",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [[
+        [139.770, 35.650],
+        [139.780, 35.650],
+        [139.780, 35.660],
+        [139.770, 35.660],
+        [139.770, 35.650]
+      ]]
+    }
+  },
+  "segment": {
+    "start": [139.765, 35.655],
+    "end": [139.785, 35.655]
+  }
+}

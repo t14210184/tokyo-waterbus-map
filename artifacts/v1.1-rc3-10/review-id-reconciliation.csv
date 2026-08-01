@@ -1,0 +1,14 @@
+reviewId,existsInTriage,existsInReviewIndex,existsInReviewCsv,existsInDecisionTemplate,coordinateMatchesWithin1e9,status
+RGR-sumida-river-13,true,true,true,true,true,consistent
+RGR-sumida-river-14,true,true,true,true,true,consistent
+RGR-asakusa-odaiba-direct-11,true,true,true,true,true,consistent
+RGR-asakusa-odaiba-direct-12,true,true,true,true,true,consistent
+RGR-hinode-odaiba-3,true,true,true,true,true,consistent
+RGR-hinode-odaiba-4,true,true,true,true,true,consistent
+RGR-hamarikyu-6,true,true,true,true,true,consistent
+RGR-hamarikyu-7,true,true,true,true,true,consistent
+RGR-mizube-line-1,true,true,true,true,true,consistent
+RGR-mizube-line-2,true,true,true,true,true,consistent
+RGR-mizube-line-9,true,true,true,true,true,consistent
+RGR-mizube-line-10,true,true,true,true,true,consistent
+RGR-mizube-line-11,true,true,true,true,true,consistent

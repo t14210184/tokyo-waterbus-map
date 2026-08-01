@@ -1,0 +1,22 @@
+{
+  "name": "endpoint-only-near-pier",
+  "expectedOutcome": "PASS_WITH_TERMINAL_EXEMPTION",
+  "pierCoordinates": [139.7705, 35.6505],
+  "landPolygon": {
+    "type": "Feature",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [[
+        [139.770, 35.650],
+        [139.780, 35.650],
+        [139.780, 35.660],
+        [139.770, 35.660],
+        [139.770, 35.650]
+      ]]
+    }
+  },
+  "segment": {
+    "start": [139.7702, 35.6502],
+    "end": [139.7600, 35.6450]
+  }
+}

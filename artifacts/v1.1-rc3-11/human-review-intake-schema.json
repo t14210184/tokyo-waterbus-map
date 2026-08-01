@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "HumanReviewIntakeSchema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "reviewId",
+      "reviewer",
+      "reviewedAt",
+      "decision",
+      "evidenceSourceName",
+      "evidenceSourceUrl",
+      "evidenceLicense",
+      "evidenceRetrievedAt",
+      "evidenceNotes",
+      "proposedAction"
+    ],
+    "properties": {
+      "reviewId": { "type": "string" },
+      "reviewer": { "type": "string", "minLength": 1 },
+      "reviewedAt": { "type": "string", "format": "date-time" },
+      "decision": {
+        "type": "string",
+        "enum": [
+          "TRUE_LAND_INTERSECTION",
+          "BOUNDARY_ALIGNMENT_AMBIGUITY",
+          "TERMINAL_SNAP_ONLY",
+          "VALIDATOR_DATA_INSUFFICIENT",
+          "REQUIRES_OFFICIAL_SOURCE",
+          "NOT_REVIEWED"
+        ]
+      },
+      "evidenceSourceName": { "type": "string", "minLength": 1 },
+      "evidenceSourceUrl": { "type": "string", "pattern": "^https://" },
+      "evidenceLicense": { "type": "string", "minLength": 1 },
+      "evidenceRetrievedAt": { "type": "string", "format": "date-time" },
+      "evidenceNotes": { "type": "string", "minLength": 30 },
+      "proposedAction": {
+        "type": "string",
+        "enum": [
+          "NO_CHANGE_REQUIRED",
+          "SEEK_OFFICIAL_SOURCE",
+          "PROPOSE_MINIMAL_WAYPOINT_EDIT",
+          "REQUEST_SECOND_REVIEW"
+        ]
+      }
+    }
+  }
+}

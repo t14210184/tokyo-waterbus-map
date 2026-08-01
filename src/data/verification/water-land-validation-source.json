@@ -1,0 +1,18 @@
+{
+  "validatorId": "water-land-independent-verifier",
+  "sourceName": "OpenStreetMap Land Polygons / Japan MLIT National Land Numerical Information",
+  "sourceUrl": "https://osmdata.openstreetmap.de/data/land-polygons.html",
+  "license": "Open Database License (ODbL) / Government of Japan Open Data Terms",
+  "accessedAt": "2026-07-31",
+  "validationInputStatus": "DATASET_ACCEPTED",
+  "localRawPath": "data/verification/raw/tokyo-bay-land-polygons.json",
+  "localGeoJsonPath": "data/verification/derived/water-land-validation.geojson",
+  "geoJsonExists": true,
+  "coverage": "Tokyo Bay & Sumida River Waterway Channels (Bounding Box [139.65, 35.55, 139.95, 35.75])",
+  "samplingDistanceMeters": 25,
+  "terminalSnapToleranceMeters": 80,
+  "limitations": [
+    "Derived WGS84 GeoJSON land/water polygon dataset extracted for independent segment line-vs-polygon intersection auditing.",
+    "Geometry classification remains strictly approximate-reference across all 6 routes."
+  ]
+}

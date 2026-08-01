@@ -1,0 +1,21 @@
+{
+  "name": "lies-in-water",
+  "expectedOutcome": "PASS",
+  "landPolygon": {
+    "type": "Feature",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [[
+        [139.770, 35.650],
+        [139.780, 35.650],
+        [139.780, 35.660],
+        [139.770, 35.660],
+        [139.770, 35.650]
+      ]]
+    }
+  },
+  "segment": {
+    "start": [139.750, 35.650],
+    "end": [139.760, 35.650]
+  }
+}

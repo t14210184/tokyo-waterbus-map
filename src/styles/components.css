@@ -1,0 +1,280 @@
+/* Tokyo Waterbus Atlas - UI Components (Phase 3A Drawer & Marker Enhancements) */
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.badge-tokyo-cruise {
+  background: rgba(19, 185, 199, 0.15);
+  color: var(--ocean-300);
+  border: 1px solid rgba(19, 185, 199, 0.4);
+}
+
+.badge-mizube-line {
+  background: rgba(143, 108, 255, 0.15);
+  color: #a78bfa;
+  border: 1px solid rgba(143, 108, 255, 0.4);
+}
+
+.conf-official {
+  background: rgba(22, 161, 91, 0.15);
+  color: #4ade80;
+  border: 1px solid rgba(22, 161, 91, 0.4);
+}
+
+.conf-operator {
+  background: rgba(245, 166, 35, 0.15);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 166, 35, 0.4);
+}
+
+.conf-simulated {
+  background: rgba(255, 92, 100, 0.15);
+  color: #fca5a5;
+  border: 1px solid rgba(255, 92, 100, 0.4);
+}
+
+/* Cards */
+.card {
+  background: var(--surface-dark-elevated);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--border-radius-md);
+  padding: 1rem;
+  margin-bottom: 0.85rem;
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.card:hover {
+  border-color: var(--ocean-500);
+  box-shadow: 0 4px 18px rgba(19, 185, 199, 0.18);
+}
+
+.card.focused {
+  border-color: var(--ocean-500);
+  box-shadow: 0 0 16px rgba(19, 185, 199, 0.35);
+  background: rgba(19, 185, 199, 0.08);
+}
+
+.card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.card-title {
+  font-size: 0.95rem; /* 15px */
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.15rem 0;
+  line-height: 1.3;
+}
+
+.card-subtitle {
+  font-size: 0.72rem; /* 11.5px */
+  color: var(--ink-400);
+}
+
+/* 2-line clamped summary body */
+.card-summary {
+  font-size: 0.78rem; /* 12.5px */
+  color: #94a3b8;
+  margin: 0.5rem 0 0.75rem 0;
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Buttons (min-height 40px touch target) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-height: 38px;
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--border-radius-sm);
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--ocean-700);
+  color: #ffffff;
+  border: 1px solid var(--ocean-500);
+}
+.btn-primary:hover {
+  background: var(--ocean-500);
+  box-shadow: 0 0 14px rgba(19, 185, 199, 0.45);
+}
+
+.btn-secondary {
+  background: rgba(23, 63, 82, 0.8);
+  color: var(--ocean-200);
+  border: 1px solid var(--glass-border);
+}
+.btn-secondary:hover {
+  background: var(--ink-700);
+  color: #ffffff;
+  border-color: var(--ocean-500);
+}
+
+.btn-icon {
+  width: 36px;
+  height: 36px;
+  min-height: 36px;
+  padding: 0;
+  border-radius: 8px;
+  background: var(--surface-dark-elevated);
+  color: var(--ocean-200);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.btn-icon:hover {
+  background: var(--ink-800);
+  color: #ffffff;
+  border-color: var(--ocean-500);
+}
+
+/* Form Controls */
+.search-input {
+  width: 100%;
+  padding: 0.6rem 0.85rem;
+  background: rgba(7, 25, 35, 0.8);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--border-radius-sm);
+  color: #ffffff;
+  font-size: 0.85rem;
+  transition: border var(--transition-fast);
+}
+.search-input:focus {
+  border-color: var(--ocean-500);
+  outline: none;
+}
+
+/* Operational Status Pill */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--emerald-500);
+}
+
+/* Pier Detail Drawer Floating Card Slot */
+.map-floating-card {
+  position: absolute;
+  top: 1rem;
+  right: 4rem;
+  width: clamp(340px, 32vw, 400px);
+  max-width: 38%;
+  z-index: 600;
+  pointer-events: auto;
+}
+
+.pier-marker-selected .pier-marker-pin {
+  border-color: #ffffff !important;
+  box-shadow: 0 0 0 4px rgba(19, 185, 199, 0.6), 0 0 16px #13b9c7;
+  transform: scale(1.25);
+  transition: transform 150ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pier-marker-selected .pier-marker-pin {
+    transform: none !important;
+    box-shadow: 0 0 0 4px #13b9c7;
+  }
+}
+
+/* JMA Environment Context Panel Styles */
+.env-context-card {
+  background: rgba(15, 34, 48, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  margin: 0.75rem 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #d9e6f2;
+  position: relative;
+}
+
+.env-context-card.env-available {
+  border-left: 3px solid #13b9c7;
+}
+
+.env-context-card.env-unavailable {
+  border-left: 3px solid #7b9eb3;
+  opacity: 0.85;
+}
+
+.env-card-badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #13b9c7;
+  background: rgba(19, 185, 199, 0.15);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  margin-bottom: 0.3rem;
+  text-transform: uppercase;
+}
+
+.env-header {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.2rem;
+}
+
+.env-source {
+  font-size: 0.75rem;
+  color: #7b9eb3;
+}
+
+.env-time {
+  font-size: 0.72rem;
+  color: #8fadc4;
+  margin-bottom: 0.4rem;
+}
+
+.env-summary {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #13b9c7;
+  margin-bottom: 0.5rem;
+}
+
+.env-disclaimer {
+  font-size: 0.72rem;
+  color: #9cb6c9;
+  line-height: 1.35;
+  margin-bottom: 0.5rem;
+}
+
+.env-link {
+  font-size: 0.72rem;
+  color: #13b9c7;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.env-link:hover {
+  text-decoration: underline;
+}
+

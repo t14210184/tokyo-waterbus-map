@@ -1,0 +1,1514 @@
+{
+  "timestamp": "2026-08-01T08:11:16.429Z",
+  "productVersion": "v1.1.0-RC.3.8",
+  "validatorScope": "coastal-and-bay-waterways",
+  "totalRoutes": 6,
+  "totalSegments": 64,
+  "scopeCounts": {
+    "coastal-bay-supported": 24,
+    "inner-harbor-limited": 2,
+    "riverbank-limited": 15,
+    "canal-limited": 11,
+    "terminal-exemption-zone": 12,
+    "coverage-gap": 0
+  },
+  "decisionCounts": {
+    "pass": 51,
+    "needs-review": 13,
+    "out-of-scope": 0
+  },
+  "eligibilityCounts": {
+    "not-needed": 51,
+    "candidate": 0,
+    "human-review-only": 13,
+    "blocked": 0
+  },
+  "hasBlockingFindings": true,
+  "routeGeometryChanges": [],
+  "phaseGate": "TRIAGE_COMPLETE_NO_AUTOMATIC_REPAIR",
+  "requiredWording": {
+    "cleanScope": "no unexempted land-intersection observed within validator scope",
+    "reviewScope": "segment requires human geographic review",
+    "classification": "route remains approximate-reference"
+  },
+  "segments": [
+    {
+      "routeId": "sumida-river",
+      "segmentIndex": 0,
+      "start": [
+        139.79825,
+        35.71195
+      ],
+      "end": [
+        139.7968,
+        35.709
+      ],
+      "lengthMeters": 353,
+      "scopeClassification": "terminal-exemption-zone",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": "80m-pier-radius",
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Terminal pier exemption applied (<=80m from pier terminal)."
+    },
+    {
+      "routeId": "sumida-river",
+      "segmentIndex": 1,
+      "start": [
+        139.7968,
+        35.709
+      ],
+      "end": [
+        139.7936,
+        35.7042
+      ],
+      "lengthMeters": 607,
+      "scopeClassification": "riverbank-limited",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Segment lies safely in water within validator scope."
+    },
+    {
+      "routeId": "sumida-river",
+      "segmentIndex": 2,
+      "start": [
+        139.7936,
+        35.7042
+      ],
+      "end": [
+        139.7915,
+        35.6985
+      ],
+      "lengthMeters": 662,
+      "scopeClassification": "riverbank-limited",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Segment lies safely in water within validator scope."
+    },
+    {
+      "routeId": "sumida-river",
+      "segmentIndex": 3,
+      "start": [
+        139.7915,
+        35.6985
+      ],
+      "end": [
+        139.7902,
+        35.6938
+      ],
+      "lengthMeters": 536,
+      "scopeClassification": "riverbank-limited",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Segment lies safely in water within validator scope."
+    },
+    {
+      "routeId": "sumida-river",
+      "segmentIndex": 4,
+      "start": [
+        139.7902,
+        35.6938
+      ],
+      "end": [
+        139.7891,
+        35.6882
+      ],
+      "lengthMeters": 631,
+      "scopeClassification": "riverbank-limited",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Segment lies safely in water within validator scope."
+    },
+    {
+      "routeId": "sumida-river",
+      "segmentIndex": 5,
+      "start": [
+        139.7891,
+        35.6882
+      ],
+      "end": [
+        139.7885,
+        35.683
+      ],
+      "lengthMeters": 581,
+      "scopeClassification": "riverbank-limited",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Segment lies safely in water within validator scope."
+    },
+    {
+      "routeId": "sumida-river",
+      "segmentIndex": 6,
+      "start": [
+        139.7885,
+        35.683
+      ],
+      "end": [
+        139.7845,
+        35.674
+      ],
+      "lengthMeters": 1064,
+      "scopeClassification": "canal-limited",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Segment lies safely in water within validator scope."
+    },
+    {
+      "routeId": "sumida-river",
+      "segmentIndex": 7,
+      "start": [
+        139.7845,
+        35.674
+      ],
+      "end": [
+        139.7788,
+        35.6695
+      ],
+      "lengthMeters": 718,
+      "scopeClassification": "canal-limited",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Segment lies safely in water within validator scope."
+    },
+    {
+      "routeId": "sumida-river",
+      "segmentIndex": 8,
+      "start": [
+        139.7788,
+        35.6695
+      ],
+      "end": [
+        139.7758,
+        35.6669
+      ],
+      "lengthMeters": 396,
+      "scopeClassification": "canal-limited",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Segment lies safely in water within validator scope."
+    },
+    {
+      "routeId": "sumida-river",
+      "segmentIndex": 9,
+      "start": [
+        139.7758,
+        35.6669
+      ],
+      "end": [
+        139.7705,
+        35.6601
+      ],
+      "lengthMeters": 895,
+      "scopeClassification": "coastal-bay-supported",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Segment lies safely in water within validator scope."
+    },
+    {
+      "routeId": "sumida-river",
+      "segmentIndex": 10,
+      "start": [
+        139.7705,
+        35.6601
+      ],
+      "end": [
+        139.7675,
+        35.6608
+      ],
+      "lengthMeters": 282,
+      "scopeClassification": "coastal-bay-supported",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Segment lies safely in water within validator scope."
+    },
+    {
+      "routeId": "sumida-river",
+      "segmentIndex": 11,
+      "start": [
+        139.7675,
+        35.6608
+      ],
+      "end": [
+        139.766,
+        35.6603
+      ],
+      "lengthMeters": 146,
+      "scopeClassification": "coastal-bay-supported",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Segment lies safely in water within validator scope."
+    },
+    {
+      "routeId": "sumida-river",
+      "segmentIndex": 12,
+      "start": [
+        139.766,
+        35.6603
+      ],
+      "end": [
+        139.76495,
+        35.6601
+      ],
+      "lengthMeters": 97,
+      "scopeClassification": "coastal-bay-supported",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Segment lies safely in water within validator scope."
+    },
+    {
+      "routeId": "sumida-river",
+      "segmentIndex": 13,
+      "start": [
+        139.76495,
+        35.6601
+      ],
+      "end": [
+        139.7635,
+        35.658
+      ],
+      "lengthMeters": 268,
+      "scopeClassification": "coastal-bay-supported",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [
+        [
+          139.7644666666667,
+          35.65940000000003
+        ]
+      ],
+      "landInteriorPartCount": 1,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "needs-review",
+      "repairEligibility": "human-review-only",
+      "reason": "Coastline intersection detected; requires human geographic review without second-source verification."
+    },
+    {
+      "routeId": "sumida-river",
+      "segmentIndex": 14,
+      "start": [
+        139.7635,
+        35.658
+      ],
+      "end": [
+        139.761,
+        35.6558
+      ],
+      "lengthMeters": 333,
+      "scopeClassification": "coastal-bay-supported",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 1,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "needs-review",
+      "repairEligibility": "human-review-only",
+      "reason": "Coastline intersection detected; requires human geographic review without second-source verification."
+    },
+    {
+      "routeId": "sumida-river",
+      "segmentIndex": 15,
+      "start": [
+        139.761,
+        35.6558
+      ],
+      "end": [
+        139.7571,
+        35.65175
+      ],
+      "lengthMeters": 572,
+      "scopeClassification": "terminal-exemption-zone",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 1,
+      "boundaryTouchCount": 0,
+      "terminalExemption": "80m-pier-radius",
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Terminal pier exemption applied (<=80m from pier terminal)."
+    },
+    {
+      "routeId": "asakusa-odaiba-direct",
+      "segmentIndex": 0,
+      "start": [
+        139.79825,
+        35.71195
+      ],
+      "end": [
+        139.7968,
+        35.709
+      ],
+      "lengthMeters": 353,
+      "scopeClassification": "terminal-exemption-zone",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": "80m-pier-radius",
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Terminal pier exemption applied (<=80m from pier terminal)."
+    },
+    {
+      "routeId": "asakusa-odaiba-direct",
+      "segmentIndex": 1,
+      "start": [
+        139.7968,
+        35.709
+      ],
+      "end": [
+        139.7936,
+        35.7042
+      ],
+      "lengthMeters": 607,
+      "scopeClassification": "riverbank-limited",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Segment lies safely in water within validator scope."
+    },
+    {
+      "routeId": "asakusa-odaiba-direct",
+      "segmentIndex": 2,
+      "start": [
+        139.7936,
+        35.7042
+      ],
+      "end": [
+        139.7915,
+        35.6985
+      ],
+      "lengthMeters": 662,
+      "scopeClassification": "riverbank-limited",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Segment lies safely in water within validator scope."
+    },
+    {
+      "routeId": "asakusa-odaiba-direct",
+      "segmentIndex": 3,
+      "start": [
+        139.7915,
+        35.6985
+      ],
+      "end": [
+        139.7902,
+        35.6938
+      ],
+      "lengthMeters": 536,
+      "scopeClassification": "riverbank-limited",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Segment lies safely in water within validator scope."
+    },
+    {
+      "routeId": "asakusa-odaiba-direct",
+      "segmentIndex": 4,
+      "start": [
+        139.7902,
+        35.6938
+      ],
+      "end": [
+        139.7891,
+        35.6882
+      ],
+      "lengthMeters": 631,
+      "scopeClassification": "riverbank-limited",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Segment lies safely in water within validator scope."
+    },
+    {
+      "routeId": "asakusa-odaiba-direct",
+      "segmentIndex": 5,
+      "start": [
+        139.7891,
+        35.6882
+      ],
+      "end": [
+        139.7885,
+        35.683
+      ],
+      "lengthMeters": 581,
+      "scopeClassification": "riverbank-limited",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Segment lies safely in water within validator scope."
+    },
+    {
+      "routeId": "asakusa-odaiba-direct",
+      "segmentIndex": 6,
+      "start": [
+        139.7885,
+        35.683
+      ],
+      "end": [
+        139.7845,
+        35.674
+      ],
+      "lengthMeters": 1064,
+      "scopeClassification": "canal-limited",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Segment lies safely in water within validator scope."
+    },
+    {
+      "routeId": "asakusa-odaiba-direct",
+      "segmentIndex": 7,
+      "start": [
+        139.7845,
+        35.674
+      ],
+      "end": [
+        139.7788,
+        35.6695
+      ],
+      "lengthMeters": 718,
+      "scopeClassification": "canal-limited",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Segment lies safely in water within validator scope."
+    },
+    {
+      "routeId": "asakusa-odaiba-direct",
+      "segmentIndex": 8,
+      "start": [
+        139.7788,
+        35.6695
+      ],
+      "end": [
+        139.7758,
+        35.6669
+      ],
+      "lengthMeters": 396,
+      "scopeClassification": "canal-limited",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Segment lies safely in water within validator scope."
+    },
+    {
+      "routeId": "asakusa-odaiba-direct",
+      "segmentIndex": 9,
+      "start": [
+        139.7758,
+        35.6669
+      ],
+      "end": [
+        139.7705,
+        35.6601
+      ],
+      "lengthMeters": 895,
+      "scopeClassification": "coastal-bay-supported",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Segment lies safely in water within validator scope."
+    },
+    {
+      "routeId": "asakusa-odaiba-direct",
+      "segmentIndex": 10,
+      "start": [
+        139.7705,
+        35.6601
+      ],
+      "end": [
+        139.7645,
+        35.656
+      ],
+      "lengthMeters": 708,
+      "scopeClassification": "coastal-bay-supported",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Segment lies safely in water within validator scope."
+    },
+    {
+      "routeId": "asakusa-odaiba-direct",
+      "segmentIndex": 11,
+      "start": [
+        139.7645,
+        35.656
+      ],
+      "end": [
+        139.7571,
+        35.65175
+      ],
+      "lengthMeters": 819,
+      "scopeClassification": "coastal-bay-supported",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [
+        [
+          139.75862698412698,
+          35.65262698412698
+        ]
+      ],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "needs-review",
+      "repairEligibility": "human-review-only",
+      "reason": "Coastline intersection detected; requires human geographic review without second-source verification."
+    },
+    {
+      "routeId": "asakusa-odaiba-direct",
+      "segmentIndex": 12,
+      "start": [
+        139.7571,
+        35.65175
+      ],
+      "end": [
+        139.7595,
+        35.645
+      ],
+      "lengthMeters": 781,
+      "scopeClassification": "coastal-bay-supported",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [
+        [
+          139.7572704918033,
+          35.65127049180328
+        ]
+      ],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "needs-review",
+      "repairEligibility": "human-review-only",
+      "reason": "Coastline intersection detected; requires human geographic review without second-source verification."
+    },
+    {
+      "routeId": "asakusa-odaiba-direct",
+      "segmentIndex": 13,
+      "start": [
+        139.7595,
+        35.645
+      ],
+      "end": [
+        139.7638,
+        35.6385
+      ],
+      "lengthMeters": 821,
+      "scopeClassification": "coastal-bay-supported",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Segment lies safely in water within validator scope."
+    },
+    {
+      "routeId": "asakusa-odaiba-direct",
+      "segmentIndex": 14,
+      "start": [
+        139.7638,
+        35.6385
+      ],
+      "end": [
+        139.768,
+        35.6315
+      ],
+      "lengthMeters": 866,
+      "scopeClassification": "coastal-bay-supported",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Segment lies safely in water within validator scope."
+    },
+    {
+      "routeId": "asakusa-odaiba-direct",
+      "segmentIndex": 15,
+      "start": [
+        139.768,
+        35.6315
+      ],
+      "end": [
+        139.7719,
+        35.62885
+      ],
+      "lengthMeters": 459,
+      "scopeClassification": "terminal-exemption-zone",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [
+        [
+          139.77,
+          35.63014102564102
+        ]
+      ],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": "80m-pier-radius",
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Terminal pier exemption applied (<=80m from pier terminal)."
+    },
+    {
+      "routeId": "hinode-odaiba",
+      "segmentIndex": 0,
+      "start": [
+        139.7571,
+        35.65175
+      ],
+      "end": [
+        139.7602,
+        35.6438
+      ],
+      "lengthMeters": 927,
+      "scopeClassification": "terminal-exemption-zone",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [
+        [
+          139.7572823529412,
+          35.65128235294118
+        ]
+      ],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": "80m-pier-radius",
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Terminal pier exemption applied (<=80m from pier terminal)."
+    },
+    {
+      "routeId": "hinode-odaiba",
+      "segmentIndex": 1,
+      "start": [
+        139.7602,
+        35.6438
+      ],
+      "end": [
+        139.7645,
+        35.6375
+      ],
+      "lengthMeters": 801,
+      "scopeClassification": "coastal-bay-supported",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Segment lies safely in water within validator scope."
+    },
+    {
+      "routeId": "hinode-odaiba",
+      "segmentIndex": 2,
+      "start": [
+        139.7645,
+        35.6375
+      ],
+      "end": [
+        139.7685,
+        35.6312
+      ],
+      "lengthMeters": 788,
+      "scopeClassification": "coastal-bay-supported",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Segment lies safely in water within validator scope."
+    },
+    {
+      "routeId": "hinode-odaiba",
+      "segmentIndex": 3,
+      "start": [
+        139.7685,
+        35.6312
+      ],
+      "end": [
+        139.7719,
+        35.62885
+      ],
+      "lengthMeters": 403,
+      "scopeClassification": "coastal-bay-supported",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [
+        [
+          139.77,
+          35.630163235294106
+        ]
+      ],
+      "landInteriorPartCount": 1,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "needs-review",
+      "repairEligibility": "human-review-only",
+      "reason": "Coastline intersection detected; requires human geographic review without second-source verification."
+    },
+    {
+      "routeId": "hinode-odaiba",
+      "segmentIndex": 4,
+      "start": [
+        139.7719,
+        35.62885
+      ],
+      "end": [
+        139.781,
+        35.6245
+      ],
+      "lengthMeters": 954,
+      "scopeClassification": "coastal-bay-supported",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 1,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "needs-review",
+      "repairEligibility": "human-review-only",
+      "reason": "Coastline intersection detected; requires human geographic review without second-source verification."
+    },
+    {
+      "routeId": "hinode-odaiba",
+      "segmentIndex": 5,
+      "start": [
+        139.781,
+        35.6245
+      ],
+      "end": [
+        139.7952,
+        35.6276
+      ],
+      "lengthMeters": 1329,
+      "scopeClassification": "terminal-exemption-zone",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [
+        [
+          139.782,
+          35.624718309859155
+        ]
+      ],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": "80m-pier-radius",
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Terminal pier exemption applied (<=80m from pier terminal)."
+    },
+    {
+      "routeId": "hamarikyu",
+      "segmentIndex": 0,
+      "start": [
+        139.79825,
+        35.71195
+      ],
+      "end": [
+        139.7915,
+        35.6985
+      ],
+      "lengthMeters": 1615,
+      "scopeClassification": "terminal-exemption-zone",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": "80m-pier-radius",
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Terminal pier exemption applied (<=80m from pier terminal)."
+    },
+    {
+      "routeId": "hamarikyu",
+      "segmentIndex": 1,
+      "start": [
+        139.7915,
+        35.6985
+      ],
+      "end": [
+        139.7885,
+        35.683
+      ],
+      "lengthMeters": 1745,
+      "scopeClassification": "riverbank-limited",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Segment lies safely in water within validator scope."
+    },
+    {
+      "routeId": "hamarikyu",
+      "segmentIndex": 2,
+      "start": [
+        139.7885,
+        35.683
+      ],
+      "end": [
+        139.7758,
+        35.6669
+      ],
+      "lengthMeters": 2126,
+      "scopeClassification": "canal-limited",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Segment lies safely in water within validator scope."
+    },
+    {
+      "routeId": "hamarikyu",
+      "segmentIndex": 3,
+      "start": [
+        139.7758,
+        35.6669
+      ],
+      "end": [
+        139.7675,
+        35.6608
+      ],
+      "lengthMeters": 1011,
+      "scopeClassification": "coastal-bay-supported",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Segment lies safely in water within validator scope."
+    },
+    {
+      "routeId": "hamarikyu",
+      "segmentIndex": 4,
+      "start": [
+        139.7675,
+        35.6608
+      ],
+      "end": [
+        139.766,
+        35.6603
+      ],
+      "lengthMeters": 146,
+      "scopeClassification": "coastal-bay-supported",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Segment lies safely in water within validator scope."
+    },
+    {
+      "routeId": "hamarikyu",
+      "segmentIndex": 5,
+      "start": [
+        139.766,
+        35.6603
+      ],
+      "end": [
+        139.76495,
+        35.6601
+      ],
+      "lengthMeters": 97,
+      "scopeClassification": "coastal-bay-supported",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Segment lies safely in water within validator scope."
+    },
+    {
+      "routeId": "hamarikyu",
+      "segmentIndex": 6,
+      "start": [
+        139.76495,
+        35.6601
+      ],
+      "end": [
+        139.7635,
+        35.658
+      ],
+      "lengthMeters": 268,
+      "scopeClassification": "inner-harbor-limited",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [
+        [
+          139.7644666666667,
+          35.65940000000003
+        ]
+      ],
+      "landInteriorPartCount": 1,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "needs-review",
+      "repairEligibility": "human-review-only",
+      "reason": "Segment in inner-harbor-limited scope requires human geographic review."
+    },
+    {
+      "routeId": "hamarikyu",
+      "segmentIndex": 7,
+      "start": [
+        139.7635,
+        35.658
+      ],
+      "end": [
+        139.761,
+        35.6558
+      ],
+      "lengthMeters": 333,
+      "scopeClassification": "inner-harbor-limited",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 1,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "needs-review",
+      "repairEligibility": "human-review-only",
+      "reason": "Segment in inner-harbor-limited scope requires human geographic review."
+    },
+    {
+      "routeId": "hamarikyu",
+      "segmentIndex": 8,
+      "start": [
+        139.761,
+        35.6558
+      ],
+      "end": [
+        139.7571,
+        35.65175
+      ],
+      "lengthMeters": 572,
+      "scopeClassification": "terminal-exemption-zone",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 1,
+      "boundaryTouchCount": 0,
+      "terminalExemption": "80m-pier-radius",
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Terminal pier exemption applied (<=80m from pier terminal)."
+    },
+    {
+      "routeId": "hinode-toyosu",
+      "segmentIndex": 0,
+      "start": [
+        139.7571,
+        35.65175
+      ],
+      "end": [
+        139.766,
+        35.648
+      ],
+      "lengthMeters": 906,
+      "scopeClassification": "terminal-exemption-zone",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [
+        [
+          139.75755731225297,
+          35.65155731225297
+        ]
+      ],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": "80m-pier-radius",
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Terminal pier exemption applied (<=80m from pier terminal)."
+    },
+    {
+      "routeId": "hinode-toyosu",
+      "segmentIndex": 1,
+      "start": [
+        139.766,
+        35.648
+      ],
+      "end": [
+        139.7755,
+        35.6495
+      ],
+      "lengthMeters": 874,
+      "scopeClassification": "canal-limited",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Segment lies safely in water within validator scope."
+    },
+    {
+      "routeId": "hinode-toyosu",
+      "segmentIndex": 2,
+      "start": [
+        139.7755,
+        35.6495
+      ],
+      "end": [
+        139.784,
+        35.652
+      ],
+      "lengthMeters": 817,
+      "scopeClassification": "canal-limited",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Segment lies safely in water within validator scope."
+    },
+    {
+      "routeId": "hinode-toyosu",
+      "segmentIndex": 3,
+      "start": [
+        139.784,
+        35.652
+      ],
+      "end": [
+        139.7909,
+        35.6548
+      ],
+      "lengthMeters": 697,
+      "scopeClassification": "terminal-exemption-zone",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": "80m-pier-radius",
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Terminal pier exemption applied (<=80m from pier terminal)."
+    },
+    {
+      "routeId": "mizube-line",
+      "segmentIndex": 0,
+      "start": [
+        139.7928,
+        35.69615
+      ],
+      "end": [
+        139.795,
+        35.704
+      ],
+      "lengthMeters": 895,
+      "scopeClassification": "terminal-exemption-zone",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": "80m-pier-radius",
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Terminal pier exemption applied (<=80m from pier terminal)."
+    },
+    {
+      "routeId": "mizube-line",
+      "segmentIndex": 1,
+      "start": [
+        139.795,
+        35.704
+      ],
+      "end": [
+        139.8005,
+        35.7111
+      ],
+      "lengthMeters": 933,
+      "scopeClassification": "riverbank-limited",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [
+        [
+          139.79631236442515,
+          35.70569414316704
+        ]
+      ],
+      "landInteriorPartCount": 1,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "needs-review",
+      "repairEligibility": "human-review-only",
+      "reason": "Segment in riverbank-limited scope requires human geographic review."
+    },
+    {
+      "routeId": "mizube-line",
+      "segmentIndex": 2,
+      "start": [
+        139.8005,
+        35.7111
+      ],
+      "end": [
+        139.7998,
+        35.7138
+      ],
+      "lengthMeters": 307,
+      "scopeClassification": "riverbank-limited",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [
+        [
+          139.79985848563967,
+          35.713574412532644
+        ]
+      ],
+      "landInteriorPartCount": 1,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "needs-review",
+      "repairEligibility": "human-review-only",
+      "reason": "Segment in riverbank-limited scope requires human geographic review."
+    },
+    {
+      "routeId": "mizube-line",
+      "segmentIndex": 3,
+      "start": [
+        139.7998,
+        35.7138
+      ],
+      "end": [
+        139.792,
+        35.7
+      ],
+      "lengthMeters": 1688,
+      "scopeClassification": "riverbank-limited",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Segment lies safely in water within validator scope."
+    },
+    {
+      "routeId": "mizube-line",
+      "segmentIndex": 4,
+      "start": [
+        139.792,
+        35.7
+      ],
+      "end": [
+        139.787,
+        35.68
+      ],
+      "lengthMeters": 2269,
+      "scopeClassification": "riverbank-limited",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Segment lies safely in water within validator scope."
+    },
+    {
+      "routeId": "mizube-line",
+      "segmentIndex": 5,
+      "start": [
+        139.787,
+        35.68
+      ],
+      "end": [
+        139.7892,
+        35.6685
+      ],
+      "lengthMeters": 1294,
+      "scopeClassification": "canal-limited",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Segment lies safely in water within validator scope."
+    },
+    {
+      "routeId": "mizube-line",
+      "segmentIndex": 6,
+      "start": [
+        139.7892,
+        35.6685
+      ],
+      "end": [
+        139.7758,
+        35.6669
+      ],
+      "lengthMeters": 1224,
+      "scopeClassification": "canal-limited",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Segment lies safely in water within validator scope."
+    },
+    {
+      "routeId": "mizube-line",
+      "segmentIndex": 7,
+      "start": [
+        139.7758,
+        35.6669
+      ],
+      "end": [
+        139.7615,
+        35.6542
+      ],
+      "lengthMeters": 1914,
+      "scopeClassification": "coastal-bay-supported",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Segment lies safely in water within validator scope."
+    },
+    {
+      "routeId": "mizube-line",
+      "segmentIndex": 8,
+      "start": [
+        139.7615,
+        35.6542
+      ],
+      "end": [
+        139.765,
+        35.638
+      ],
+      "lengthMeters": 1829,
+      "scopeClassification": "coastal-bay-supported",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Segment lies safely in water within validator scope."
+    },
+    {
+      "routeId": "mizube-line",
+      "segmentIndex": 9,
+      "start": [
+        139.765,
+        35.638
+      ],
+      "end": [
+        139.7719,
+        35.62885
+      ],
+      "lengthMeters": 1193,
+      "scopeClassification": "coastal-bay-supported",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [
+        [
+          139.77027868852457,
+          35.631
+        ]
+      ],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "needs-review",
+      "repairEligibility": "human-review-only",
+      "reason": "Coastline intersection detected; requires human geographic review without second-source verification."
+    },
+    {
+      "routeId": "mizube-line",
+      "segmentIndex": 10,
+      "start": [
+        139.7719,
+        35.62885
+      ],
+      "end": [
+        139.795,
+        35.626
+      ],
+      "lengthMeters": 2112,
+      "scopeClassification": "coastal-bay-supported",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [
+        [
+          139.782,
+          35.62760389610389
+        ]
+      ],
+      "landInteriorPartCount": 0,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "needs-review",
+      "repairEligibility": "human-review-only",
+      "reason": "Coastline intersection detected; requires human geographic review without second-source verification."
+    },
+    {
+      "routeId": "mizube-line",
+      "segmentIndex": 11,
+      "start": [
+        139.795,
+        35.626
+      ],
+      "end": [
+        139.825,
+        35.632
+      ],
+      "lengthMeters": 2792,
+      "scopeClassification": "coastal-bay-supported",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [
+        [
+          139.80666666666667,
+          35.62833333333333
+        ]
+      ],
+      "landInteriorPartCount": 1,
+      "boundaryTouchCount": 0,
+      "terminalExemption": null,
+      "validatorDecision": "needs-review",
+      "repairEligibility": "human-review-only",
+      "reason": "Coastline intersection detected; requires human geographic review without second-source verification."
+    },
+    {
+      "routeId": "mizube-line",
+      "segmentIndex": 12,
+      "start": [
+        139.825,
+        35.632
+      ],
+      "end": [
+        139.8605,
+        35.641
+      ],
+      "lengthMeters": 3361,
+      "scopeClassification": "terminal-exemption-zone",
+      "coverageStatus": "covered",
+      "lineIntersectionPoints": [],
+      "landInteriorPartCount": 1,
+      "boundaryTouchCount": 0,
+      "terminalExemption": "80m-pier-radius",
+      "validatorDecision": "pass",
+      "repairEligibility": "not-needed",
+      "reason": "Terminal pier exemption applied (<=80m from pier terminal)."
+    }
+  ]
+}

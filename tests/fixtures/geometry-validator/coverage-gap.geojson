@@ -1,0 +1,22 @@
+{
+  "name": "coverage-gap",
+  "expectedOutcome": "OUT_OF_SCOPE",
+  "datasetBbox": [139.65, 35.55, 139.95, 35.75],
+  "landPolygon": {
+    "type": "Feature",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [[
+        [139.770, 35.650],
+        [139.780, 35.650],
+        [139.780, 35.660],
+        [139.770, 35.660],
+        [139.770, 35.650]
+      ]]
+    }
+  },
+  "segment": {
+    "start": [140.500, 36.200],
+    "end": [140.600, 36.300]
+  }
+}
