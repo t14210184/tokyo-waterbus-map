@@ -56,6 +56,8 @@ if (fs.existsSync(leafletCssPath)) {
 }
 
 // Compute CSS Content Hash
+bundledCSS = bundledCSS.replace(/\r\n/g, '\n');
+
 const cssHash = crypto.createHash('sha256').update(bundledCSS, 'utf8').digest('hex').substring(0, 8);
 const hashedCssFilename = `index-atlas.${cssHash}.css`;
 const cssFilename = 'index-atlas.css';
@@ -131,6 +133,9 @@ jsModules.forEach(modPath => {
     content = content.replace(/export\s+function\s+/g, 'function ');
     content = content.replace(/export\s+let\s+/g, 'let ');
     
+    // Normalize CRLF line endings to LF for cross-platform deterministic hashing
+    content = content.replace(/\r\n/g, '\n');
+
     sourceMap.set(modPath, content);
   }
 });
@@ -138,6 +143,8 @@ jsModules.forEach(modPath => {
 sourceMap.forEach((content, modPath) => {
   bundleJS += `\n// --- Module: ${modPath} ---\n` + content + '\n';
 });
+
+bundleJS = bundleJS.replace(/\r\n/g, '\n');
 
 // Copy Leaflet Vendor JS
 const leafletJsPath = path.join(rootDir, 'node_modules', 'leaflet', 'dist', 'leaflet.js');

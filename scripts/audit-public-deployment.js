@@ -33,7 +33,8 @@ function fetchUrl(url) {
 }
 
 function getSha256(content) {
-  return crypto.createHash('sha256').update(content, 'utf8').digest('hex');
+  const norm = typeof content === 'string' ? content.replace(/\r\n/g, '\n') : content;
+  return crypto.createHash('sha256').update(norm, 'utf8').digest('hex');
 }
 
 async function runPublicDeploymentAudit() {
