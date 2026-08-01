@@ -39,6 +39,7 @@ import { renderPierPanel } from './ui/pier-panel.js';
 import { renderPierDetailDrawer } from './ui/pier-detail-drawer.js';
 import { renderGuidePanel } from './ui/guide-panel.js';
 import { renderEnvironmentPanel } from './ui/environment-panel.js';
+import { renderReviewPortalPanel } from './ui/review-portal-panel.js';
 
 const appNavStartTime = performance.now();
 
@@ -493,6 +494,8 @@ function renderActiveTab() {
         `).join('')}
       </div>
     `;
+  } else if (activeTab === 'review') {
+    renderReviewPortalPanel(container);
   }
 }
 

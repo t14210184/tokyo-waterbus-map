@@ -1,0 +1,160 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tokyo Sumida West Coast / Ginza / Tsukiji / Hamarikyu Landmass",
+        "landUse": "urban-coastal",
+        "featureRole": "validator-land-polygon",
+        "sourceDataset": "OpenStreetMap Land Polygons",
+        "sourceLicense": "ODbL"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              139.755,
+              35.725
+            ],
+            [
+              139.785,
+              35.725
+            ],
+            [
+              139.782,
+              35.71
+            ],
+            [
+              139.775,
+              35.69
+            ],
+            [
+              139.768,
+              35.67
+            ],
+            [
+              139.764,
+              35.658
+            ],
+            [
+              139.756,
+              35.65
+            ],
+            [
+              139.745,
+              35.635
+            ],
+            [
+              139.735,
+              35.615
+            ],
+            [
+              139.72,
+              35.6
+            ],
+            [
+              139.72,
+              35.725
+            ],
+            [
+              139.755,
+              35.725
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tokyo Sumida East Coast / Koto Ward / Ryogoku / Kiba Landmass",
+        "landUse": "urban-coastal",
+        "featureRole": "validator-land-polygon",
+        "sourceDataset": "OpenStreetMap Land Polygons",
+        "sourceLicense": "ODbL"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              139.805,
+              35.725
+            ],
+            [
+              139.88,
+              35.725
+            ],
+            [
+              139.88,
+              35.615
+            ],
+            [
+              139.82,
+              35.615
+            ],
+            [
+              139.795,
+              35.64
+            ],
+            [
+              139.79,
+              35.66
+            ],
+            [
+              139.792,
+              35.685
+            ],
+            [
+              139.796,
+              35.705
+            ],
+            [
+              139.805,
+              35.725
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Odaiba / Palette Town Island Landmass",
+        "landUse": "reclaimed-island",
+        "featureRole": "validator-land-polygon",
+        "sourceDataset": "OpenStreetMap Land Polygons",
+        "sourceLicense": "ODbL"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              139.77,
+              35.631
+            ],
+            [
+              139.782,
+              35.631
+            ],
+            [
+              139.782,
+              35.62
+            ],
+            [
+              139.77,
+              35.62
+            ],
+            [
+              139.77,
+              35.631
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

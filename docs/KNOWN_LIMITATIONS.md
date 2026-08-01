@@ -1,7 +1,7 @@
 # Tokyo Waterbus Atlas (東京水上巴士 Atlas) - 已知限制說明 (Known Limitations)
 
 **生效日期**: 2026-08-01  
-**適用版本**: v1.1.0 (RC.3.11)
+**適用版本**: v1.1.0 (RC.3.13)
 
 ---
 
@@ -18,5 +18,5 @@
 
 1. **近似水路擬合幾何參考 (approximate-reference)**:
    - 所有航線幾何標記為 `geometryClassification = approximate-reference`，採離散水路轉折點擬合，用於示意及繪製航線，非官方海事 AIS 航跡或 100% 幾何精確航道。
-2. **無虛構簽核之審核接收準備度 (No-Fabricated-Sign-off Intake Disclosures)**:
-   - 人工審核接收流程準備就緒（`CANONICAL_REVIEW_INTAKE_READY_AWAITING_HUMAN_INPUT`），嚴格禁止任何 AI 或自動化腳本虛構簽核人員，`eligibleForGeometryChangeCount = 0`，本輪零航線幾何修改。
+2. **GitHub Pages 審核門戶零上傳說明 (GitHub Pages Review Portal Disclosures)**:
+   - 13 個 Canonical Needs-Review Segments 經公開門戶展示（`PAGES_REVIEW_PORTAL_READY`），本機格式預檢工具 100% 於瀏覽器記憶體內執行且零網路上傳，`eligibleForGeometryChangeCount = 0`，本輪零航線幾何修改。

@@ -1,17 +1,17 @@
 # Tokyo Waterbus Atlas — Release Notes
 
 **Version:** v1.1.0
-**Release candidate validation:** RC.3.11
+**Release candidate validation:** RC.3.13
 **Release date:** 2026-08-01
 **Release status:** CONDITIONAL PASS
-**Condition:** Human review intake readiness verified (CANONICAL_REVIEW_INTAKE_READY_AWAITING_HUMAN_INPUT; 13 canonical corrected review IDs registered; zero fabricated sign-offs; product code checksums 100% immutable; classification maintained as approximate-reference).
+**Condition:** GitHub Pages human review portal deployed (PAGES_REVIEW_PORTAL_READY; Vite base set to /tokyo-waterbus-map/; 13 canonical review items rendered; local-only CSV format pre-validation enabled with zero network upload; product code checksums 100% immutable; classification maintained as approximate-reference).
 
 ---
 
 ## 🌟 產品狀態與說明 (Product Status & Disclosures)
 
-- **Human Review Intake Readiness**: `CANONICAL_REVIEW_INTAKE_READY_AWAITING_HUMAN_INPUT` (13 個正式 Canonical Review IDs 建立與更正，準備接收真實人類 GIS 審核簽核)
-- **Zero Fabricated Sign-off Policy**: `PASS` (拒絕任何 AI、系統提示或虛構人員充當簽核者，`eligibleForGeometryChangeCount = 0`)
+- **GitHub Pages Human Review Portal**: `PAGES_REVIEW_PORTAL_READY` (公開提供 13 個 Canonical Review Items 檢視、審核範本下載與瀏覽器本機 100% 格式預檢)
+- **Client-Side Privacy Security**: `PASS` (選取 CSV 檔案僅使用 FileReader 於本機記憶體解析，無任何網路上傳或外部傳送)
 - **Product Immutability**: `PASS` (`src/data/route-geometries.js` 等核心檔案 SHA-256 哈希值保持 100% 不變)
 - **Required Geometry Wording**: `no unexempted land-intersection observed within validator scope` / `segment requires human geographic review` / `route remains approximate-reference`
 - **Environment State Contract**: `PASS` (日本氣象廳 JMA 唯讀氣象 Context 5 種情境驗證通過)

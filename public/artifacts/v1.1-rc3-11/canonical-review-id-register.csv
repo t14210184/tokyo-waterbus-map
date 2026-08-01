@@ -1,0 +1,14 @@
+reviewId,routeId,segmentIndex,scopeClassification
+RGR-sumida-river-13,sumida-river,13,riverbank-limited
+RGR-sumida-river-14,sumida-river,14,riverbank-limited
+RGR-asakusa-odaiba-direct-11,asakusa-odaiba-direct,11,riverbank-limited
+RGR-asakusa-odaiba-direct-12,asakusa-odaiba-direct,12,riverbank-limited
+RGR-hinode-odaiba-3,hinode-odaiba,3,coastal-bay-supported
+RGR-hinode-odaiba-4,hinode-odaiba,4,coastal-bay-supported
+RGR-hamarikyu-6,hamarikyu,6,inner-harbor-limited
+RGR-hamarikyu-7,hamarikyu,7,inner-harbor-limited
+RGR-mizube-line-1,mizube-line,1,riverbank-limited
+RGR-mizube-line-2,mizube-line,2,riverbank-limited
+RGR-mizube-line-9,mizube-line,9,canal-limited
+RGR-mizube-line-10,mizube-line,10,canal-limited
+RGR-mizube-line-11,mizube-line,11,canal-limited

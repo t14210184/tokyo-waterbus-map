@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 127.0.0.1",
-    "build": "vite build || node scripts/build-static.js",
+    "build": "npm run build:static",
     "build:static": "node -e \"import('file:///e:/ANTI/%E6%9D%B1%E4%BA%AC%E6%B0%B4%E4%B8%8A%E5%B7%B4%E5%A3%AB%E5%AF%A6%E5%A2%83%E5%9C%B0%E7%90%86%E8%B7%AF%E7%B7%9A%E5%9C%96/scripts/build-static.js')\"",
     "preview": "vite preview",
     "validate:data": "node scripts/validate-data.js",
@@ -33,6 +33,7 @@
     "audit:review-package-reconciliation": "node -e \"import('file:///e:/ANTI/%E6%9D%B1%E4%BA%AC%E6%B0%B4%E4%B8%8A%E5%B7%B4%E5%A3%AB%E5%AF%A6%E5%A2%83%E5%9C%B0%E7%90%86%E8%B7%AF%E7%B7%9A%E5%9C%96/scripts/audit-review-package-reconciliation.js')\"",
     "audit:human-decision-eligibility": "node -e \"import('file:///e:/ANTI/%E6%9D%B1%E4%BA%AC%E6%B0%B4%E4%B8%8A%E5%B7%B4%E5%A3%AB%E5%AF%A6%E5%A2%83%E5%9C%B0%E7%90%86%E8%B7%AF%E7%B7%9A%E5%9C%96/scripts/audit-human-decision-eligibility.js')\"",
     "audit:human-review-intake": "node -e \"import('file:///e:/ANTI/%E6%9D%B1%E4%BA%AC%E6%B0%B4%E4%B8%8A%E5%B7%B4%E5%A3%AB%E5%AF%A6%E5%A2%83%E5%9C%B0%E7%90%86%E8%B7%AF%E7%B7%9A%E5%9C%96/scripts/audit-human-review-intake.js')\"",
+    "audit:pages-review-portal": "node -e \"import('file:///e:/ANTI/%E6%9D%B1%E4%BA%AC%E6%B0%B4%E4%B8%8A%E5%B7%B4%E5%A3%AB%E5%AF%A6%E5%A2%83%E5%9C%B0%E7%90%86%E8%B7%AF%E7%B7%9A%E5%9C%96/scripts/audit-pages-review-portal.js')\"",
     "prepare:validation-dataset": "node -e \"import('file:///e:/ANTI/%E6%9D%B1%E4%BA%AC%E6%B0%B4%E4%B8%8A%E5%B7%B4%E5%A3%AB%E5%AF%A6%E5%A2%83%E5%9C%B0%E7%90%86%E8%B7%AF%E7%B7%9A%E5%9C%96/scripts/prepare-water-land-validation.js')\"",
     "test:nojs": "node -e \"import('file:///e:/ANTI/%E6%9D%B1%E4%BA%AC%E6%B0%B4%E4%B8%8A%E5%B7%B4%E5%A3%AB%E5%AF%A6%E5%A2%83%E5%9C%B0%E7%90%86%E8%B7%AF%E7%B7%9A%E5%9C%96/scripts/test-nojs-fallback.js')\"",
     "capture:release": "node -e \"import('file:///e:/ANTI/%E6%9D%B1%E4%BA%AC%E6%B0%B4%E4%B8%8A%E5%B7%B4%E5%A3%AB%E5%AF%A6%E5%A2%83%E5%9C%B0%E7%90%86%E8%B7%AF%E7%B7%9A%E5%9C%96/scripts/capture-release.js')\"",

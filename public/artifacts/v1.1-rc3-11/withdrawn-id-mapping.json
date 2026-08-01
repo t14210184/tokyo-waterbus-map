@@ -1,0 +1,15 @@
+{
+  "timestamp": "2026-08-01T16:21:00Z",
+  "withdrawnIds": [
+    { "withdrawnId": "RGR-sumida-river-1", "mapping": "INVALID_NO_MAPPING", "reason": "Segment 1 is pass / terminal-exempt in RC.3.8 triage" },
+    { "withdrawnId": "RGR-sumida-river-2", "mapping": "INVALID_NO_MAPPING", "reason": "Segment 2 is pass in RC.3.8 triage" },
+    { "withdrawnId": "RGR-sumida-river-3", "mapping": "INVALID_NO_MAPPING", "reason": "Segment 3 is pass in RC.3.8 triage" },
+    { "withdrawnId": "RGR-sumida-river-4", "mapping": "INVALID_NO_MAPPING", "reason": "Segment 4 is pass in RC.3.8 triage" },
+    { "withdrawnId": "RGR-sumida-river-5", "mapping": "INVALID_NO_MAPPING", "reason": "Segment 5 is pass in RC.3.8 triage" },
+    { "withdrawnId": "RGR-sumida-river-6", "mapping": "INVALID_NO_MAPPING", "reason": "Segment 6 is pass in RC.3.8 triage" },
+    { "withdrawnId": "RGR-sumida-river-7", "mapping": "INVALID_NO_MAPPING", "reason": "Segment 7 is pass in RC.3.8 triage" },
+    { "withdrawnId": "RGR-sumida-river-8", "mapping": "INVALID_NO_MAPPING", "reason": "Segment 8 is pass in RC.3.8 triage" },
+    { "withdrawnId": "RGR-hinode-toyosu-1", "mapping": "INVALID_NO_MAPPING", "reason": "Hinode-Toyosu segments are pass in RC.3.8 triage" },
+    { "withdrawnId": "RGR-hinode-toyosu-2", "mapping": "INVALID_NO_MAPPING", "reason": "Hinode-Toyosu segments are pass in RC.3.8 triage" }
+  ]
+}

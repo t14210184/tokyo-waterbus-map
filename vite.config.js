@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import { resolve } from 'path';
 
 export default defineConfig({
-  base: './',
+  base: '/tokyo-waterbus-map/',
   server: {
     port: 3000,
     open: true

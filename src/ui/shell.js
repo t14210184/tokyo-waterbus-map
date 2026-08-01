@@ -60,6 +60,10 @@ export function createUIShell(appContainer) {
               <span class="tab-icon">${ICONS.data}</span>
               <span>關於資料</span>
             </button>
+            <button class="tab-btn" data-tab="review" role="tab" aria-selected="false" aria-label="地理審核門戶">
+              <span class="tab-icon">${ICONS.compass}</span>
+              <span>地理審核</span>
+            </button>
           </nav>
 
           <!-- Tab Content Panel -->
