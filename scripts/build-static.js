@@ -67,6 +67,7 @@ const jsModules = [
   'data/vessels.js',
   'data/landmarks.js',
   'data/guides.js',
+  'data/service-status.js',
   'assets/icons.js',
   'core/constants.js',
   'core/geometry.js',

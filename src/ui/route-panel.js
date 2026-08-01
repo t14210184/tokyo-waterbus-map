@@ -76,18 +76,30 @@ export function renderRoutePanel(container, routes, activeFocusRouteId, onFocusR
                 <span class="badge ${badgeClass}">${route.operator}</span>
               </div>
 
-              <!-- Row 2: Metadata Pills -->
+              <!-- Row 2: Metadata Pills & Suspension Status -->
               <div style="display: flex; align-items: center; gap: 0.5rem; margin: 0.45rem 0; flex-wrap: wrap;">
-                <span style="font-size: 0.73rem; color: var(--ocean-200); background: rgba(19, 185, 199, 0.1); padding: 0.15rem 0.45rem; border-radius: 4px; border: 1px solid rgba(19, 185, 199, 0.2); display: inline-flex; align-items: center; gap: 0.25rem;">
-                  ${ICONS.clock} 約 ${route.approxDurationMinutes}
-                </span>
-                <span class="badge ${route.dataConfidence?.duration === 'official-reference' ? 'conf-official' : 'conf-operator'}">
-                  ${route.dataConfidence?.duration === 'official-reference' ? '官方基準' : '業者公佈'}
-                </span>
+                ${route.id === 'mizube-line' ? `
+                  <span class="badge" style="background: rgba(239, 68, 68, 0.2); color: #ef4444; border: 1px solid #ef4444; font-weight: 600;">
+                    暫停營運中 (自 2026-01-19)
+                  </span>
+                ` : `
+                  <span style="font-size: 0.73rem; color: var(--ocean-200); background: rgba(19, 185, 199, 0.1); padding: 0.15rem 0.45rem; border-radius: 4px; border: 1px solid rgba(19, 185, 199, 0.2); display: inline-flex; align-items: center; gap: 0.25rem;">
+                    ${ICONS.clock} 約 ${route.approxDurationMinutes}
+                  </span>
+                  <span class="badge ${route.dataConfidence?.duration === 'official-reference' ? 'conf-official' : 'conf-operator'}">
+                    ${route.dataConfidence?.duration === 'official-reference' ? '官方基準' : '業者公佈'}
+                  </span>
+                `}
                 <span style="font-size: 0.72rem; color: var(--ink-400); display: inline-flex; align-items: center; gap: 0.25rem;">
                   ${ICONS.pier} 停靠 ${route.piers.length} 碼頭
                 </span>
               </div>
+
+              ${route.id === 'mizube-line' ? `
+                <div style="font-size: 0.73rem; color: #ef4444; background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); padding: 0.4rem 0.6rem; border-radius: 4px; margin: 0.4rem 0; line-height: 1.4;">
+                  自 2026-01-19 起當面暫停營運。目前無可用班次或模擬出航。復航請依官方公告為準。
+                </div>
+              ` : ''}
 
               <!-- Row 3: Clamped Summary -->
               <p class="card-summary">

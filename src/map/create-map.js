@@ -179,6 +179,9 @@ export function createWaterbusMapController(containerId, options = {}) {
     fitInitialBounds,
     invalidateAfterLayoutChange,
     destroy,
+    toggleBaseMap: () => (baseLayers ? baseLayers.toggle() : null),
+    setBaseMapMode: (mode) => (baseLayers ? baseLayers.setMode(mode) : null),
+    getBaseMapMode: () => (baseLayers ? baseLayers.getMode() : 'dark'),
     getMap: () => mapInstance,
     getBaseLayers: () => baseLayers,
     getContract: () => checkMapContainerContract(mapElement)

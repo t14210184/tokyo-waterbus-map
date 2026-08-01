@@ -249,15 +249,9 @@ function initSimulationEngine() {
     });
 
     simEngine.subscribe('map', (snapshots) => {
-      const state = atlasStore.getState().simulation;
+      // Safe lockout: Do not render moving vessel markers when simulation is locked out
       if (vesselMarkersHandler) {
-        vesselMarkersHandler.updateVessels(snapshots, state.selectedVesselId);
-      }
-      if (mapCameraHandler && state.followedVesselId) {
-        const followedSnap = snapshots.find(s => s.vesselId === state.followedVesselId);
-        if (followedSnap) {
-          mapCameraHandler.updateFollow(followedSnap);
-        }
+        vesselMarkersHandler.updateVessels([], null);
       }
     });
 
@@ -334,9 +328,8 @@ async function initMapEngine() {
         renderActiveTab();
       });
 
-      if (simEngine) {
-        const initialSnapshots = simEngine.getAllVesselSnapshots();
-        vesselMarkersHandler.updateVessels(initialSnapshots, atlasStore.getState().simulation.selectedVesselId);
+      if (simEngine && vesselMarkersHandler) {
+        vesselMarkersHandler.updateVessels([], null);
       }
 
       requestAnimationFrame(() => {
@@ -375,9 +368,8 @@ async function initMapEngine() {
 function updateStatusChip() {
   const statusChip = document.getElementById('status-chip-simulation');
   if (!statusChip) return;
-  const isPaused = atlasStore.getState().simulation.isPaused;
-  statusChip.innerHTML = isPaused ? '模擬已暫停 (PAUSED)' : '航行模擬中 (SIMULATED)';
-  statusChip.style.color = isPaused ? 'var(--amber-500)' : 'var(--emerald-500)';
+  statusChip.innerHTML = '● 目前無可驗證的模擬航行';
+  statusChip.style.color = '#f59e0b';
 }
 
 function updateFleetPanelValues(container) {
@@ -609,6 +601,21 @@ function setupMapControlListeners(layers) {
   if (resetBtn) {
     resetBtn.addEventListener('click', () => {
       handleClearFocus();
+    });
+  }
+
+  const themeBtn = document.getElementById('btn-theme-toggle');
+  if (themeBtn && layers) {
+    themeBtn.addEventListener('click', () => {
+      const newMode = layers.toggle ? layers.toggle() : 'dark';
+      const labelMap = {
+        dark: '切換底圖：深色',
+        light: '切換底圖：淺色',
+        none: '切換底圖：無 (參考資料)'
+      };
+      const label = labelMap[newMode] || '切換底圖：深色';
+      themeBtn.innerHTML = `${ICONS.layers} ${label}`;
+      themeBtn.setAttribute('aria-pressed', newMode === 'light' ? 'true' : 'false');
     });
   }
 }

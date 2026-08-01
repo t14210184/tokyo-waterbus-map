@@ -34,6 +34,8 @@
     "audit:human-decision-eligibility": "node -e \"import('./scripts/audit-human-decision-eligibility.js')\"",
     "audit:human-review-intake": "node -e \"import('./scripts/audit-human-review-intake.js')\"",
     "audit:pages-review-portal": "node -e \"import('./scripts/audit-pages-review-portal.js')\"",
+    "audit:basemap-toggle": "node -e \"import('./scripts/audit-basemap-toggle.js')\"",
+    "audit:operational-truth": "node -e \"import('./scripts/audit-operational-truth.js')\"",
     "prepare:validation-dataset": "node -e \"import('./scripts/prepare-water-land-validation.js')\"",
     "test:nojs": "node -e \"import('./scripts/test-nojs-fallback.js')\"",
     "capture:release": "node -e \"import('./scripts/capture-release.js')\"",

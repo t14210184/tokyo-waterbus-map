@@ -69,6 +69,11 @@ export function renderItineraryResults(container, itineraries, selectedItinerary
             </div>
 
             <!-- Leg Breakdown Timeline -->
+            ${(itinerary.legs || []).some(l => l.routeId === 'mizube-line' || (l.operator && l.operator.includes('水辺'))) ? `
+              <div style="font-size: 0.72rem; color: #ef4444; background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.4); padding: 0.45rem 0.65rem; border-radius: 4px; margin: 0.4rem 0; line-height: 1.4;">
+                ⚠️ 此行程包含暫停營運之「東京水辺ライン」（自 2026-01-19 起當面停航），目前不可作為可用行程。
+              </div>
+            ` : ''}
             <div style="background: rgba(7, 25, 35, 0.6); padding: 0.65rem 0.75rem; border-radius: 6px; border: 1px solid var(--glass-border); margin: 0.5rem 0;">
               ${itinerary.legs.map((leg, lIdx) => {
                 const fromPier = PIERS.find(p => p.id === leg.fromPierId);
