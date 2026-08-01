@@ -169,6 +169,9 @@ if (fs.existsSync(faviconPath)) {
   fs.copyFileSync(faviconPath, path.join(distDir, 'favicon.svg'));
 }
 
+// Write .nojekyll to prevent Jekyll from skipping files
+fs.writeFileSync(path.join(distDir, '.nojekyll'), '', 'utf8');
+
 // Copy public/artifacts directory if exists
 const publicArtifactsDir = path.join(rootDir, 'public', 'artifacts');
 if (fs.existsSync(publicArtifactsDir)) {
