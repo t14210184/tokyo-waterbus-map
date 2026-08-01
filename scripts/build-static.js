@@ -1,9 +1,14 @@
 /**
- * Pure-JS Static Production Builder for Tokyo Waterbus Atlas (Phase 4A / RC.3.1 Map Truth Repair)
- * Bundles application CSS/JS and copies local Leaflet vendor assets to ensure instant, zero-delay map initialization.
+ * Pure-JS Static Production Builder for Tokyo Waterbus Atlas (Phase RC.3.19 Content-Hashed Assets)
+ * Zero npm/esbuild/rollup binary external dependencies.
+ * Concatenates CSS and JS in strict dependency order, calculates SHA-256 content hashes,
+ * produces content-hashed asset filenames (index-atlas.<hash>.js/css), outputs manifest.json,
+ * and updates dist/index.html to guarantee cache-busting.
  */
+
 import fs from 'fs';
 import path from 'path';
+import crypto from 'crypto';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -12,29 +17,15 @@ const rootDir = path.resolve(__dirname, '..');
 const distDir = path.join(rootDir, 'dist');
 const assetsDir = path.join(distDir, 'assets');
 
-console.log('🚀 Running Pure-JS Static Production Builder for Tokyo Waterbus Atlas...');
+console.log('🚀 Running Pure-JS Static Production Builder for Tokyo Waterbus Atlas (RC.3.19 Content-Hashed)...');
 
-// 1. Ensure dist directories
+// 1. Ensure Output Directories Exist
 if (fs.existsSync(distDir)) {
   fs.rmSync(distDir, { recursive: true, force: true });
 }
 fs.mkdirSync(assetsDir, { recursive: true });
 
-// Copy Local Leaflet Vendor Assets for Zero-Delay Loading
-const nodeModulesLeafletCss = path.join(rootDir, 'node_modules', 'leaflet', 'dist', 'leaflet.css');
-const nodeModulesLeafletJs = path.join(rootDir, 'node_modules', 'leaflet', 'dist', 'leaflet.js');
-
-if (fs.existsSync(nodeModulesLeafletCss)) {
-  fs.copyFileSync(nodeModulesLeafletCss, path.join(assetsDir, 'vendor-leaflet.css'));
-  console.log('📦 Copied vendor asset: dist/assets/vendor-leaflet.css');
-}
-
-if (fs.existsSync(nodeModulesLeafletJs)) {
-  fs.copyFileSync(nodeModulesLeafletJs, path.join(assetsDir, 'vendor-leaflet.js'));
-  console.log('📦 Copied vendor asset: dist/assets/vendor-leaflet.js');
-}
-
-// 2. Bundle App CSS files
+// 2. Bundle CSS
 const cssFiles = [
   'tokens.css',
   'base.css',
@@ -44,7 +35,11 @@ const cssFiles = [
   'responsive.css'
 ];
 
-let bundledCSS = '/* Tokyo Waterbus Atlas - Bundled Production CSS */\n';
+let bundledCSS = `/**
+ * Tokyo Waterbus Atlas - Production CSS Bundle
+ */
+`;
+
 cssFiles.forEach(file => {
   const filePath = path.join(rootDir, 'src', 'styles', file);
   if (fs.existsSync(filePath)) {
@@ -52,9 +47,22 @@ cssFiles.forEach(file => {
   }
 });
 
+// Copy Leaflet Vendor CSS
+const leafletCssPath = path.join(rootDir, 'node_modules', 'leaflet', 'dist', 'leaflet.css');
+if (fs.existsSync(leafletCssPath)) {
+  fs.copyFileSync(leafletCssPath, path.join(assetsDir, 'vendor-leaflet.css'));
+} else {
+  fs.writeFileSync(path.join(assetsDir, 'vendor-leaflet.css'), '/* Fallback Leaflet CSS */', 'utf8');
+}
+
+// Compute CSS Content Hash
+const cssHash = crypto.createHash('sha256').update(bundledCSS, 'utf8').digest('hex').substring(0, 8);
+const hashedCssFilename = `index-atlas.${cssHash}.css`;
 const cssFilename = 'index-atlas.css';
+
+fs.writeFileSync(path.join(assetsDir, hashedCssFilename), bundledCSS, 'utf8');
 fs.writeFileSync(path.join(assetsDir, cssFilename), bundledCSS, 'utf8');
-console.log(`📦 Generated CSS asset: dist/assets/${cssFilename} (${(bundledCSS.length / 1024).toFixed(2)} KB)`);
+console.log(`📦 Generated CSS asset: dist/assets/${hashedCssFilename} (${(bundledCSS.length / 1024).toFixed(2)} KB)`);
 
 // 3. Bundle JS Code (In strict dependency order)
 const jsModules = [
@@ -131,11 +139,36 @@ sourceMap.forEach((content, modPath) => {
   bundleJS += `\n// --- Module: ${modPath} ---\n` + content + '\n';
 });
 
-const jsFilename = 'index-atlas.js';
-fs.writeFileSync(path.join(assetsDir, jsFilename), bundleJS, 'utf8');
-console.log(`📦 Generated JS asset: dist/assets/${jsFilename} (${(bundleJS.length / 1024).toFixed(2)} KB)`);
+// Copy Leaflet Vendor JS
+const leafletJsPath = path.join(rootDir, 'node_modules', 'leaflet', 'dist', 'leaflet.js');
+if (fs.existsSync(leafletJsPath)) {
+  fs.copyFileSync(leafletJsPath, path.join(assetsDir, 'vendor-leaflet.js'));
+} else {
+  fs.writeFileSync(path.join(assetsDir, 'vendor-leaflet.js'), '/* Fallback Leaflet JS */', 'utf8');
+}
 
-// 4. Generate Production HTML (100% self-contained local assets, 0 external blocking font/script calls)
+// Compute JS Content Hash
+const jsHash = crypto.createHash('sha256').update(bundleJS, 'utf8').digest('hex').substring(0, 8);
+const hashedJsFilename = `index-atlas.${jsHash}.js`;
+const jsFilename = 'index-atlas.js';
+
+fs.writeFileSync(path.join(assetsDir, hashedJsFilename), bundleJS, 'utf8');
+fs.writeFileSync(path.join(assetsDir, jsFilename), bundleJS, 'utf8');
+console.log(`📦 Generated JS asset: dist/assets/${hashedJsFilename} (${(bundleJS.length / 1024).toFixed(2)} KB)`);
+
+// 4. Generate Asset Manifest JSON
+const manifestData = {
+  "index-atlas.js": hashedJsFilename,
+  "index-atlas.css": hashedCssFilename,
+  "jsHash": jsHash,
+  "cssHash": cssHash,
+  "buildTimestamp": new Date().toISOString()
+};
+
+fs.writeFileSync(path.join(assetsDir, 'manifest.json'), JSON.stringify(manifestData, null, 2), 'utf8');
+console.log(`📋 Generated Asset Manifest: dist/assets/manifest.json`);
+
+// 5. Generate Production HTML with Content-Hashed Filenames
 const htmlContent = `<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
@@ -148,8 +181,8 @@ const htmlContent = `<!DOCTYPE html>
   <!-- Leaflet Vendor CSS -->
   <link rel="stylesheet" href="./assets/vendor-leaflet.css" />
   
-  <!-- Production Bundled CSS -->
-  <link rel="stylesheet" href="./assets/${cssFilename}" />
+  <!-- Production Bundled CSS (Content-Hashed) -->
+  <link rel="stylesheet" href="./assets/${hashedCssFilename}" />
   
   <!-- Leaflet Vendor JS -->
   <script src="./assets/vendor-leaflet.js"></script>
@@ -157,8 +190,8 @@ const htmlContent = `<!DOCTYPE html>
 <body>
   <div id="app"></div>
   
-  <!-- Production Bundled ES Module -->
-  <script type="module" src="./assets/${jsFilename}"></script>
+  <!-- Production Bundled ES Module (Content-Hashed) -->
+  <script type="module" src="./assets/${hashedJsFilename}"></script>
 </body>
 </html>
 `;

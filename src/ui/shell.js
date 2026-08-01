@@ -14,7 +14,7 @@ export function createUIShell(appContainer) {
           <div>
             <div class="brand-title">
               Tokyo Waterbus Atlas
-              <span class="badge badge-tokyo-cruise" style="font-size: 0.65rem;">v1.0</span>
+              <span class="badge badge-tokyo-cruise" style="font-size: 0.65rem;">v1.0 (RC.3.19)</span>
             </div>
             <div class="brand-subtitle">
               Navigate Tokyo by water — routes, piers, live-status gateway & simulated movement
