@@ -1,0 +1,46 @@
+{
+  "timestamp": "2026-08-01T15:52:20.621Z",
+  "productVersion": "v1.1.0-RC.3.17",
+  "publicUrl": "https://t14210184.github.io/tokyo-waterbus-map/",
+  "rootHttp200": true,
+  "noDefault404": true,
+  "appHomeLoaded": true,
+  "jsBundleUrl": "https://t14210184.github.io/tokyo-waterbus-map/./assets/index-atlas.js",
+  "jsBundleStatus": 200,
+  "canonicalIdsRendered": "0/13",
+  "allDownloadsOk": false,
+  "downloadResults": [
+    {
+      "path": "artifacts/v1.1-rc3-11/human-review-intake-template.csv",
+      "url": "https://t14210184.github.io/tokyo-waterbus-map/artifacts/v1.1-rc3-11/human-review-intake-template.csv",
+      "status": 404,
+      "ok": false
+    },
+    {
+      "path": "artifacts/v1.1-rc3-11/human-review-intake-schema.json",
+      "url": "https://t14210184.github.io/tokyo-waterbus-map/artifacts/v1.1-rc3-11/human-review-intake-schema.json",
+      "status": 404,
+      "ok": false
+    },
+    {
+      "path": "artifacts/v1.1-rc3-11/human-review-intake-instructions.md",
+      "url": "https://t14210184.github.io/tokyo-waterbus-map/artifacts/v1.1-rc3-11/human-review-intake-instructions.md",
+      "status": 404,
+      "ok": false
+    },
+    {
+      "path": "artifacts/v1.1-rc3-11/canonical-review-id-register.csv",
+      "url": "https://t14210184.github.io/tokyo-waterbus-map/artifacts/v1.1-rc3-11/canonical-review-id-register.csv",
+      "status": 404,
+      "ok": false
+    }
+  ],
+  "hasApproximateReference": true,
+  "hasConditionalPass": false,
+  "geometryModificationCount": 0,
+  "humanDecisionIngestionEnabled": false,
+  "eligibleForGeometryChangeCount": 0,
+  "releaseStatus": "CONDITIONAL PASS",
+  "testPassed": false,
+  "phaseGate": "PAGES_SMOKE_TEST_FAILED"
+}

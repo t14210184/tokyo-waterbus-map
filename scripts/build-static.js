@@ -169,4 +169,11 @@ if (fs.existsSync(faviconPath)) {
   fs.copyFileSync(faviconPath, path.join(distDir, 'favicon.svg'));
 }
 
+// Copy public/artifacts directory if exists
+const publicArtifactsDir = path.join(rootDir, 'public', 'artifacts');
+if (fs.existsSync(publicArtifactsDir)) {
+  fs.cpSync(publicArtifactsDir, path.join(distDir, 'artifacts'), { recursive: true });
+  console.log('📦 Copied public artifacts to dist/artifacts');
+}
+
 console.log('✅ Production build artifact verified successfully!');
