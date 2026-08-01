@@ -36,16 +36,11 @@ async function runSmokeTest() {
   const noDefault404 = !rootRes.data.includes("There isn't a GitHub Pages site here");
   const appHomeLoaded = rootRes.data.includes('Tokyo Waterbus Atlas') && rootRes.data.includes('<title>');
 
-  // Extract JS bundle asset path from root HTML
-  const scriptMatch = rootRes.data.match(/src=["'](.*?\index-atlas\.js.*?)["']/i);
-  let jsBundleUrl = null;
-  let jsBundleRes = { status: 0, data: '' };
-
-  if (scriptMatch && scriptMatch[1]) {
-    const assetPath = scriptMatch[1].startsWith('/') ? scriptMatch[1].substring(1) : scriptMatch[1];
-    jsBundleUrl = publicUrl + (assetPath.startsWith('tokyo-waterbus-map/') ? assetPath.substring(19) : assetPath);
-    jsBundleRes = await fetchUrl(jsBundleUrl);
-  }
+  // Extract JS bundle asset path from root HTML or default assets/index-atlas.js
+  const scriptMatch = rootRes.data.match(/src=["'](\.?\/assets\/index-atlas\.js.*?)["']/i);
+  const jsBundlePath = scriptMatch && scriptMatch[1] ? scriptMatch[1].replace(/^\.\//, '') : 'assets/index-atlas.js';
+  const jsBundleUrl = publicUrl + jsBundlePath;
+  const jsBundleRes = await fetchUrl(jsBundleUrl);
 
   // 2. Check 4 Download Assets HTTP 200
   const downloads = [

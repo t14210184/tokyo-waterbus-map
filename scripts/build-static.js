@@ -95,6 +95,7 @@ const jsModules = [
   'ui/trip-planner.js',
   'ui/guide-panel.js',
   'ui/environment-panel.js',
+  'ui/review-portal-panel.js',
   'main.js'
 ];
 

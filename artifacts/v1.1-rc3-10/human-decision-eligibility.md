@@ -1,6 +1,6 @@
 # Human Decision Ingestion Eligibility Audit Report (v1.1.0-RC.3.10)
 
-- **Audit Timestamp**: 2026-08-01T15:52:56.756Z
+- **Audit Timestamp**: 2026-08-01T15:55:51.073Z
 - **Total Decision Rows Evaluated**: 13
 - **Eligible for Geometry Change Count**: **`0`**
 - **Human Decision Ingestion Enabled**: **`false`**
