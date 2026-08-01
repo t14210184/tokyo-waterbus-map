@@ -1,7 +1,7 @@
 /**
- * Release Metadata Idempotency Audit Script for Tokyo Waterbus Atlas (v1.1.0 / RC.3.11)
+ * Release Metadata Idempotency Audit Script for Tokyo Waterbus Atlas (v1.1.0 / RC.3.13)
  * Verifies that updating metadata in release documentation is 100% idempotent,
- * produces no version pollution (e.g. RC.3.11-RC.3.11), and enforces canonical product version v1.1.0.
+ * produces no version pollution (e.g. RC.3.13-RC.3.13), and enforces canonical product version v1.1.0.
  */
 
 import fs from 'fs';
@@ -12,12 +12,12 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, '..');
-const artifactDir = path.join(rootDir, 'artifacts', 'v1.1-rc3-11');
+const artifactDir = path.join(rootDir, 'artifacts', 'v1.1-rc3-13');
 
 if (!fs.existsSync(artifactDir)) fs.mkdirSync(artifactDir, { recursive: true });
 
 const CANONICAL_PRODUCT_VERSION = 'v1.1.0';
-const VALIDATION_LABEL = 'RC.3.11';
+const VALIDATION_LABEL = 'RC.3.13';
 const RELEASE_DATE = '2026-08-01';
 
 const releaseNotesPath = path.join(rootDir, 'docs', 'RELEASE_NOTES.md');
@@ -29,7 +29,7 @@ const EXPECTED_RELEASE_NOTES_HEADER = `# Tokyo Waterbus Atlas — Release Notes
 **Release candidate validation:** ${VALIDATION_LABEL}
 **Release date:** ${RELEASE_DATE}
 **Release status:** CONDITIONAL PASS
-**Condition:** Human review intake readiness verified (CANONICAL_REVIEW_INTAKE_READY_AWAITING_HUMAN_INPUT; 13 canonical corrected review IDs registered; zero fabricated sign-offs; product code checksums 100% immutable; classification maintained as approximate-reference).
+**Condition:** GitHub Pages human review portal deployed (PAGES_REVIEW_PORTAL_READY; Vite base set to /tokyo-waterbus-map/; 13 canonical review items rendered; local-only CSV format pre-validation enabled with zero network upload; product code checksums 100% immutable; classification maintained as approximate-reference).
 `;
 
 const EXPECTED_QA_CHECKLIST_HEADER = `# Tokyo Waterbus Atlas — Release QA Checklist
@@ -37,7 +37,7 @@ const EXPECTED_QA_CHECKLIST_HEADER = `# Tokyo Waterbus Atlas — Release QA Chec
 **Product version:** ${CANONICAL_PRODUCT_VERSION}
 **Validation label:** ${VALIDATION_LABEL}
 **Release status:** CONDITIONAL PASS
-**Map condition:** Human Review Intake: CANONICAL_REVIEW_INTAKE_READY_AWAITING_HUMAN_INPUT; Geometry: approximate-reference (unchanged); Overall: CONDITIONAL PASS.
+**Map condition:** Pages Review Portal: PAGES_REVIEW_PORTAL_READY; Vite Base: /tokyo-waterbus-map/; Geometry: approximate-reference (unchanged); Overall: CONDITIONAL PASS.
 `;
 
 function getSha256(filePath) {
@@ -65,7 +65,7 @@ function normalizeQaChecklist(content) {
 }
 
 function runAudit() {
-  console.log('🚀 Running Release Metadata Idempotency Audit (v1.1.0-RC.3.11)...');
+  console.log('🚀 Running Release Metadata Idempotency Audit (v1.1.0-RC.3.13)...');
 
   // Step 1: Normalize release docs
   if (fs.existsSync(releaseNotesPath)) {
@@ -103,7 +103,7 @@ function runAudit() {
   const qaChecklistIdempotent = hash1QaChecklist === hash2QaChecklist;
 
   const forbiddenPatterns = [
-    /RC\.3\.11-RC/i,
+    /RC\.3\.13-RC/i,
     /v1\.1\.0-v1\.1\.0/i,
     /BLOCKED/i
   ];
@@ -137,7 +137,7 @@ function runAudit() {
     'utf8'
   );
 
-  const mdReport = `# Release Metadata Idempotency Audit Report (v1.1.0-RC.3.11)
+  const mdReport = `# Release Metadata Idempotency Audit Report (v1.1.0-RC.3.13)
 
 - **Product Version**: \`${CANONICAL_PRODUCT_VERSION}\`
 - **Validation Label**: \`${VALIDATION_LABEL}\`
