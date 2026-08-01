@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-08-01T15:55:16.894Z",
+  "timestamp": "2026-08-01T15:57:00.798Z",
   "productVersion": "v1.1.0-RC.3.17",
   "publicUrl": "https://t14210184.github.io/tokyo-waterbus-map/",
   "rootHttp200": true,
   "noDefault404": true,
   "appHomeLoaded": true,
-  "jsBundleUrl": "https://t14210184.github.io/tokyo-waterbus-map/assets/index-atlas.js",
+  "jsBundleUrl": "https://t14210184.github.io/tokyo-waterbus-map/assets/index-atlas.js?v=1785599819293",
   "jsBundleStatus": 200,
-  "canonicalIdsRendered": "0/13",
+  "canonicalIdsRendered": "13/13",
   "allDownloadsOk": true,
   "downloadResults": [
     {
@@ -36,11 +36,11 @@
     }
   ],
   "hasApproximateReference": true,
-  "hasConditionalPass": false,
+  "hasConditionalPass": true,
   "geometryModificationCount": 0,
   "humanDecisionIngestionEnabled": false,
   "eligibleForGeometryChangeCount": 0,
   "releaseStatus": "CONDITIONAL PASS",
-  "testPassed": false,
-  "phaseGate": "PAGES_SMOKE_TEST_FAILED"
+  "testPassed": true,
+  "phaseGate": "PAGES_REVIEW_PORTAL_PUBLISHED_AND_VERIFIED"
 }

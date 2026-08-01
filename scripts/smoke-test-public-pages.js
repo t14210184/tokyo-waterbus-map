@@ -39,7 +39,7 @@ async function runSmokeTest() {
   // Extract JS bundle asset path from root HTML or default assets/index-atlas.js
   const scriptMatch = rootRes.data.match(/src=["'](\.?\/assets\/index-atlas\.js.*?)["']/i);
   const jsBundlePath = scriptMatch && scriptMatch[1] ? scriptMatch[1].replace(/^\.\//, '') : 'assets/index-atlas.js';
-  const jsBundleUrl = publicUrl + jsBundlePath;
+  const jsBundleUrl = publicUrl + jsBundlePath + '?v=' + Date.now();
   const jsBundleRes = await fetchUrl(jsBundleUrl);
 
   // 2. Check 4 Download Assets HTTP 200
