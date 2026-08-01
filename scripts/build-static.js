@@ -119,7 +119,7 @@ const sourceMap = new Map();
 jsModules.forEach(modPath => {
   const fullPath = path.join(rootDir, 'src', modPath);
   if (fs.existsSync(fullPath)) {
-    let content = fs.readFileSync(fullPath, 'utf8');
+    let content = fs.readFileSync(fullPath, 'utf8').replace(/\r\n/g, '\n');
     
     // Strip CSS imports
     content = content.replace(/import\s+['"].*?\.css['"];?/g, '');

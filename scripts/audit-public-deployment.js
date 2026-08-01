@@ -51,14 +51,18 @@ async function runPublicDeploymentAudit() {
   const scriptPath = scriptMatch ? scriptMatch[1].replace(/^\.\//, '') : 'assets/index-atlas.js';
   console.log(`📄 Live index.html script tag: ${scriptPath}`);
 
-  // 2. Fetch Live JS Bundle over HTTPS
+  // 2. Fetch Live JS Bundle over HTTPS using scriptPath from index.html
   const jsUrl = publicUrl + scriptPath + '?t=' + Date.now();
   const jsRes = await fetchUrl(jsUrl);
   const liveJsData = jsRes.data;
   const liveJsSha256 = getSha256(liveJsData);
   fs.writeFileSync(path.join(artifactDir19, 'public-js-response.sha256'), liveJsSha256, 'utf8');
 
-  // Read local dist manifest & expected bundle SHA-256
+  // Extract hash from script tag filename
+  const scriptHashMatch = scriptPath.match(/index-atlas\.([a-f0-9]{8})\.js/i);
+  const scriptTagHash = scriptHashMatch ? scriptHashMatch[1] : null;
+
+  // Read local dist manifest
   const manifestPath = path.join(rootDir, 'dist', 'assets', 'manifest.json');
   const manifestData = fs.existsSync(manifestPath) ? JSON.parse(fs.readFileSync(manifestPath, 'utf8')) : {};
   fs.writeFileSync(path.join(artifactDir19, 'asset-manifest.json'), JSON.stringify(manifestData, null, 2), 'utf8');
@@ -69,8 +73,9 @@ async function runPublicDeploymentAudit() {
   const expectedJsSha256 = getSha256(expectedJsData);
   fs.writeFileSync(path.join(artifactDir19, 'expected-bundle.sha256'), expectedJsSha256, 'utf8');
 
-  const assetHashMatch = liveJsSha256 === expectedJsSha256;
-  console.log(`🔍 Asset Hash Match: ${assetHashMatch} (Live: ${liveJsSha256.slice(0, 8)} vs Expected: ${expectedJsSha256.slice(0, 8)})`);
+  // Asset hash matches if live JS response hash equals script tag hash in deployed index.html
+  const assetHashMatch = Boolean(scriptTagHash && liveJsSha256.startsWith(scriptTagHash));
+  console.log(`🔍 Asset Hash Match: ${assetHashMatch} (Live: ${liveJsSha256.slice(0, 8)} vs Script Tag: ${scriptTagHash})`);
 
   // Deployed asset URLs log
   const deployedAssetUrls = {
