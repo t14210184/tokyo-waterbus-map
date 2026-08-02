@@ -480,11 +480,15 @@ function setupResizeListeners() {
   });
 }
 
+let activeTab = 'today';
+
 function renderActiveTab() {
   const container = document.getElementById('sidebar-tab-content');
   if (!container) return;
 
-  if (activeTab === 'routes') {
+  if (activeTab === 'today') {
+    renderTodayStatusPanel(container);
+  } else if (activeTab === 'routes') {
     renderRoutePanel(
       container,
       ROUTES,
@@ -492,8 +496,6 @@ function renderActiveTab() {
       (routeId) => handleFocusRoute(routeId),
       () => handleClearFocus()
     );
-  } else if (activeTab === 'fleet') {
-    renderFleetPanel(container, VESSELS);
   } else if (activeTab === 'piers') {
     renderPierPanel(
       container,
@@ -501,29 +503,17 @@ function renderActiveTab() {
       (pierId) => handlePierSelect(pierId),
       (routeId) => handleRouteFocusFromDrawer(routeId)
     );
+  } else if (activeTab === 'planner') {
+    renderTripPlanner(
+      container,
+      PIERS,
+      routeEngine,
+      (itineraryId) => handleSelectItinerary(itineraryId)
+    );
   } else if (activeTab === 'guide') {
     renderGuidePanel(container, (itinerary) => handleSelectItinerary(itinerary));
-  } else if (activeTab === 'data') {
-    container.innerHTML = `
-      <div style="padding: 0.25rem 0;">
-        <h2 style="font-size: 1.05rem; font-weight: 700; color: #ffffff; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.4rem;">
-          ${ICONS.data} 資料來源與官方門戶
-        </h2>
-        <div style="background: rgba(255, 92, 100, 0.1); border-left: 3px solid var(--coral-500); padding: 0.75rem; border-radius: 4px; font-size: 0.76rem; color: var(--coral-400); margin-bottom: 1rem; display: flex; gap: 0.4rem; align-items: flex-start;">
-          <span style="flex-shrink: 0; margin-top: 2px;">${ICONS.alert}</span>
-          <div><strong>免責宣告:</strong> ${SOURCES.disclaimer.zhHant}</div>
-        </div>
-        ${SOURCES.operators.map(op => `
-          <div class="card">
-            <h3 class="card-title">${op.name}</h3>
-            <p class="card-summary">${op.notes}</p>
-            <a href="${op.todayStatusSite}" target="_blank" rel="noopener" class="btn btn-secondary" style="font-size: 0.75rem; text-decoration: none;">
-              ${ICONS.externalLink} 點此開啟 ${op.id} 當日營運狀態
-            </a>
-          </div>
-        `).join('')}
-      </div>
-    `;
+  } else if (activeTab === 'explore') {
+    renderFleetPanel(container, VESSELS);
   } else if (activeTab === 'review') {
     renderReviewPortalPanel(container);
   }
@@ -691,6 +681,39 @@ function setupMapControlListeners(layers) {
       if (simEngine && simEngine.resetDemoClock) {
         simEngine.resetDemoClock();
       }
+    });
+  }
+
+  // Secondary Entry for Human Geographic Review Portal (P0-2)
+  const secondaryReviewLink = document.getElementById('link-secondary-review');
+  if (secondaryReviewLink) {
+    secondaryReviewLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      const tabs = document.querySelectorAll('.tab-btn');
+      tabs.forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      activeTab = 'review';
+      renderActiveTab();
+    });
+  }
+
+  // Data Trust Levels Info Drawer (P0-4)
+  const toggleDataLevelsBtn = document.getElementById('btn-toggle-data-levels');
+  const closeDataLevelsBtn = document.getElementById('btn-close-data-levels');
+  const dataLevelsModal = document.getElementById('data-levels-modal');
+
+  if (toggleDataLevelsBtn && dataLevelsModal) {
+    toggleDataLevelsBtn.addEventListener('click', () => {
+      const isHidden = dataLevelsModal.style.display === 'none';
+      dataLevelsModal.style.display = isHidden ? 'block' : 'none';
+    });
+  }
+
+  if (closeDataLevelsBtn && dataLevelsModal) {
+    closeDataLevelsBtn.addEventListener('click', () => {
+      dataLevelsModal.style.display = 'none';
     });
   }
 }

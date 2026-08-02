@@ -9,6 +9,7 @@
 import fs from 'fs';
 import path from 'path';
 import crypto from 'crypto';
+import { execSync } from 'child_process';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -17,7 +18,43 @@ const rootDir = path.resolve(__dirname, '..');
 const distDir = path.join(rootDir, 'dist');
 const assetsDir = path.join(distDir, 'assets');
 
-console.log('🚀 Running Pure-JS Static Production Builder for Tokyo Waterbus Atlas (RC.3.19 Content-Hashed)...');
+console.log('🚀 Running Pure-JS Static Production Builder for Tokyo Waterbus Atlas (v1.1.0-RC.3.22)...');
+
+// 0. Update src/data/version.js with real short Git commit SHA and build timestamp
+let shortSha = 'b2a5c6c';
+try {
+  shortSha = execSync('git rev-parse --short HEAD', { cwd: rootDir, encoding: 'utf8' }).trim() || 'b2a5c6c';
+} catch (e) {
+  console.warn('Could not fetch git SHA, using fallback:', shortSha);
+}
+
+const buildIsoTimestamp = new Date().toISOString();
+const versionContent = `/**
+ * Version and Build Metadata Registry for Tokyo Waterbus Atlas (v1.1.0-RC.3.22)
+ * Shared single source of truth for UI shell header, footer disclosures, and build assets.
+ * Automatically injected/updated during \`npm run build\`.
+ */
+
+export const VERSION = 'v1.1.0-RC.3.22';
+export const SHORT_SHA = '${shortSha}';
+export const BUILD_TIMESTAMP = '${buildIsoTimestamp}';
+export const ASSET_HASH = 'a420a80b';
+
+export function getFullVersionString() {
+  return \`\${VERSION} · \${SHORT_SHA}\`;
+}
+
+export function getBuildMetadata() {
+  return {
+    version: VERSION,
+    shortSha: SHORT_SHA,
+    buildTimestamp: BUILD_TIMESTAMP,
+    assetHash: ASSET_HASH,
+    fullVersion: getFullVersionString()
+  };
+}
+`;
+fs.writeFileSync(path.join(rootDir, 'src', 'data', 'version.js'), versionContent, 'utf8');
 
 // 1. Ensure Output Directories Exist
 if (fs.existsSync(distDir)) {
@@ -68,6 +105,7 @@ console.log(`📦 Generated CSS asset: dist/assets/${hashedCssFilename} (${(bund
 
 // 3. Bundle JS Code (In strict dependency order)
 const jsModules = [
+  'data/version.js',
   'data/environment.js',
   'data/route-geometry-sources.js',
   'data/route-geometries.js',
@@ -98,6 +136,7 @@ const jsModules = [
   'map/itinerary-layers.js',
   'map/map-camera.js',
   'ui/shell.js',
+  'ui/today-status-panel.js',
   'ui/route-panel.js',
   'ui/fleet-panel.js',
   'ui/pier-panel.js',
