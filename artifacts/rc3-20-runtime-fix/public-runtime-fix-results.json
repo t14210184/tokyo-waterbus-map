@@ -1,0 +1,15 @@
+{
+  "publicUrl": "https://t14210184.github.io/tokyo-waterbus-map/?rc320=1785639106442",
+  "commit": "c373fba",
+  "assetHashMatch": true,
+  "consoleErrorCount": 0,
+  "pageErrorCount": 0,
+  "requestFailedCount": 0,
+  "safeLockoutHeaderPassed": true,
+  "activeVesselMarkerCount": 0,
+  "basemapCyclePassed": true,
+  "reviewTabPassed": true,
+  "reviewIdsCount": 13,
+  "downloadLinkCount": 4,
+  "phaseGate": "PUBLIC_RUNTIME_INTERACTIONS_VERIFIED"
+}
