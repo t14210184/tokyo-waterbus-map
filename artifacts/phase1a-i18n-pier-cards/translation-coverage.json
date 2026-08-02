@@ -1,0 +1,11 @@
+{
+  "zhTWKeys": 68,
+  "enKeys": 68,
+  "jaKeys": 68,
+  "koKeys": 68,
+  "untranslatedEngineeringReviewKeys": [
+    "RGR-sumida-river-13",
+    "human-review-csv-schema"
+  ],
+  "coveragePercentage": 100
+}

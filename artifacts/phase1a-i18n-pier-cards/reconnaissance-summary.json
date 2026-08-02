@@ -1,0 +1,13 @@
+{
+  "phase": "Phase 1A Evidence Repair",
+  "version": "v1.1.0-RC.3.23",
+  "featuredPiersCount": 4,
+  "supportedLocales": [
+    "zh-TW",
+    "en",
+    "ja",
+    "ko"
+  ],
+  "verifiedFactsCount": 24,
+  "photoGuidanceStatus": "Photo wayfinding: planned"
+}

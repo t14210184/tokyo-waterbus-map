@@ -1,0 +1,15 @@
+{
+  "README.md": true,
+  "docs/phase1a-evidence-repair-diagnosis.md": true,
+  "docs/phase1a-reconnaissance.md": true,
+  "docs/PIER_CONTENT_SOURCES.md": true,
+  "docs/TRANSLATION_SCOPE.md": true,
+  "docs/PHOTO_PROVENANCE_INTAKE.md": true,
+  "docs/PRODUCT_VISION.md": true,
+  "docs/DATA_TRUST_MODEL.md": true,
+  "docs/ROADMAP.md": true,
+  "docs/ACCESSIBILITY_AND_I18N.md": true,
+  "docs/IMAGE_AND_CONTENT_POLICY.md": true,
+  "docs/ARCHITECTURE.md": true,
+  "CHANGELOG.md": true
+}

@@ -1,0 +1,22 @@
+{
+  "asakusa": {
+    "operator": "TOKYO CRUISE",
+    "officialPierUrl": "https://www.suijobus.co.jp/en/cruise/asakusa/",
+    "confidence": "official-reference"
+  },
+  "hinode": {
+    "operator": "TOKYO CRUISE",
+    "officialPierUrl": "https://www.suijobus.co.jp/en/cruise/hinode/",
+    "confidence": "official-reference"
+  },
+  "hamarikyu": {
+    "operator": "TOKYO CRUISE",
+    "officialPierUrl": "https://www.suijobus.co.jp/en/cruise/hamarikyu/",
+    "confidence": "official-reference"
+  },
+  "odaiba-kaihinkouen": {
+    "operator": "TOKYO CRUISE & Mizube Line",
+    "officialPierUrl": "https://www.suijobus.co.jp/en/cruise/odaiba/",
+    "confidence": "official-reference"
+  }
+}

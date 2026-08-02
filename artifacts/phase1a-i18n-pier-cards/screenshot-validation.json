@@ -1,0 +1,320 @@
+{
+  "schemaVersion": 1,
+  "runId": "a023a5b1-844f-46a9-a95f-e4ea2f1b6697",
+  "startedAtUtc": "2026-08-02T14:31:32.406Z",
+  "completedAtUtc": "2026-08-02T14:32:36.167Z",
+  "expectedCommit": "4d8328e1c019658b3e1853fac7adc3608ced6c8c",
+  "observedCommit": "4d8328e",
+  "publicJsUrl": "https://t14210184.github.io/tokyo-waterbus-map/assets/index-atlas.d4482fa7.js",
+  "publicJsSha256": "d4482fa7355b2fa6a66a43a478247e3ce9c308be3b6cd04304e95e91a1b17a6c",
+  "screenshots": [
+    {
+      "runId": "a023a5b1-844f-46a9-a95f-e4ea2f1b6697",
+      "file": "desktop-zhTW-asakusa-card.png",
+      "publicUrl": "https://t14210184.github.io/tokyo-waterbus-map/?lang=zh-TW&evidenceRun=a023a5b1-844f-46a9-a95f-e4ea2f1b6697&v=4d8328e&ts=1785681122796",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "locale": "zh-TW",
+      "state": "Piers tab active, Asakusa Pier Arrival Card visible",
+      "interactionMethod": "Native DOM Click via CDP evaluate",
+      "expectedVisibleText": [
+        "淺草碼頭",
+        "官方位置已確認"
+      ],
+      "expectedTextPassed": true,
+      "targetSelector": "#map-floating-card .pier-arrival-card",
+      "targetBoundingBox": {
+        "x": 999,
+        "y": 167.265625,
+        "width": 364,
+        "height": 513.625
+      },
+      "targetComputedStyle": {
+        "display": "block",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "pageExceptionCount": 0,
+      "consoleErrorCount": 0,
+      "failedRequestCount": 0,
+      "pngSha256": "6dd486c01dde98653a627b3fe5a9397ac79830a6f0b74bf461620987cf290ceb",
+      "pngByteSize": 721059,
+      "pngWidth": 1440,
+      "pngHeight": 900,
+      "uniqueRgbColorCount": 17763,
+      "dominantRgb": [],
+      "dominantColorRatio": 0.09482484567901235,
+      "nonTransparentPixelRatio": 1,
+      "nonBackgroundPixelRatio": 0.964246913580247,
+      "visualValidationPassed": true,
+      "failureReasons": []
+    },
+    {
+      "runId": "a023a5b1-844f-46a9-a95f-e4ea2f1b6697",
+      "file": "desktop-en-hinode-card.png",
+      "publicUrl": "https://t14210184.github.io/tokyo-waterbus-map/?lang=en&evidenceRun=a023a5b1-844f-46a9-a95f-e4ea2f1b6697&v=4d8328e&ts=1785681127979",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "locale": "en",
+      "state": "Piers tab active, Hinode Pier Arrival Card visible",
+      "interactionMethod": "Native DOM Click via CDP evaluate",
+      "expectedVisibleText": [
+        "Hinode Pier",
+        "Photo wayfinding: planned"
+      ],
+      "expectedTextPassed": true,
+      "targetSelector": "#map-floating-card .pier-arrival-card",
+      "targetBoundingBox": {
+        "x": 999,
+        "y": 166.265625,
+        "width": 364,
+        "height": 677.578125
+      },
+      "targetComputedStyle": {
+        "display": "block",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "pageExceptionCount": 0,
+      "consoleErrorCount": 0,
+      "failedRequestCount": 0,
+      "pngSha256": "0d62e734bb41fee3897dc7306187cc20a1a6804374dddf6c9564aab66ca8584f",
+      "pngByteSize": 599983,
+      "pngWidth": 1440,
+      "pngHeight": 900,
+      "uniqueRgbColorCount": 15904,
+      "dominantRgb": [],
+      "dominantColorRatio": 0.10498842592592593,
+      "nonTransparentPixelRatio": 1,
+      "nonBackgroundPixelRatio": 0.964386574074074,
+      "visualValidationPassed": true,
+      "failureReasons": []
+    },
+    {
+      "runId": "a023a5b1-844f-46a9-a95f-e4ea2f1b6697",
+      "file": "desktop-ja-hamarikyu-card.png",
+      "publicUrl": "https://t14210184.github.io/tokyo-waterbus-map/?lang=ja&evidenceRun=a023a5b1-844f-46a9-a95f-e4ea2f1b6697&v=4d8328e&ts=1785681133015",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "locale": "ja",
+      "state": "Piers tab active, Hamarikyu Pier Arrival Card visible",
+      "interactionMethod": "Native DOM Click via CDP evaluate",
+      "expectedVisibleText": [
+        "浜離宮",
+        "現地確認写真：準備中"
+      ],
+      "expectedTextPassed": true,
+      "targetSelector": "#map-floating-card .pier-arrival-card",
+      "targetBoundingBox": {
+        "x": 999,
+        "y": 166.265625,
+        "width": 364,
+        "height": 583.015625
+      },
+      "targetComputedStyle": {
+        "display": "block",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "pageExceptionCount": 0,
+      "consoleErrorCount": 0,
+      "failedRequestCount": 1,
+      "pngSha256": "d35bf3ebea21004330634c266d12b35f3493e06b1d3ff6067f1d6b859b8922f5",
+      "pngByteSize": 657842,
+      "pngWidth": 1440,
+      "pngHeight": 900,
+      "uniqueRgbColorCount": 19874,
+      "dominantRgb": [],
+      "dominantColorRatio": 0.08869058641975308,
+      "nonTransparentPixelRatio": 1,
+      "nonBackgroundPixelRatio": 0.963440586419753,
+      "visualValidationPassed": false,
+      "failureReasons": [
+        "Visual validation threshold failed"
+      ]
+    },
+    {
+      "runId": "a023a5b1-844f-46a9-a95f-e4ea2f1b6697",
+      "file": "desktop-ko-odaiba-card.png",
+      "publicUrl": "https://t14210184.github.io/tokyo-waterbus-map/?lang=ko&evidenceRun=a023a5b1-844f-46a9-a95f-e4ea2f1b6697&v=4d8328e&ts=1785681140776",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "locale": "ko",
+      "state": "Piers tab active, Odaiba Pier Arrival Card visible",
+      "interactionMethod": "Native DOM Click via CDP evaluate",
+      "expectedVisibleText": [
+        "오다이바",
+        "현장 안내 사진: 준비 중"
+      ],
+      "expectedTextPassed": true,
+      "targetSelector": "#map-floating-card .pier-arrival-card",
+      "targetBoundingBox": {
+        "x": 999,
+        "y": 166.265625,
+        "width": 364,
+        "height": 513.09375
+      },
+      "targetComputedStyle": {
+        "display": "block",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "pageExceptionCount": 0,
+      "consoleErrorCount": 0,
+      "failedRequestCount": 27,
+      "pngSha256": "fa3753467b7607f53198da5ae1929fc44b80c0cd2f9ad9c59b35b3f67998e21d",
+      "pngByteSize": 478270,
+      "pngWidth": 1440,
+      "pngHeight": 900,
+      "uniqueRgbColorCount": 13997,
+      "dominantRgb": [],
+      "dominantColorRatio": 0.16917361111111112,
+      "nonTransparentPixelRatio": 1,
+      "nonBackgroundPixelRatio": 0.963445987654321,
+      "visualValidationPassed": false,
+      "failureReasons": [
+        "Visual validation threshold failed"
+      ]
+    },
+    {
+      "runId": "a023a5b1-844f-46a9-a95f-e4ea2f1b6697",
+      "file": "mobile-360-language-picker.png",
+      "publicUrl": "https://t14210184.github.io/tokyo-waterbus-map/?lang=zh-TW&evidenceRun=a023a5b1-844f-46a9-a95f-e4ea2f1b6697&v=4d8328e&ts=1785681145944",
+      "viewport": {
+        "width": 360,
+        "height": 800
+      },
+      "locale": "zh-TW",
+      "state": "Language picker dropdown expanded with 4 locale options",
+      "interactionMethod": "Native DOM Click via CDP evaluate",
+      "expectedVisibleText": [
+        "繁體中文",
+        "English",
+        "日本語",
+        "한국어"
+      ],
+      "expectedTextPassed": true,
+      "targetSelector": "#lang-picker-menu",
+      "targetBoundingBox": {
+        "x": -37.875,
+        "y": 71.234375,
+        "width": 160,
+        "height": 160.59375
+      },
+      "targetComputedStyle": {
+        "display": "block",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "pageExceptionCount": 0,
+      "consoleErrorCount": 0,
+      "failedRequestCount": 0,
+      "pngSha256": "f9a7c494dcf9a0ac087581c339358e019c9b14cbd9f936312abc1583a976693c",
+      "pngByteSize": 178440,
+      "pngWidth": 360,
+      "pngHeight": 800,
+      "uniqueRgbColorCount": 10123,
+      "dominantRgb": [],
+      "dominantColorRatio": 0.17877430555555557,
+      "nonTransparentPixelRatio": 1,
+      "nonBackgroundPixelRatio": 0.9999965277777778,
+      "visualValidationPassed": true,
+      "failureReasons": []
+    },
+    {
+      "runId": "a023a5b1-844f-46a9-a95f-e4ea2f1b6697",
+      "file": "mobile-390-pier-card.png",
+      "publicUrl": "https://t14210184.github.io/tokyo-waterbus-map/?lang=en&evidenceRun=a023a5b1-844f-46a9-a95f-e4ea2f1b6697&v=4d8328e&ts=1785681149044",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "locale": "en",
+      "state": "Mobile viewport, Piers tab active, Hinode Pier Arrival Card visible",
+      "interactionMethod": "Native DOM Click via CDP evaluate",
+      "expectedVisibleText": [
+        "Hinode Pier",
+        "Photo wayfinding: planned"
+      ],
+      "expectedTextPassed": true,
+      "targetSelector": "#map-floating-card .pier-arrival-card",
+      "targetBoundingBox": {
+        "x": 15,
+        "y": 167.265625,
+        "width": 304,
+        "height": 744.734375
+      },
+      "targetComputedStyle": {
+        "display": "block",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "pageExceptionCount": 0,
+      "consoleErrorCount": 0,
+      "failedRequestCount": 0,
+      "pngSha256": "7e768997bfafcb257e44f9cc6c2834246b9e9473860c7f17e2f3bd7275e6590f",
+      "pngByteSize": 142250,
+      "pngWidth": 390,
+      "pngHeight": 844,
+      "uniqueRgbColorCount": 9077,
+      "dominantRgb": [],
+      "dominantColorRatio": 0.2582634585004253,
+      "nonTransparentPixelRatio": 1,
+      "nonBackgroundPixelRatio": 0.9988151658767772,
+      "visualValidationPassed": true,
+      "failureReasons": []
+    },
+    {
+      "runId": "a023a5b1-844f-46a9-a95f-e4ea2f1b6697",
+      "file": "secondary-review-entry-regression.png",
+      "publicUrl": "https://t14210184.github.io/tokyo-waterbus-map/?lang=zh-TW&evidenceRun=a023a5b1-844f-46a9-a95f-e4ea2f1b6697&v=4d8328e&ts=1785681153090",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "locale": "zh-TW",
+      "state": "Secondary review portal opened with 13 canonical review items",
+      "interactionMethod": "Native DOM Click via CDP evaluate",
+      "expectedVisibleText": [
+        "RGR",
+        "RGR-sumida-river-13"
+      ],
+      "expectedTextPassed": true,
+      "targetSelector": ".review-portal-container",
+      "targetBoundingBox": {
+        "x": 16.09375,
+        "y": 126.28125,
+        "width": 335.203125,
+        "height": 2149.28125
+      },
+      "targetComputedStyle": {
+        "display": "block",
+        "visibility": "visible",
+        "opacity": "1"
+      },
+      "pageExceptionCount": 0,
+      "consoleErrorCount": 0,
+      "failedRequestCount": 0,
+      "pngSha256": "a181fdeabb36680e4968bbf472d2de425381bea3a9047002148657d7be48ae38",
+      "pngByteSize": 748889,
+      "pngWidth": 1440,
+      "pngHeight": 900,
+      "uniqueRgbColorCount": 19630,
+      "dominantRgb": [],
+      "dominantColorRatio": 0.12104012345679012,
+      "nonTransparentPixelRatio": 1,
+      "nonBackgroundPixelRatio": 0.9645378086419754,
+      "visualValidationPassed": true,
+      "failureReasons": []
+    }
+  ],
+  "phaseGate": "PHASE1A_EVIDENCE_REPAIR_INCOMPLETE"
+}

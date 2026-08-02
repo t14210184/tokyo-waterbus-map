@@ -1,0 +1,42 @@
+[
+  {
+    "pierId": "asakusa",
+    "candidateUrl": "https://www.suijobus.co.jp/en/cruise/asakusa/",
+    "sourceType": "official-link",
+    "reusePermissionVerified": false,
+    "creator": null,
+    "license": null,
+    "decision": "link-only",
+    "reason": "Official operator page link only"
+  },
+  {
+    "pierId": "hinode",
+    "candidateUrl": "https://www.suijobus.co.jp/en/cruise/hinode/",
+    "sourceType": "official-link",
+    "reusePermissionVerified": false,
+    "creator": null,
+    "license": null,
+    "decision": "link-only",
+    "reason": "Official operator page link only"
+  },
+  {
+    "pierId": "hamarikyu",
+    "candidateUrl": "https://www.suijobus.co.jp/en/cruise/hamarikyu/",
+    "sourceType": "official-link",
+    "reusePermissionVerified": false,
+    "creator": null,
+    "license": null,
+    "decision": "link-only",
+    "reason": "Official operator page link only"
+  },
+  {
+    "pierId": "odaiba-kaihinkouen",
+    "candidateUrl": "https://www.suijobus.co.jp/en/cruise/odaiba/",
+    "sourceType": "official-link",
+    "reusePermissionVerified": false,
+    "creator": null,
+    "license": null,
+    "decision": "link-only",
+    "reason": "Official operator page link only"
+  }
+]

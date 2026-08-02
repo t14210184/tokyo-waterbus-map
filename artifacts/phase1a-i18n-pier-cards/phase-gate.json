@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "runId": "a023a5b1-844f-46a9-a95f-e4ea2f1b6697",
+  "timestampUtc": "2026-08-02T14:32:36.167Z",
+  "expectedCommit": "4d8328e1c019658b3e1853fac7adc3608ced6c8c",
+  "observedCommit": "4d8328e",
+  "publicJsUrl": "https://t14210184.github.io/tokyo-waterbus-map/assets/index-atlas.d4482fa7.js",
+  "publicJsSha256": "d4482fa7355b2fa6a66a43a478247e3ce9c308be3b6cd04304e95e91a1b17a6c",
+  "phaseGate": "PHASE1A_EVIDENCE_REPAIR_INCOMPLETE",
+  "verified": false
+}
