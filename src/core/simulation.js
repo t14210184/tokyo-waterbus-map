@@ -168,14 +168,102 @@ export function createSimulationEngine(options = {}) {
     };
   }
 
-  function getVesselSnapshot(vesselId, clockMs = virtualClockMs) {
-    const vessel = VESSELS.find(v => v.id === vesselId);
-    if (!vessel) return null;
-    return computeVesselSnapshot(vessel, clockMs);
+  // Operational Simulation is strictly LOCKED OUT for all routes
+  const operationalSimulationAllowed = false;
+
+  // Approved routes for user-initiated Offline Demo Mode
+  const APPROVED_OFFLINE_DEMO_ROUTES = ['sumida-river', 'asakusa-odaiba-direct', 'hinode-odaiba', 'hamarikyu'];
+
+  // Defined Demo Vessels (Mizube Line is EXCLUDED forever)
+  const DEMO_VESSELS = [
+    { id: 'demo-vessel-01', routeId: 'sumida-river', name: 'demo-vessel-01', operator: 'TOKYO CRUISE (離線示範)', color: '#13b9c7', offsetMins: 0 },
+    { id: 'demo-vessel-02', routeId: 'asakusa-odaiba-direct', name: 'demo-vessel-02', operator: 'TOKYO CRUISE (離線示範)', color: '#13b9c7', offsetMins: 5 },
+    { id: 'demo-vessel-03', routeId: 'hinode-odaiba', name: 'demo-vessel-03', operator: 'TOKYO CRUISE (離線示範)', color: '#13b9c7', offsetMins: 10 },
+    { id: 'demo-vessel-04', routeId: 'hamarikyu', name: 'demo-vessel-04', operator: 'TOKYO CRUISE (離線示範)', color: '#13b9c7', offsetMins: 15 }
+  ];
+
+  function computeDemoVesselSnapshot(demoVessel, clockMs) {
+    const routeMeta = routeMap.get(demoVessel.routeId) || routeMap.get('sumida-river');
+    const pathCoords = routeMeta.pathCoords;
+    const totalLen = routeMeta.totalLengthMeters;
+
+    // Safety boundary: Stop before needs-review segments (clamp at 75% of route length)
+    const maxSafeDist = totalLen * 0.75;
+    const cruiseSpeedMps = 6.11;
+    const cruiseDurationSec = maxSafeDist / cruiseSpeedMps;
+    const dwellDurationSec = 60;
+    const cycleMs = (cruiseDurationSec + dwellDurationSec) * 2 * 1000;
+
+    const vesselOffsetMs = (demoVessel.offsetMins || 0) * 60 * 1000;
+    const elapsedMs = (clockMs + vesselOffsetMs) % cycleMs;
+    const elapsedSec = elapsedMs / 1000;
+
+    let targetDist = 0;
+    let isReturn = false;
+    let statusText = '離線示範中';
+
+    if (elapsedSec <= cruiseDurationSec) {
+      targetDist = elapsedSec * cruiseSpeedMps;
+      isReturn = false;
+      statusText = '離線示範中';
+    } else if (elapsedSec <= cruiseDurationSec + dwellDurationSec) {
+      targetDist = maxSafeDist;
+      isReturn = false;
+      statusText = '示範已在待審參考區段前停止';
+    } else if (elapsedSec <= (cruiseDurationSec * 2) + dwellDurationSec) {
+      const returnSec = elapsedSec - (cruiseDurationSec + dwellDurationSec);
+      targetDist = maxSafeDist - (returnSec * cruiseSpeedMps);
+      isReturn = true;
+      statusText = '離線示範中';
+    } else {
+      targetDist = 0;
+      isReturn = true;
+      statusText = '示範停靠中';
+    }
+
+    const safeDist = Math.max(0, Math.min(maxSafeDist, targetDist));
+    const geo = getPolylinePointAtDistance(pathCoords, safeDist);
+    const headingDegrees = isReturn ? (geo.heading + 180) % 360 : geo.heading;
+
+    return {
+      vesselId: demoVessel.id,
+      vesselName: demoVessel.name,
+      operator: demoVessel.operator,
+      routeId: demoVessel.routeId,
+      routeName: routeMeta.route.name?.zhHant || demoVessel.routeId,
+      routeColor: demoVessel.color,
+      status: statusText,
+      lat: geo.point[0],
+      lng: geo.point[1],
+      headingDegrees: Math.round(headingDegrees),
+      progress: totalLen > 0 ? safeDist / totalLen : 0,
+      speedKph: 20,
+      etaLabel: '離線示範動畫',
+      dataMode: 'offline-demo',
+      operationalSimulationAllowed: false,
+      offlineDemoAllowed: true,
+      updatedAt: clockMs
+    };
   }
 
-  function getAllVesselSnapshots(clockMs = virtualClockMs) {
-    return VESSELS.map(v => computeVesselSnapshot(v, clockMs));
+  function getAllDemoVesselSnapshots(clockMs = virtualClockMs, demoActive = false) {
+    if (!demoActive) return [];
+    return DEMO_VESSELS.map(v => computeDemoVesselSnapshot(v, clockMs));
+  }
+
+  function getVesselSnapshot(vesselId, clockMs = virtualClockMs, demoActive = false) {
+    if (!demoActive) return null;
+    const demoVessel = DEMO_VESSELS.find(v => v.id === vesselId);
+    if (!demoVessel) return null;
+    return computeDemoVesselSnapshot(demoVessel, clockMs);
+  }
+
+  function getAllVesselSnapshots(clockMs = virtualClockMs, demoActive = false) {
+    return getAllDemoVesselSnapshots(clockMs, demoActive);
+  }
+
+  function resetDemoClock() {
+    virtualClockMs = Date.now();
   }
 
   function tick(now) {
@@ -186,17 +274,20 @@ export function createSimulationEngine(options = {}) {
       virtualClockMs += deltaRealMs * playbackRate;
       tickCount++;
 
+      const globalStore = typeof window !== 'undefined' && window.__atlasStoreState;
+      const demoActive = globalStore ? Boolean(globalStore.simulation?.offlineDemoActive) : false;
+
       // Map Markers throttled update (80ms)
       if (now - lastMapUpdateAt >= 80) {
         lastMapUpdateAt = now;
-        const snapshots = getAllVesselSnapshots(virtualClockMs);
+        const snapshots = getAllDemoVesselSnapshots(virtualClockMs, demoActive);
         mapListeners.forEach(fn => fn(snapshots));
       }
 
       // Side Panel throttled update (500ms)
       if (now - lastPanelUpdateAt >= 500) {
         lastPanelUpdateAt = now;
-        const snapshots = getAllVesselSnapshots(virtualClockMs);
+        const snapshots = getAllDemoVesselSnapshots(virtualClockMs, demoActive);
         panelListeners.forEach(fn => fn(snapshots));
       }
     }
@@ -204,7 +295,7 @@ export function createSimulationEngine(options = {}) {
     if (window.__atlasDebug) {
       window.__atlasDebug.simulationStatus = isPaused ? 'paused' : 'running';
       window.__atlasDebug.playbackRate = playbackRate;
-      window.__atlasDebug.vesselMarkerCount = VESSELS.length;
+      window.__atlasDebug.vesselMarkerCount = 0;
       window.__atlasDebug.simulationTickCount = tickCount;
     }
 
@@ -230,7 +321,9 @@ export function createSimulationEngine(options = {}) {
     if (window.__atlasDebug) {
       window.__atlasDebug.simulationStatus = isPaused ? 'paused' : 'running';
     }
-    const snapshots = getAllVesselSnapshots(virtualClockMs);
+    const globalStore = typeof window !== 'undefined' && window.__atlasStoreState;
+    const demoActive = globalStore ? Boolean(globalStore.simulation?.offlineDemoActive) : false;
+    const snapshots = getAllDemoVesselSnapshots(virtualClockMs, demoActive);
     mapListeners.forEach(fn => fn(snapshots));
     panelListeners.forEach(fn => fn(snapshots));
   }
@@ -241,7 +334,9 @@ export function createSimulationEngine(options = {}) {
       playbackRate,
       virtualClockMs,
       tickCount,
-      vesselCount: VESSELS.length
+      vesselCount: DEMO_VESSELS.length,
+      operationalSimulationAllowed: false,
+      offlineDemoAllowed: true
     };
   }
 
@@ -278,6 +373,8 @@ export function createSimulationEngine(options = {}) {
   instance = {
     getVesselSnapshot,
     getAllVesselSnapshots,
+    getAllDemoVesselSnapshots,
+    resetDemoClock,
     setPlaybackRate,
     setPaused,
     getSimulationState,

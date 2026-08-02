@@ -23,14 +23,28 @@ export function createUIShell(appContainer) {
         </div>
 
         <div style="display: flex; align-items: center; gap: 0.75rem;">
-          <div class="status-pill num-tabular" id="status-chip-simulation" title="Simulation engine active" style="color: #f59e0b;">
+          <div class="status-pill num-tabular" id="status-chip-simulation" title="Simulation status" style="color: #f59e0b;">
             ● 目前無可驗證的模擬航行
           </div>
+          <button id="btn-offline-demo" class="btn btn-secondary" aria-label="啟動離線示範" aria-pressed="false" title="開啟概念離線示範動畫" style="padding: 0.3rem 0.6rem; font-size: 0.75rem; background: rgba(56, 189, 248, 0.12); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4);">
+            ▶ 啟動離線示範
+          </button>
           <button id="btn-theme-toggle" class="btn btn-secondary" aria-label="切換地圖底圖" aria-pressed="false" title="切換深色/淺色/參考資料底圖" style="padding: 0.3rem 0.6rem; font-size: 0.75rem;">
             ${ICONS.layers} 切換底圖：深色
           </button>
         </div>
       </header>
+
+      <!-- Offline Demo Disclaimer Banner (Shown only when offline demo is active) -->
+      <div id="demo-disclaimer-banner" style="display: none; background: rgba(15, 23, 42, 0.95); border-bottom: 1px solid rgba(56, 189, 248, 0.4); padding: 0.5rem 1rem; font-size: 0.73rem; color: #38bdf8; align-items: center; justify-content: space-between; gap: 1rem;">
+        <div>
+          <strong>此為離線示範動畫。</strong>不代表即時 GPS、AIS、目前船位、歷史軌跡、班次或可搭乘服務。航線幾何為 approximate-reference，不能用於導航或安全判斷。
+        </div>
+        <div style="display: flex; gap: 0.5rem; flex-shrink: 0;">
+          <button id="btn-reset-demo" class="btn btn-secondary" style="padding: 0.2rem 0.5rem; font-size: 0.7rem;">重設示範</button>
+          <button id="btn-stop-demo" class="btn btn-secondary" style="padding: 0.2rem 0.5rem; font-size: 0.7rem; background: #ef4444; color: #fff; border: none;">停止示範</button>
+        </div>
+      </div>
 
       <!-- Main Body -->
       <div class="app-body">

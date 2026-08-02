@@ -22,6 +22,7 @@ export function setupVesselMarkers(map, onVesselSelect) {
     return '#38bdf8';
   }
 
+  // Register standard vessels
   VESSELS.forEach(vessel => {
     const color = getVesselColor(vessel);
 
@@ -42,7 +43,6 @@ export function setupVesselMarkers(map, onVesselSelect) {
     });
 
     const initialPos = [35.655, 139.775];
-    // Do NOT add to map initially; updateVessels manages active markers based on snapshots
     const marker = L.marker(initialPos, { icon: customIcon });
 
     marker.on('click', () => {
@@ -50,6 +50,29 @@ export function setupVesselMarkers(map, onVesselSelect) {
     });
 
     vesselMarkerMap.set(vessel.id, marker);
+  });
+
+  // Register demo vessels (demo-vessel-01 .. demo-vessel-04)
+  const DEMO_IDS = ['demo-vessel-01', 'demo-vessel-02', 'demo-vessel-03', 'demo-vessel-04'];
+  DEMO_IDS.forEach(demoId => {
+    const customIcon = L.divIcon({
+      className: 'vessel-marker-container demo-vessel-marker',
+      html: `
+        <div class="vessel-marker-pin" style="background: #38bdf8; border: 2px solid #ffffff; box-shadow: 0 0 10px #38bdf8; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer;" title="${demoId}">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1 .6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/>
+            <path d="M19.38 20A11.6 11.6 0 0 0 21 14l-9-4-9 4c0 2.9.94 5.34 2.81 7.03"/>
+            <path d="M12 10V4"/>
+            <path d="M12 4L7 7"/>
+          </svg>
+        </div>
+      `,
+      iconSize: [22, 22],
+      iconAnchor: [11, 11]
+    });
+
+    const marker = L.marker([35.655, 139.775], { icon: customIcon });
+    vesselMarkerMap.set(demoId, marker);
   });
 
   function updateVessels(snapshots = [], selectedVesselId = null) {
@@ -75,19 +98,18 @@ export function setupVesselMarkers(map, onVesselSelect) {
 
       marker.setLatLng([snap.lat, snap.lng]);
 
-      const vessel = VESSELS.find(v => v.id === snap.vesselId);
-      const color = vessel ? getVesselColor(vessel) : '#13b9c7';
-
-      const statusText = snap.status === 'docked' ? '靠港中' : snap.status === 'approaching' ? '進港中' : '模擬航行中';
+      const isDemo = snap.dataMode === 'offline-demo';
+      const popupTitle = isDemo ? '離線示範動畫' : '位置資訊';
+      const disclaimer = isDemo ? '概念離線示範，不代表即時船位或營運狀態' : '依公開班表參考';
 
       const popupContent = `
         <div style="font-family: system-ui; padding: 4px; max-width: 220px;">
-          <div style="font-size: 0.7rem; color: #13b9c7; text-transform: uppercase; font-weight: 700;">SIMULATED POSITION</div>
-          <h4 style="margin: 2px 0 4px 0; color: #ffffff; font-size: 0.95rem;">${snap.name?.zhHant || snap.vesselId}</h4>
-          <div style="font-size: 0.75rem; color: #94a3b8; margin-bottom: 6px;">${snap.name?.en || ''}</div>
-          <div style="font-size: 0.75rem; color: #bcecf0; margin-bottom: 4px;">狀態: ${statusText}</div>
-          <div style="font-size: 0.72rem; color: #f5a623; margin-top: 4px; border-top: 1px dashed rgba(255,255,255,0.2); padding-top: 4px;">
-            依公開時刻表模擬，非即時 GPS
+          <div style="font-size: 0.7rem; color: #38bdf8; text-transform: uppercase; font-weight: 700;">${popupTitle}</div>
+          <h4 style="margin: 2px 0 4px 0; color: #ffffff; font-size: 0.95rem;">${snap.vesselName}</h4>
+          <div style="font-size: 0.75rem; color: #94a3b8; margin-bottom: 6px;">航線: ${snap.routeName || ''}</div>
+          <div style="font-size: 0.75rem; color: #bcecf0; margin-bottom: 4px;">狀態: ${snap.status}</div>
+          <div style="font-size: 0.72rem; color: #f59e0b; margin-top: 4px; border-top: 1px dashed rgba(255,255,255,0.2); padding-top: 4px;">
+            ${disclaimer}
           </div>
         </div>
       `;

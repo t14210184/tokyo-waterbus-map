@@ -251,9 +251,13 @@ function initSimulationEngine() {
     });
 
     simEngine.subscribe('map', (snapshots) => {
-      // Safe lockout: Do not render moving vessel markers when simulation is locked out
+      const demoActive = atlasStore.getState().simulation.offlineDemoActive;
       if (vesselMarkersHandler) {
-        vesselMarkersHandler.updateVessels([], null);
+        if (demoActive) {
+          vesselMarkersHandler.updateVessels(snapshots, null);
+        } else {
+          vesselMarkersHandler.updateVessels([], null);
+        }
       }
     });
 
@@ -264,6 +268,12 @@ function initSimulationEngine() {
           updateFleetPanelValues(container);
         }
       }
+    });
+
+    // Expose store state on window for simEngine
+    window.__atlasStoreState = atlasStore.getState();
+    atlasStore.subscribe(state => {
+      window.__atlasStoreState = state;
     });
 
   } catch (err) {
@@ -369,9 +379,35 @@ async function initMapEngine() {
 
 function updateStatusChip() {
   const statusChip = document.getElementById('status-chip-simulation');
+  const demoBanner = document.getElementById('demo-disclaimer-banner');
+  const demoBtn = document.getElementById('btn-offline-demo');
   if (!statusChip) return;
-  statusChip.innerHTML = '● 目前無可驗證的模擬航行';
-  statusChip.style.color = '#f59e0b';
+
+  const demoActive = atlasStore.getState().simulation?.offlineDemoActive;
+
+  if (demoActive) {
+    statusChip.innerHTML = '● 離線示範中，不代表即時船位或實際營運';
+    statusChip.style.color = '#38bdf8';
+    if (demoBanner) demoBanner.style.display = 'flex';
+    if (demoBtn) {
+      demoBtn.innerHTML = '⏹ 停止示範';
+      demoBtn.setAttribute('aria-pressed', 'true');
+      demoBtn.style.background = 'rgba(239, 68, 68, 0.2)';
+      demoBtn.style.color = '#ff5c64';
+      demoBtn.style.borderColor = 'rgba(239, 68, 68, 0.4)';
+    }
+  } else {
+    statusChip.innerHTML = '● 目前無可驗證的模擬航行';
+    statusChip.style.color = '#f59e0b';
+    if (demoBanner) demoBanner.style.display = 'none';
+    if (demoBtn) {
+      demoBtn.innerHTML = '▶ 啟動離線示範';
+      demoBtn.setAttribute('aria-pressed', 'false');
+      demoBtn.style.background = 'rgba(56, 189, 248, 0.12)';
+      demoBtn.style.color = '#38bdf8';
+      demoBtn.style.borderColor = 'rgba(56, 189, 248, 0.4)';
+    }
+  }
 }
 
 function updateFleetPanelValues(container) {
@@ -618,6 +654,43 @@ function setupMapControlListeners(layers) {
       const label = labelMap[newMode] || '切換底圖：深色';
       themeBtn.innerHTML = `${ICONS.layers} ${label}`;
       themeBtn.setAttribute('aria-pressed', newMode === 'light' ? 'true' : 'false');
+    });
+  }
+
+  const offlineDemoBtn = document.getElementById('btn-offline-demo');
+  if (offlineDemoBtn) {
+    offlineDemoBtn.addEventListener('click', () => {
+      const currentActive = atlasStore.getState().simulation?.offlineDemoActive;
+      const nextActive = !currentActive;
+      atlasStore.setState({
+        simulation: { ...atlasStore.getState().simulation, offlineDemoActive: nextActive }
+      });
+      updateStatusChip();
+      if (!nextActive && vesselMarkersHandler) {
+        vesselMarkersHandler.updateVessels([], null);
+      }
+    });
+  }
+
+  const stopDemoBtn = document.getElementById('btn-stop-demo');
+  if (stopDemoBtn) {
+    stopDemoBtn.addEventListener('click', () => {
+      atlasStore.setState({
+        simulation: { ...atlasStore.getState().simulation, offlineDemoActive: false }
+      });
+      updateStatusChip();
+      if (vesselMarkersHandler) {
+        vesselMarkersHandler.updateVessels([], null);
+      }
+    });
+  }
+
+  const resetDemoBtn = document.getElementById('btn-reset-demo');
+  if (resetDemoBtn) {
+    resetDemoBtn.addEventListener('click', () => {
+      if (simEngine && simEngine.resetDemoClock) {
+        simEngine.resetDemoClock();
+      }
     });
   }
 }

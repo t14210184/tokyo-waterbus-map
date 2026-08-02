@@ -82,7 +82,8 @@ export const atlasStore = createStore({
     playbackRate: 1,
     selectedVesselId: null,
     followedVesselId: null,
-    lastUiUpdateAt: 0
+    lastUiUpdateAt: 0,
+    offlineDemoActive: false
   },
   pierExplorer: {
     query: '',
