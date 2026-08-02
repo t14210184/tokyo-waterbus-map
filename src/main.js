@@ -26,6 +26,7 @@ import { ICONS } from './assets/icons.js';
 import { displayText } from './core/itinerary-formatters.js';
 
 // Import UI & Map Modules
+import { initI18n, subscribeI18n } from './i18n/index.js';
 import { createUIShell } from './ui/shell.js';
 import { createWaterbusMap } from './map/create-map.js';
 import { setupRouteLayers } from './map/route-layers.js';
@@ -97,12 +98,22 @@ async function initApp() {
   appContainer.dataset.appState = 'booting';
 
   try {
+    // 0. Initialize i18n Core Engine
+    initI18n();
+
     // 1. Build Shell UI Structure
     createUIShell(appContainer);
 
     // 2. Setup Navigation Tabs & Resize Listeners
     setupTabNavigation();
     setupResizeListeners();
+
+    // Subscribe to i18n locale updates
+    subscribeI18n(() => {
+      createUIShell(appContainer);
+      setupTabNavigation();
+      renderActiveTab();
+    });
 
     // 3. Initialize Route Engine Graph
     initRouteGraphEngine();

@@ -18,7 +18,7 @@ const rootDir = path.resolve(__dirname, '..');
 const distDir = path.join(rootDir, 'dist');
 const assetsDir = path.join(distDir, 'assets');
 
-console.log('🚀 Running Pure-JS Static Production Builder for Tokyo Waterbus Atlas (v1.1.0-RC.3.22)...');
+console.log('🚀 Running Pure-JS Static Production Builder for Tokyo Waterbus Atlas (v1.1.0-RC.3.23)...');
 
 // 0. Update src/data/version.js with real short Git commit SHA and build timestamp
 let shortSha = 'b2a5c6c';
@@ -30,12 +30,12 @@ try {
 
 const buildIsoTimestamp = new Date().toISOString();
 const versionContent = `/**
- * Version and Build Metadata Registry for Tokyo Waterbus Atlas (v1.1.0-RC.3.22)
+ * Version and Build Metadata Registry for Tokyo Waterbus Atlas (v1.1.0-RC.3.23)
  * Shared single source of truth for UI shell header, footer disclosures, and build assets.
  * Automatically injected/updated during \`npm run build\`.
  */
 
-export const VERSION = 'v1.1.0-RC.3.22';
+export const VERSION = 'v1.1.0-RC.3.23';
 export const SHORT_SHA = '${shortSha}';
 export const BUILD_TIMESTAMP = '${buildIsoTimestamp}';
 export const ASSET_HASH = 'a420a80b';
@@ -106,6 +106,12 @@ console.log(`📦 Generated CSS asset: dist/assets/${hashedCssFilename} (${(bund
 // 3. Bundle JS Code (In strict dependency order)
 const jsModules = [
   'data/version.js',
+  'i18n/locales/zh-TW.js',
+  'i18n/locales/en.js',
+  'i18n/locales/ja.js',
+  'i18n/locales/ko.js',
+  'i18n/index.js',
+  'data/pier-arrival-cards.js',
   'data/environment.js',
   'data/route-geometry-sources.js',
   'data/route-geometries.js',
@@ -135,6 +141,8 @@ const jsModules = [
   'map/vessel-markers.js',
   'map/itinerary-layers.js',
   'map/map-camera.js',
+  'ui/language-picker.js',
+  'ui/pier-arrival-card.js',
   'ui/shell.js',
   'ui/today-status-panel.js',
   'ui/route-panel.js',

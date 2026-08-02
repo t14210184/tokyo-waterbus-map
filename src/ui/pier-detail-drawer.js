@@ -7,6 +7,9 @@ import { ICONS } from '../assets/icons.js';
 import { ROUTES } from '../data/routes.js';
 import { LANDMARKS } from '../data/landmarks.js';
 import { atlasStore } from '../core/store.js';
+import { PIER_ARRIVAL_CARDS } from '../data/pier-arrival-cards.js';
+import { renderPierArrivalCard } from './pier-arrival-card.js';
+import { t } from '../i18n/index.js';
 import {
   displayLocalizedName,
   displayOperator,
@@ -23,6 +26,14 @@ export function renderPierDetailDrawer(container, pier, onClose, onFocusPierOnMa
   const opText = displayOperator(pier);
   const isTokyoCruise = opText.includes('TOKYO');
   const operatorBadgeClass = isTokyoCruise ? 'badge-tokyo-cruise' : 'badge-mizube-line';
+
+  const cardData = PIER_ARRIVAL_CARDS[pier.id];
+  let cardHtml = '';
+  if (cardData) {
+    const dummyEl = document.createElement('div');
+    renderPierArrivalCard(cardData, dummyEl);
+    cardHtml = dummyEl.innerHTML;
+  }
 
   const confidenceInfo = displayConfidence(pier.confidence || 'official-reference');
 
@@ -62,6 +73,8 @@ export function renderPierDetailDrawer(container, pier, onClose, onFocusPierOnMa
           ${ICONS.close}
         </button>
       </div>
+
+      ${cardHtml}
 
       <!-- Metadata Badges & Notice -->
       <div style="display: flex; align-items: center; gap: 0.45rem; flex-wrap: wrap; margin-bottom: 0.75rem;">

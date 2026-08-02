@@ -1,12 +1,12 @@
 /**
- * Version and Build Metadata Registry for Tokyo Waterbus Atlas (v1.1.0-RC.3.22)
+ * Version and Build Metadata Registry for Tokyo Waterbus Atlas (v1.1.0-RC.3.23)
  * Shared single source of truth for UI shell header, footer disclosures, and build assets.
  * Automatically injected/updated during `npm run build`.
  */
 
-export const VERSION = 'v1.1.0-RC.3.22';
-export const SHORT_SHA = '5e049b2';
-export const BUILD_TIMESTAMP = '2026-08-02T04:06:07.607Z';
+export const VERSION = 'v1.1.0-RC.3.23';
+export const SHORT_SHA = '464e0d9';
+export const BUILD_TIMESTAMP = '2026-08-02T04:19:24.345Z';
 export const ASSET_HASH = 'a420a80b';
 
 export function getFullVersionString() {
