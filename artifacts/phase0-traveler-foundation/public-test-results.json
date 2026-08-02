@@ -1,0 +1,23 @@
+{
+  "publicUrl": "https://t14210184.github.io/tokyo-waterbus-map/?p0=1785643626226",
+  "version": "v1.1.0-RC.3.22",
+  "rootStatus": 200,
+  "scriptPath": "assets/index-atlas.45d38db3.js",
+  "assetHashMatch": true,
+  "primaryTabsOrder": [
+    "今天狀態",
+    "航線",
+    "碼頭",
+    "行程規劃",
+    "攻略",
+    "探索"
+  ],
+  "secondaryReviewEntry": true,
+  "todayStatusOfficialLinks": true,
+  "mizubeLineSuspended": true,
+  "offlineDemoAvailable": true,
+  "consoleErrors": 0,
+  "pageErrors": 0,
+  "failedRequests": 0,
+  "phaseGate": "PHASE0_TRUTHFUL_TRAVELLER_FOUNDATION_VERIFIED"
+}
