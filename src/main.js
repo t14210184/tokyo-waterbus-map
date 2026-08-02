@@ -220,7 +220,9 @@ function initSimulationEngine() {
     });
 
     window.__atlasDebug.simulationStatus = 'running';
-    window.__atlasDebug.vesselMarkerCount = VESSELS.length;
+    window.__atlasDebug.vesselMarkerCount = 0;
+
+    updateStatusChip();
 
     atlasStore.subscribe(state => state.simulation.isPaused, (isPaused) => {
       if (simEngine) simEngine.setPaused(isPaused);

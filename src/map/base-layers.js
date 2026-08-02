@@ -128,35 +128,39 @@ export function setupBaseLayers(mapInstance, onStatusChange = null) {
     activeTileLayer.addTo(mapInstance);
   }
 
+  function setMode(newMode) {
+    if (!TILE_LAYERS[newMode]) return currentMode;
+
+    if (activeTileLayer) {
+      mapInstance.removeLayer(activeTileLayer);
+      activeTileLayer = null;
+    }
+
+    currentMode = newMode;
+    if (newMode !== 'none') {
+      activeTileLayer = createTileLayer(newMode);
+      if (activeTileLayer) {
+        activeTileLayer.addTo(mapInstance);
+      }
+    }
+
+    if (typeof window !== 'undefined' && window.dispatchEvent) {
+      window.dispatchEvent(new CustomEvent('atlas:basemap-mode-changed', {
+        detail: { mode: currentMode, label: TILE_LAYERS[currentMode].label }
+      }));
+    }
+
+    return currentMode;
+  }
+
+  function toggle() {
+    const nextMode = currentMode === 'dark' ? 'light' : (currentMode === 'light' ? 'none' : 'dark');
+    return setMode(nextMode);
+  }
+
   return {
     getMode: () => currentMode,
-    setMode: (newMode) => {
-      if (!TILE_LAYERS[newMode]) return currentMode;
-
-      if (activeTileLayer) {
-        mapInstance.removeLayer(activeTileLayer);
-        activeTileLayer = null;
-      }
-
-      currentMode = newMode;
-      if (newMode !== 'none') {
-        activeTileLayer = createTileLayer(newMode);
-        if (activeTileLayer) {
-          activeTileLayer.addTo(mapInstance);
-        }
-      }
-
-      if (typeof window !== 'undefined' && window.dispatchEvent) {
-        window.dispatchEvent(new CustomEvent('atlas:basemap-mode-changed', {
-          detail: { mode: currentMode, label: TILE_LAYERS[currentMode].label }
-        }));
-      }
-
-      return currentMode;
-    },
-    toggle: () => {
-      const nextMode = currentMode === 'dark' ? 'light' : (currentMode === 'light' ? 'none' : 'dark');
-      return controller.setMode(nextMode);
-    }
+    setMode: setMode,
+    toggle: toggle
   };
 }

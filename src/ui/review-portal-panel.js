@@ -22,7 +22,8 @@ const CANONICAL_REVIEW_ITEMS = [
 ];
 
 export function renderReviewPortalPanel(container) {
-  const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+  const envBase = (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.BASE_URL) ? import.meta.env.BASE_URL : './';
+  const baseUrl = envBase.endsWith('/') ? envBase : `${envBase}/`;
 
   container.innerHTML = `
     <div style="padding: 0.25rem 0;" class="review-portal-container">

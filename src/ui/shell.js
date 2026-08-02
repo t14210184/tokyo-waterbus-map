@@ -23,8 +23,8 @@ export function createUIShell(appContainer) {
         </div>
 
         <div style="display: flex; align-items: center; gap: 0.75rem;">
-          <div class="status-pill num-tabular" id="status-chip-simulation" title="Simulation engine active">
-            ● 模擬航行中 (SIMULATED)
+          <div class="status-pill num-tabular" id="status-chip-simulation" title="Simulation engine active" style="color: #f59e0b;">
+            ● 目前無可驗證的模擬航行
           </div>
           <button id="btn-theme-toggle" class="btn btn-secondary" aria-label="切換地圖底圖" aria-pressed="false" title="切換深色/淺色/參考資料底圖" style="padding: 0.3rem 0.6rem; font-size: 0.75rem;">
             ${ICONS.layers} 切換底圖：深色

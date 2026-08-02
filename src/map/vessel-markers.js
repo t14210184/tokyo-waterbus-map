@@ -42,7 +42,8 @@ export function setupVesselMarkers(map, onVesselSelect) {
     });
 
     const initialPos = [35.655, 139.775];
-    const marker = L.marker(initialPos, { icon: customIcon }).addTo(map);
+    // Do NOT add to map initially; updateVessels manages active markers based on snapshots
+    const marker = L.marker(initialPos, { icon: customIcon });
 
     marker.on('click', () => {
       if (onVesselSelect) onVesselSelect(vessel.id);
@@ -52,9 +53,25 @@ export function setupVesselMarkers(map, onVesselSelect) {
   });
 
   function updateVessels(snapshots = [], selectedVesselId = null) {
+    const activeIds = new Set(snapshots.map(s => s.vesselId));
+
+    // Remove inactive markers from map
+    vesselMarkerMap.forEach((marker, vesselId) => {
+      if (!activeIds.has(vesselId)) {
+        if (map.hasLayer(marker)) {
+          map.removeLayer(marker);
+        }
+      }
+    });
+
+    // Add / Update active markers
     snapshots.forEach(snap => {
       const marker = vesselMarkerMap.get(snap.vesselId);
       if (!marker) return;
+
+      if (!map.hasLayer(marker)) {
+        marker.addTo(map);
+      }
 
       marker.setLatLng([snap.lat, snap.lng]);
 
