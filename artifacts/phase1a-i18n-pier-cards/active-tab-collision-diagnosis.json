@@ -1,0 +1,31 @@
+{
+  "timestampUtc": "2026-08-02T10:20:40.000Z",
+  "publicBundleUrl": "https://t14210184.github.io/tokyo-waterbus-map/assets/index-atlas.2508b888.js",
+  "publicError": {
+    "name": "SyntaxError",
+    "message": "Identifier 'activeTab' has already been declared",
+    "line": 7113,
+    "column": 4
+  },
+  "builderStrategy": "Pure-JS Static Builder concatenates source modules into a single production script file (index-atlas.<hash>.js) after stripping import/export keywords.",
+  "declarations": [
+    {
+      "sourceFile": "src/main.js",
+      "line": 79,
+      "declarationKind": "let",
+      "codeExcerpt": "let activeTab = 'routes';",
+      "moduleRole": "Top-level state declaration at module setup (line 79)"
+    },
+    {
+      "sourceFile": "src/main.js",
+      "line": 494,
+      "declarationKind": "let",
+      "codeExcerpt": "let activeTab = 'today';",
+      "moduleRole": "Duplicate top-level state declaration before renderActiveTab() (line 494)"
+    }
+  ],
+  "collisionMechanism": "src/main.js contained two top-level 'let activeTab' declarations (line 79 and line 494). When concatenated into a single bundle scope by scripts/build-static.js, the duplicate lexical binding 'activeTab' triggered an un-catchable V8 SyntaxError on bundle evaluation.",
+  "selectedFix": "Option A: Removed the duplicate top-level 'let activeTab = 'routes';' declaration at line 79 of src/main.js, preserving the authoritative 'let activeTab = 'today';' declaration at line 494.",
+  "whyNoBehaviorChanges": "The variable activeTab represents the active sidebar tab state in src/main.js. Line 79 was a redundant top-level declaration initialized to 'routes', which was immediately superseded by line 494 initializing activeTab to 'today'. Retaining a single top-level declaration at line 494 resolves the lexical scope collision with 100% zero behavior or state change.",
+  "protectedFilesUnchanged": true
+}

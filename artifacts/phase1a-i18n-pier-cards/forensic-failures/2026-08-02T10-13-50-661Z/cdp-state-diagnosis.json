@@ -1,0 +1,49 @@
+{
+  "timestampUtc": "2026-08-02T09:09:58.478Z",
+  "publicUrl": "https://t14210184.github.io/tokyo-waterbus-map/?lang=zh-TW&cdpdiag=1785661753450",
+  "cdpTargetInitialUrl": "about:blank",
+  "finalPageUrl": "https://t14210184.github.io/tokyo-waterbus-map/?lang=zh-TW&cdpdiag=1785661753450",
+  "pageTitle": "Tokyo Waterbus Atlas｜東京水上巴士 航線・碼頭・動態探索",
+  "documentReadyState": "complete",
+  "fontReady": true,
+  "lifecycleEvents": [],
+  "selectors": {
+    "primaryAppRoot": ".app-shell",
+    "piersTab": ".tab-btn[data-tab=\"piers\"]",
+    "piersList": ".piers-list",
+    "asakusaPierTrigger": ".pier-card[data-pier-id=\"asakusa\"]",
+    "arrivalCardRoot": "#map-floating-card .pier-arrival-card",
+    "asakusaLocalizedHeading": "#map-floating-card .pier-arrival-card h3"
+  },
+  "tabInteraction": {
+    "methodAttempted": [
+      "Method 1: CDP Mouse Event",
+      "Method 2: Native DOM click"
+    ],
+    "result": "",
+    "postconditionPassed": false,
+    "details": ""
+  },
+  "asakusaInteraction": {
+    "methodAttempted": [],
+    "result": "",
+    "postconditionPassed": false,
+    "details": ""
+  },
+  "bodyTextPrefix": "",
+  "visibleElements": [
+    ".app-shell",
+    ".tab-btn[data-tab=\"piers\"]",
+    ".piers-list",
+    ".pier-card[data-pier-id=\"asakusa\"]",
+    "#map-floating-card .pier-arrival-card"
+  ],
+  "consoleMessages": [],
+  "pageExceptions": [
+    "Uncaught"
+  ],
+  "networkFailures": [],
+  "diagnosticScreenshotWritten": false,
+  "diagnosticScreenshotValidation": {},
+  "microGate": "CDP_SINGLE_STATE_CAPTURE_BLOCKED"
+}

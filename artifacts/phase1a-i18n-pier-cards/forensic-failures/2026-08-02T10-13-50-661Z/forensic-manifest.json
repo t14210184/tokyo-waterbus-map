@@ -1,0 +1,135 @@
+{
+  "timestampUtc": "2026-08-02T10:13:52.574Z",
+  "forensicDirectory": "artifacts/phase1a-i18n-pier-cards/forensic-failures/2026-08-02T10-13-50-661Z",
+  "statement": "These preserved files represent failed/unverified evidence collected prior to truth-logic repair. They are retained as immutable forensic reference and DO NOT constitute valid Phase 1A evidence or screenshots.",
+  "files": [
+    {
+      "fileName": "cdp-state-diagnosis.json",
+      "sourcePath": "artifacts/phase1a-i18n-pier-cards/cdp-state-diagnosis.json",
+      "forensicCopyPath": "artifacts/phase1a-i18n-pier-cards/forensic-failures/2026-08-02T10-13-50-661Z/cdp-state-diagnosis.json",
+      "sizeBytes": 1567,
+      "sha256": "21c77639a55935d096da1a4d0349c6956357fceffdf9b1cad4c3ed5760cf880b",
+      "imageMetrics": null
+    },
+    {
+      "fileName": "cdp-state-diagnosis.md",
+      "sourcePath": "artifacts/phase1a-i18n-pier-cards/cdp-state-diagnosis.md",
+      "forensicCopyPath": "artifacts/phase1a-i18n-pier-cards/forensic-failures/2026-08-02T10-13-50-661Z/cdp-state-diagnosis.md",
+      "sizeBytes": 650,
+      "sha256": "0d0462ed22503718154ae67f60cc020a50513494affff33fb7a76fbbf53399b6",
+      "imageMetrics": null
+    },
+    {
+      "fileName": "diagnostic-failure-state.png",
+      "sourcePath": "artifacts/phase1a-i18n-pier-cards/diagnostic-failure-state.png",
+      "forensicCopyPath": "artifacts/phase1a-i18n-pier-cards/forensic-failures/2026-08-02T10-13-50-661Z/diagnostic-failure-state.png",
+      "sizeBytes": 5855,
+      "sha256": "09c235902fd53e2da88b55efd7721ec8306c937eda7586cb766fe2568a6f2f00",
+      "imageMetrics": {
+        "width": 1440,
+        "height": 900,
+        "uniqueColorCount": 1,
+        "dominantColorHex": "#071923",
+        "dominantRatio": 1
+      }
+    },
+    {
+      "fileName": "desktop-zhTW-asakusa-card.png",
+      "sourcePath": "artifacts/phase1a-i18n-pier-cards/desktop-zhTW-asakusa-card.png",
+      "forensicCopyPath": "artifacts/phase1a-i18n-pier-cards/forensic-failures/2026-08-02T10-13-50-661Z/desktop-zhTW-asakusa-card.png",
+      "sizeBytes": 5855,
+      "sha256": "09c235902fd53e2da88b55efd7721ec8306c937eda7586cb766fe2568a6f2f00",
+      "imageMetrics": {
+        "width": 1440,
+        "height": 900,
+        "uniqueColorCount": 1,
+        "dominantColorHex": "#071923",
+        "dominantRatio": 1
+      }
+    },
+    {
+      "fileName": "desktop-en-hinode-card.png",
+      "sourcePath": "artifacts/phase1a-i18n-pier-cards/desktop-en-hinode-card.png",
+      "forensicCopyPath": "artifacts/phase1a-i18n-pier-cards/forensic-failures/2026-08-02T10-13-50-661Z/desktop-en-hinode-card.png",
+      "sizeBytes": 5855,
+      "sha256": "09c235902fd53e2da88b55efd7721ec8306c937eda7586cb766fe2568a6f2f00",
+      "imageMetrics": {
+        "width": 1440,
+        "height": 900,
+        "uniqueColorCount": 1,
+        "dominantColorHex": "#071923",
+        "dominantRatio": 1
+      }
+    },
+    {
+      "fileName": "desktop-ja-hamarikyu-card.png",
+      "sourcePath": "artifacts/phase1a-i18n-pier-cards/desktop-ja-hamarikyu-card.png",
+      "forensicCopyPath": "artifacts/phase1a-i18n-pier-cards/forensic-failures/2026-08-02T10-13-50-661Z/desktop-ja-hamarikyu-card.png",
+      "sizeBytes": 5855,
+      "sha256": "09c235902fd53e2da88b55efd7721ec8306c937eda7586cb766fe2568a6f2f00",
+      "imageMetrics": {
+        "width": 1440,
+        "height": 900,
+        "uniqueColorCount": 1,
+        "dominantColorHex": "#071923",
+        "dominantRatio": 1
+      }
+    },
+    {
+      "fileName": "desktop-ko-odaiba-card.png",
+      "sourcePath": "artifacts/phase1a-i18n-pier-cards/desktop-ko-odaiba-card.png",
+      "forensicCopyPath": "artifacts/phase1a-i18n-pier-cards/forensic-failures/2026-08-02T10-13-50-661Z/desktop-ko-odaiba-card.png",
+      "sizeBytes": 5855,
+      "sha256": "09c235902fd53e2da88b55efd7721ec8306c937eda7586cb766fe2568a6f2f00",
+      "imageMetrics": {
+        "width": 1440,
+        "height": 900,
+        "uniqueColorCount": 1,
+        "dominantColorHex": "#071923",
+        "dominantRatio": 1
+      }
+    },
+    {
+      "fileName": "mobile-360-language-picker.png",
+      "sourcePath": "artifacts/phase1a-i18n-pier-cards/mobile-360-language-picker.png",
+      "forensicCopyPath": "artifacts/phase1a-i18n-pier-cards/forensic-failures/2026-08-02T10-13-50-661Z/mobile-360-language-picker.png",
+      "sizeBytes": 2405,
+      "sha256": "53f85d10548c8088d4ea563466426c33c6dfde29f68c12ff36b121d1033dabb3",
+      "imageMetrics": {
+        "width": 360,
+        "height": 800,
+        "uniqueColorCount": 1,
+        "dominantColorHex": "#071923",
+        "dominantRatio": 1
+      }
+    },
+    {
+      "fileName": "mobile-390-pier-card.png",
+      "sourcePath": "artifacts/phase1a-i18n-pier-cards/mobile-390-pier-card.png",
+      "forensicCopyPath": "artifacts/phase1a-i18n-pier-cards/forensic-failures/2026-08-02T10-13-50-661Z/mobile-390-pier-card.png",
+      "sizeBytes": 2743,
+      "sha256": "e80199b1d0849b72d91591742d96461744617b6ee3eb1186988d06c866a80e15",
+      "imageMetrics": {
+        "width": 390,
+        "height": 844,
+        "uniqueColorCount": 1,
+        "dominantColorHex": "#071923",
+        "dominantRatio": 1
+      }
+    },
+    {
+      "fileName": "secondary-review-entry-regression.png",
+      "sourcePath": "artifacts/phase1a-i18n-pier-cards/secondary-review-entry-regression.png",
+      "forensicCopyPath": "artifacts/phase1a-i18n-pier-cards/forensic-failures/2026-08-02T10-13-50-661Z/secondary-review-entry-regression.png",
+      "sizeBytes": 5855,
+      "sha256": "09c235902fd53e2da88b55efd7721ec8306c937eda7586cb766fe2568a6f2f00",
+      "imageMetrics": {
+        "width": 1440,
+        "height": 900,
+        "uniqueColorCount": 1,
+        "dominantColorHex": "#071923",
+        "dominantRatio": 1
+      }
+    }
+  ]
+}

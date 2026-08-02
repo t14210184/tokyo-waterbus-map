@@ -1,0 +1,13 @@
+[
+  {
+    "timestamp": 1785665794083,
+    "type": "Runtime.exceptionThrown",
+    "text": "Uncaught",
+    "exceptionDescription": "SyntaxError: Identifier 'activeTab' has already been declared",
+    "url": "https://t14210184.github.io/tokyo-waterbus-map/assets/index-atlas.2508b888.js",
+    "lineNumber": 7113,
+    "columnNumber": 4,
+    "stackTrace": [],
+    "phase": "shell-ready"
+  }
+]

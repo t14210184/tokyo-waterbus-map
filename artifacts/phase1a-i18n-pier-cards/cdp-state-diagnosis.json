@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "runId": "541e7f93-3ad4-4927-8462-7987669a6c27",
+  "startedAtUtc": "2026-08-02T10:16:15.158Z",
+  "completedAtUtc": "2026-08-02T10:16:45.011Z",
+  "publicUrl": "https://t14210184.github.io/tokyo-waterbus-map/?lang=zh-TW&cdpdiag=1785665775160",
+  "cdpTargetInitialUrl": "about:blank",
+  "finalPageUrl": "https://t14210184.github.io/tokyo-waterbus-map/?lang=zh-TW&cdpdiag=1785665775160",
+  "pageTitle": "Tokyo Waterbus Atlas｜東京水上巴士 航線・碼頭・動態探索",
+  "lifecycleReady": true,
+  "fontReady": true,
+  "shellReady": false,
+  "tabPostconditionPassed": false,
+  "pierPostconditionPassed": false,
+  "expectedTextPassed": false,
+  "consoleErrorCount": 0,
+  "pageExceptionCount": 1,
+  "screenshotWritten": false,
+  "outputPngSha256": "",
+  "screenshotPixelValidationPassed": false,
+  "pixelMetrics": null,
+  "failureReasons": [
+    "Application shell or appStatus !== \"ready\" failed within timeout.",
+    "Failure state screenshot written to failure-541e7f93-3ad4-4927-8462-7987669a6c27.png"
+  ],
+  "microGate": "CDP_SINGLE_STATE_CAPTURE_BLOCKED"
+}

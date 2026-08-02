@@ -76,7 +76,6 @@ window.__atlasDebug = {
   }
 };
 
-let activeTab = 'routes';
 let activeFocusRouteId = null;
 let mapInstance = null;
 let routeLayersHandler = null;
