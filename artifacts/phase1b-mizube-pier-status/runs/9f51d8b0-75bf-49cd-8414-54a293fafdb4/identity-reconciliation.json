@@ -1,17 +1,17 @@
 {
-  "runId": "bd531674-7f89-46dd-8fe1-295402520c63",
+  "runId": "9f51d8b0-75bf-49cd-8414-54a293fafdb4",
   "localHeadSha": "4ee85e1c71f47d0e85146170dc17b3e365f6b269",
   "originMainSha": "4ee85e1c71f47d0e85146170dc17b3e365f6b269",
-  "repairCommitSha": "4ee85e1c71f47d0e85146170dc17b3e365f6b269",
-  "repairCommitSubject": "docs: record verified Phase 1B evidence-truth-hardening artifacts",
-  "pagesWorkflowId": "30784094344",
-  "pagesWorkflowUrl": "https://github.com/t14210184/tokyo-waterbus-map/actions/runs/30784094344",
-  "pagesWorkflowHeadSha": "4ee85e1c71f47d0e85146170dc17b3e365f6b269",
+  "repairCommitSha": "a5af928057b29abacedbcd97f9c5d7f4a4996ae6",
+  "repairCommitSubject": "docs: refine Mizube Line suspension copy for ja and ko locales",
+  "pagesWorkflowId": "30784028970",
+  "pagesWorkflowUrl": "https://github.com/t14210184/tokyo-waterbus-map/actions/runs/30784028970",
+  "pagesWorkflowHeadSha": "a5af928057b29abacedbcd97f9c5d7f4a4996ae6",
   "pagesWorkflowConclusion": "success",
   "publicIndexUrl": "https://t14210184.github.io/tokyo-waterbus-map/",
   "publicIndexSha256": "e74986b941a794e70fdb9edfc18bf96826a1144c77c4f41bbef02a0e967819af",
   "publicJsUrl": "https://t14210184.github.io/tokyo-waterbus-map/assets/index-atlas.84eb4161.js",
   "publicJsSha256": "84eb416199161caf8ab5a904aa077405144985f3dc3fbe58408b5a108534bb14",
   "publicBundleEmbeddedCommit": "4ee85e1",
-  "allIdentityFieldsConsistent": true
+  "allIdentityFieldsConsistent": false
 }

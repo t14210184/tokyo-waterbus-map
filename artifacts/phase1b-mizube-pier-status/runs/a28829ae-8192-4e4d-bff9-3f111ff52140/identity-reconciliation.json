@@ -1,5 +1,5 @@
 {
-  "runId": "bd531674-7f89-46dd-8fe1-295402520c63",
+  "runId": "a28829ae-8192-4e4d-bff9-3f111ff52140",
   "localHeadSha": "4ee85e1c71f47d0e85146170dc17b3e365f6b269",
   "originMainSha": "4ee85e1c71f47d0e85146170dc17b3e365f6b269",
   "repairCommitSha": "4ee85e1c71f47d0e85146170dc17b3e365f6b269",
@@ -7,11 +7,11 @@
   "pagesWorkflowId": "30784094344",
   "pagesWorkflowUrl": "https://github.com/t14210184/tokyo-waterbus-map/actions/runs/30784094344",
   "pagesWorkflowHeadSha": "4ee85e1c71f47d0e85146170dc17b3e365f6b269",
-  "pagesWorkflowConclusion": "success",
+  "pagesWorkflowConclusion": null,
   "publicIndexUrl": "https://t14210184.github.io/tokyo-waterbus-map/",
-  "publicIndexSha256": "e74986b941a794e70fdb9edfc18bf96826a1144c77c4f41bbef02a0e967819af",
-  "publicJsUrl": "https://t14210184.github.io/tokyo-waterbus-map/assets/index-atlas.84eb4161.js",
-  "publicJsSha256": "84eb416199161caf8ab5a904aa077405144985f3dc3fbe58408b5a108534bb14",
-  "publicBundleEmbeddedCommit": "4ee85e1",
-  "allIdentityFieldsConsistent": true
+  "publicIndexSha256": "8cf4461a3db1f1d7c2cfdf99d2134c2f3ba574f56f3e433263ea7142d98ee27c",
+  "publicJsUrl": "https://t14210184.github.io/tokyo-waterbus-map/assets/index-atlas.85de68e5.js",
+  "publicJsSha256": "85de68e58b1600d6aaecc39d8ae8cf1d4a3e903a496db60047c2b8b313de4c6b",
+  "publicBundleEmbeddedCommit": "a5af928",
+  "allIdentityFieldsConsistent": false
 }

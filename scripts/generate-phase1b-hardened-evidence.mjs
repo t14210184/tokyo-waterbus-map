@@ -142,14 +142,15 @@ async function runHardenedPipeline() {
   const originMainSha = execSync('git rev-parse origin/main', { encoding: 'utf8' }).trim();
   const repairCommitSha = localHeadSha;
   const repairCommitSubject = execSync('git log -1 --pretty=%s', { encoding: 'utf8' }).trim();
+  const repairShortSha = repairCommitSha.substring(0, 7);
 
   // Fetch Pages workflow status from GitHub API
-  const runsRes = await fetch('https://api.github.com/repos/t14210184/tokyo-waterbus-map/actions/runs?per_page=10');
+  const runsRes = await fetch(`https://api.github.com/repos/t14210184/tokyo-waterbus-map/actions/runs?per_page=20&ts=${Date.now()}`);
   if (!runsRes.ok) throw new Error(`GitHub API error ${runsRes.status}`);
   const runsData = await runsRes.json();
-  const pagesRun = runsData.workflow_runs.find(r => r.head_sha === localHeadSha);
+  const pagesRun = runsData.workflow_runs.find(r => r.head_sha === repairCommitSha);
 
-  if (!pagesRun) throw new Error(`Could not find GitHub Pages workflow run for commit ${localHeadSha}`);
+  if (!pagesRun) throw new Error(`Could not find GitHub Pages workflow run for repair commit ${repairCommitSha}`);
 
   const publicIndexUrl = 'https://t14210184.github.io/tokyo-waterbus-map/';
   const idxRes = await fetch(`${publicIndexUrl}?ts=${Date.now()}`);
@@ -169,15 +170,13 @@ async function runHardenedPipeline() {
   const shaMatch = jsCode.match(/SHORT_SHA\s*=\s*['"]([^'"]+)['"]/);
   const publicBundleEmbeddedCommit = shaMatch ? shaMatch[1] : '';
 
-  const localShortSha = localHeadSha.substring(0, 7);
-
   const identityConsistent =
     localHeadSha === originMainSha &&
     localHeadSha === repairCommitSha &&
-    pagesRun.head_sha === localHeadSha &&
+    pagesRun.head_sha === repairCommitSha &&
     pagesRun.status === 'completed' &&
     pagesRun.conclusion === 'success' &&
-    publicBundleEmbeddedCommit === localShortSha;
+    publicBundleEmbeddedCommit === repairShortSha;
 
   const identityObj = {
     runId,
@@ -204,7 +203,7 @@ async function runHardenedPipeline() {
     console.error('❌ Identity reconciliation failed!', identityObj);
     process.exit(1);
   }
-  console.log(`✅ Deployment Identity Reconciled: ${localShortSha}, Workflow Run: ${pagesRun.id}`);
+  console.log(`✅ Deployment Identity Reconciled: ${repairShortSha}, Workflow Run: ${pagesRun.id}`);
 
   // Section 3: Audit Status Derivation
   console.log('🔍 Section 3: Auditing Status Association...');
@@ -576,9 +575,13 @@ async function runHardenedPipeline() {
       })()
     `);
 
-    // Verify required visible texts
-    const missingTexts = cfg.requiredTexts.filter(req => !visibleData.drawerVisibleText.includes(req));
-    const forbiddenFound = cfg.forbiddenTexts.filter(forb => visibleData.drawerVisibleText.includes(forb));
+    if (!visibleData) {
+      throw new Error(`Failed to evaluate visible DOM data for ${cfg.code}`);
+    }
+
+    const drawerVisibleText = visibleData.drawerVisibleText || '';
+    const missingTexts = cfg.requiredTexts.filter(req => !drawerVisibleText.includes(req));
+    const forbiddenFound = cfg.forbiddenTexts.filter(forb => drawerVisibleText.includes(forb));
 
     const exactVisibleTextPassed = missingTexts.length === 0 && forbiddenFound.length === 0;
 
