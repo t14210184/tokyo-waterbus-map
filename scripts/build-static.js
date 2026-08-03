@@ -18,39 +18,47 @@ const rootDir = path.resolve(__dirname, '..');
 const distDir = path.join(rootDir, 'dist');
 const assetsDir = path.join(distDir, 'assets');
 
-console.log('🚀 Running Pure-JS Static Production Builder for Tokyo Waterbus Atlas (v1.1.0-RC.3.23)...');
+// 0. Update src/data/version.js with canonical build identity module
+const pkgPath = path.join(rootDir, 'package.json');
+const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'));
+const productVersion = pkg.version || '1.0.0';
 
-// 0. Update src/data/version.js with real short Git commit SHA and build timestamp
-let shortSha = 'b2a5c6c';
+let shortSha = '35c1f86';
+let fullSha = '35c1f86887c0bd588724b85fbf6bfae1e5a57eb3';
 try {
-  shortSha = execSync('git rev-parse --short HEAD', { cwd: rootDir, encoding: 'utf8' }).trim() || 'b2a5c6c';
+  shortSha = execSync('git rev-parse --short HEAD', { cwd: rootDir, encoding: 'utf8' }).trim() || '35c1f86';
+  fullSha = execSync('git rev-parse HEAD', { cwd: rootDir, encoding: 'utf8' }).trim() || '35c1f86887c0bd588724b85fbf6bfae1e5a57eb3';
 } catch (e) {
   console.warn('Could not fetch git SHA, using fallback:', shortSha);
 }
 
 const buildIsoTimestamp = new Date().toISOString();
+const displayLabel = `v${productVersion} · ${shortSha}`;
+
 const versionContent = `/**
- * Version and Build Metadata Registry for Tokyo Waterbus Atlas (v1.1.0-RC.3.23)
+ * Canonical Build Identity Module for Tokyo Waterbus Atlas
  * Shared single source of truth for UI shell header, footer disclosures, and build assets.
  * Automatically injected/updated during \`npm run build\`.
  */
 
-export const VERSION = 'v1.1.0-RC.3.23';
+export const productVersion = '${productVersion}';
 export const SHORT_SHA = '${shortSha}';
+export const FULL_SHA = '${fullSha}';
+export const BUILD_ENVIRONMENT = 'production';
 export const BUILD_TIMESTAMP = '${buildIsoTimestamp}';
-export const ASSET_HASH = 'a420a80b';
-
-export function getFullVersionString() {
-  return \`\${VERSION} · \${SHORT_SHA}\`;
-}
+export const displayLabel = '${displayLabel}';
 
 export function getBuildMetadata() {
   return {
-    version: VERSION,
-    shortSha: SHORT_SHA,
+    productVersion,
+    fullCommit: FULL_SHA,
+    shortCommit: SHORT_SHA,
+    buildEnvironment: BUILD_ENVIRONMENT,
+    displayLabel,
     buildTimestamp: BUILD_TIMESTAMP,
-    assetHash: ASSET_HASH,
-    fullVersion: getFullVersionString()
+    version: \`v\${productVersion}\`,
+    shortSha: SHORT_SHA,
+    fullVersion: displayLabel
   };
 }
 `;

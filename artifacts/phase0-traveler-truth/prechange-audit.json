@@ -1,0 +1,74 @@
+{
+  "timestampUtc": "2026-08-03T05:27:23.156Z",
+  "localHeadFullSha": "35c1f86887c0bd588724b85fbf6bfae1e5a57eb3",
+  "originMainFullSha": "35c1f86887c0bd588724b85fbf6bfae1e5a57eb3",
+  "latestPagesWorkflowId": "30784190298",
+  "latestPagesWorkflowHeadSha": "35c1f86887c0bd588724b85fbf6bfae1e5a57eb3",
+  "latestPagesWorkflowConclusion": "success",
+  "publicIndexUrl": "https://t14210184.github.io/tokyo-waterbus-map/",
+  "publicJsUrl": "https://t14210184.github.io/tokyo-waterbus-map/assets/index-atlas.2527b8b3.js",
+  "publicBundleEmbeddedCommit": "35c1f86",
+  "visiblePublicBuildLabel": "v1.1.0-RC.3.23 · 35c1f86",
+  "identityFieldsConsistent": true,
+  "identityMismatchDetails": [],
+  "primaryNavigationItems": [
+    {
+      "id": "today",
+      "selector": ".tab-btn[data-tab=\"today\"]",
+      "labelZhTW": "今天狀態"
+    },
+    {
+      "id": "routes",
+      "selector": ".tab-btn[data-tab=\"routes\"]",
+      "labelZhTW": "航線"
+    },
+    {
+      "id": "piers",
+      "selector": ".tab-btn[data-tab=\"piers\"]",
+      "labelZhTW": "碼頭"
+    },
+    {
+      "id": "planner",
+      "selector": ".tab-btn[data-tab=\"planner\"]",
+      "labelZhTW": "行程規劃"
+    },
+    {
+      "id": "guide",
+      "selector": ".tab-btn[data-tab=\"guide\"]",
+      "labelZhTW": "攻略"
+    },
+    {
+      "id": "explore",
+      "selector": ".tab-btn[data-tab=\"explore\"]",
+      "labelZhTW": "探索"
+    }
+  ],
+  "developerItemsInPrimaryNavigation": [],
+  "visibleDemoLabels": [
+    "▶ 啟動離線示範",
+    "離線示範：非 GPS/AIS、非即時船位、非當日班次。航線為概略參考，不可用於導航或安全判斷。"
+  ],
+  "persistentNonLiveDisclosurePresent": true,
+  "operationalStatusModels": [
+    "getPierDerivedStatus in src/data/service-status.js",
+    "SERVICE_STATUS_REGISTRY in src/data/service-status.js"
+  ],
+  "sourceFields": [
+    "SOURCES in src/data/sources.js",
+    "officialUrl in src/data/piers.js"
+  ],
+  "publishedTimeFields": [
+    "publishedAt in src/data/sources.js"
+  ],
+  "checkedTimeFields": [
+    "lastUpdated in src/data/sources.js"
+  ],
+  "fetchedTimeFields": [],
+  "pierArrivalFields": [],
+  "mizubeRegressionRisks": [
+    "Tokyo Mizube Line service suspended since 2026-01-19 must retain official status-truth badge and link."
+  ],
+  "phase1bAuthoritativeRun": "acf33785-5020-410e-88ee-1a9caef387a6",
+  "phase1bNonAuthoritativeRuns": [],
+  "protectedFilesCleanBefore": true
+}

@@ -101,10 +101,6 @@ export function createUIShell(appContainer) {
               <span class="tab-icon">${ICONS.compass}</span>
               <span class="tab-label">${t('tabs.planner', '行程規劃')}</span>
             </button>
-            <button class="tab-btn" data-tab="guide" role="tab" aria-selected="false" aria-label="${t('tabs.guide', '攻略')}">
-              <span class="tab-icon">${ICONS.data}</span>
-              <span class="tab-label">${t('tabs.guide', '攻略')}</span>
-            </button>
             <button class="tab-btn" data-tab="explore" role="tab" aria-selected="false" aria-label="${t('tabs.explore', '探索')}">
               <span class="tab-icon">${ICONS.compass}</span>
               <span class="tab-label">${t('tabs.explore', '探索')}</span>
