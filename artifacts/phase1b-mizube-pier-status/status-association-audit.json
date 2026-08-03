@@ -1,0 +1,189 @@
+{
+  "runId": "a4b5531f-db26-46cb-88b8-4c1dfdd7fc83",
+  "allPiersResolvedTruthfully": true,
+  "piers": [
+    {
+      "pierId": "etchujima",
+      "pierName": "越中島碼頭 (Etchujima Pier)",
+      "servingOperators": [
+        "東京水辺ライン"
+      ],
+      "operatorStatusRecords": [
+        {
+          "operatorId": "tokyo-mizube-line",
+          "serviceState": "SUSPENDED",
+          "effectiveFrom": "2026-01-19"
+        }
+      ],
+      "derivedPierStatus": "SUSPENDED",
+      "activeServiceExists": false,
+      "suspensionReason": "replacement of aging vessels",
+      "officialSourceUrls": [
+        "https://www.tokyo-park.or.jp/water/waterbus/"
+      ],
+      "sourceFile": "src/data/piers.js",
+      "sourceDataPath": "PIERS[etchujima]"
+    },
+    {
+      "pierId": "ryogoku",
+      "pierName": "兩國 River Center 碼頭 (Ryogoku River Center Pier)",
+      "servingOperators": [
+        "東京水辺ライン"
+      ],
+      "operatorStatusRecords": [
+        {
+          "operatorId": "tokyo-mizube-line",
+          "serviceState": "SUSPENDED",
+          "effectiveFrom": "2026-01-19"
+        }
+      ],
+      "derivedPierStatus": "SUSPENDED",
+      "activeServiceExists": false,
+      "suspensionReason": "replacement of aging vessels",
+      "officialSourceUrls": [
+        "https://www.tokyo-park.or.jp/water/waterbus/"
+      ],
+      "sourceFile": "src/data/piers.js",
+      "sourceDataPath": "PIERS[ryogoku]"
+    },
+    {
+      "pierId": "sumida-office",
+      "pierName": "墨田區役所前碼頭 (Sumida City Office Pier)",
+      "servingOperators": [
+        "東京水辺ライン"
+      ],
+      "operatorStatusRecords": [
+        {
+          "operatorId": "tokyo-mizube-line",
+          "serviceState": "SUSPENDED",
+          "effectiveFrom": "2026-01-19"
+        }
+      ],
+      "derivedPierStatus": "SUSPENDED",
+      "activeServiceExists": false,
+      "suspensionReason": "replacement of aging vessels",
+      "officialSourceUrls": [
+        "https://www.tokyo-park.or.jp/water/waterbus/"
+      ],
+      "sourceFile": "src/data/piers.js",
+      "sourceDataPath": "PIERS[sumida-office]"
+    },
+    {
+      "pierId": "asakusa-nitenmon",
+      "pierName": "淺草二天門碼頭 (Asakusa Nitenmon Pier)",
+      "servingOperators": [
+        "東京水辺ライン"
+      ],
+      "operatorStatusRecords": [
+        {
+          "operatorId": "tokyo-mizube-line",
+          "serviceState": "SUSPENDED",
+          "effectiveFrom": "2026-01-19"
+        }
+      ],
+      "derivedPierStatus": "SUSPENDED",
+      "activeServiceExists": false,
+      "suspensionReason": "replacement of aging vessels",
+      "officialSourceUrls": [
+        "https://www.tokyo-park.or.jp/water/waterbus/"
+      ],
+      "sourceFile": "src/data/piers.js",
+      "sourceDataPath": "PIERS[asakusa-nitenmon]"
+    },
+    {
+      "pierId": "seiruka-garden",
+      "pierName": "聖路加花園前碼頭 (St. Luke's Garden Pier)",
+      "servingOperators": [
+        "東京水辺ライン"
+      ],
+      "operatorStatusRecords": [
+        {
+          "operatorId": "tokyo-mizube-line",
+          "serviceState": "SUSPENDED",
+          "effectiveFrom": "2026-01-19"
+        }
+      ],
+      "derivedPierStatus": "SUSPENDED",
+      "activeServiceExists": false,
+      "suspensionReason": "replacement of aging vessels",
+      "officialSourceUrls": [
+        "https://www.tokyo-park.or.jp/water/waterbus/"
+      ],
+      "sourceFile": "src/data/piers.js",
+      "sourceDataPath": "PIERS[seiruka-garden]"
+    },
+    {
+      "pierId": "waters-takeshiba",
+      "pierName": "WATERS takeshiba (竹芝碼頭)",
+      "servingOperators": [
+        "東京水辺ライン"
+      ],
+      "operatorStatusRecords": [
+        {
+          "operatorId": "tokyo-mizube-line",
+          "serviceState": "SUSPENDED",
+          "effectiveFrom": "2026-01-19"
+        }
+      ],
+      "derivedPierStatus": "SUSPENDED",
+      "activeServiceExists": false,
+      "suspensionReason": "replacement of aging vessels",
+      "officialSourceUrls": [
+        "https://www.tokyo-park.or.jp/water/waterbus/"
+      ],
+      "sourceFile": "src/data/piers.js",
+      "sourceDataPath": "PIERS[waters-takeshiba]"
+    },
+    {
+      "pierId": "kasai-rinkai",
+      "pierName": "葛西臨海公園碼頭 (Kasai Rinkai Park Pier)",
+      "servingOperators": [
+        "東京水辺ライン"
+      ],
+      "operatorStatusRecords": [
+        {
+          "operatorId": "tokyo-mizube-line",
+          "serviceState": "SUSPENDED",
+          "effectiveFrom": "2026-01-19"
+        }
+      ],
+      "derivedPierStatus": "SUSPENDED",
+      "activeServiceExists": false,
+      "suspensionReason": "replacement of aging vessels",
+      "officialSourceUrls": [
+        "https://www.tokyo-park.or.jp/water/waterbus/"
+      ],
+      "sourceFile": "src/data/piers.js",
+      "sourceDataPath": "PIERS[kasai-rinkai]"
+    },
+    {
+      "pierId": "odaiba-kaihinkouen",
+      "pierName": "台場海濱公園碼頭 (Odaiba Seaside Park Pier)",
+      "servingOperators": [
+        "TOKYO CRUISE",
+        "東京水辺ライン"
+      ],
+      "operatorStatusRecords": [
+        {
+          "operatorId": "tokyo-cruise",
+          "serviceState": "OPERATING",
+          "effectiveFrom": "2026-01-01"
+        },
+        {
+          "operatorId": "tokyo-mizube-line",
+          "serviceState": "SUSPENDED",
+          "effectiveFrom": "2026-01-19"
+        }
+      ],
+      "derivedPierStatus": "PARTIAL",
+      "activeServiceExists": true,
+      "suspensionReason": "Tokyo Mizube Line suspended; TOKYO CRUISE operating normally",
+      "officialSourceUrls": [
+        "https://www.suijobus.co.jp/en/cruise/odaiba/",
+        "https://www.tokyo-park.or.jp/water/waterbus/"
+      ],
+      "sourceFile": "src/data/piers.js",
+      "sourceDataPath": "PIERS[odaiba-kaihinkouen]"
+    }
+  ]
+}

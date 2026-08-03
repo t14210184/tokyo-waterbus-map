@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "runId": "d0f6318f-746c-4f46-a565-94cedf621482",
+  "timestampUtc": "2026-08-03T03:12:26.263Z",
+  "expectedCommitPrefix": "674dd34",
+  "observedCommit": "674dd34",
+  "publicJsUrl": "https://t14210184.github.io/tokyo-waterbus-map/assets/index-atlas.96a1648f.js",
+  "publicJsSha256": "96a1648f6d6eeab282011199ee9fa71fcb247b7cab7ec2f6ab27162c9c96175c",
+  "screenshots": [
+    {
+      "runId": "d0f6318f-746c-4f46-a565-94cedf621482",
+      "file": "desktop-zhTW-etchujima-suspended.png",
+      "publicUrl": "https://t14210184.github.io/tokyo-waterbus-map/?lang=zh-TW&evidenceRun=d0f6318f-746c-4f46-a565-94cedf621482&v=674dd34&ts=1785726680098",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "locale": "zh-TW",
+      "pierId": "etchujima",
+      "actualVisibleTexts": [
+        "碼頭詳細資訊 (PIER DETAILS)\n越中島碼頭\n越中島 / Etchujima Pier\n東京水辺ライン\n暫停營運\n營運商／觀光局資料\n⚠️\n東京水辺ライン：暫停營運\n自 2026 年 1 月 19 日起暫停營運，復航日期尚待官方公告。目前無法在此搭乘東京水辺ライン。出發前請查看官方公告。\n開啟東京水辺ライン官方營運公告\n官方確認提醒: 出發前請向營運商官方頁面確認當日實際營運班次與航線。\n可搭乘航線 (1 條)\n東京水辺ライン (廣域水路)\n鄰近交通車站\n•\nJR 京葉線 越中島站 (步行 5 分鐘)\n•\n東京 Metro 東陽町 / 門前仲町站 (步行 10 分鐘)\n周邊代表景點\n"
+      ],
+      "normalOperationTextPresent": false,
+      "suspensionTextPresent": true,
+      "officialUrl": "https://www.tokyo-park.or.jp/water/waterbus/",
+      "boardNowImplicationPresent": false,
+      "activeVesselImplicationPresent": false,
+      "pageExceptionCount": 0,
+      "consoleErrorCount": 0,
+      "failedRequestCount": 0,
+      "pngSha256": "d61bfe74242c9003ab795f46e64235524b460c1543b9bb714c8d9166d8a03bd1",
+      "pngByteSize": 466070,
+      "pngWidth": 1440,
+      "pngHeight": 900,
+      "uniqueRgbColorCount": 17193,
+      "visualValidationPassed": true,
+      "failureReasons": []
+    },
+    {
+      "runId": "d0f6318f-746c-4f46-a565-94cedf621482",
+      "file": "desktop-en-etchujima-suspended.png",
+      "publicUrl": "https://t14210184.github.io/tokyo-waterbus-map/?lang=en&evidenceRun=d0f6318f-746c-4f46-a565-94cedf621482&v=674dd34&ts=1785726712840",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "locale": "en",
+      "pierId": "etchujima",
+      "actualVisibleTexts": [
+        "碼頭詳細資訊 (PIER DETAILS)\n越中島碼頭\n越中島 / Etchujima Pier\n東京水辺ライン\nService Suspended\n營運商／觀光局資料\n⚠️\nTokyo Mizube Line: Service Suspended\nService suspended since January 19, 2026. Reopening date subject to official announcement. Boarding Tokyo Mizube Line is currently unavailable at this pier. Please check offic"
+      ],
+      "normalOperationTextPresent": false,
+      "suspensionTextPresent": true,
+      "officialUrl": "https://www.tokyo-park.or.jp/water/waterbus/",
+      "boardNowImplicationPresent": false,
+      "activeVesselImplicationPresent": false,
+      "pageExceptionCount": 0,
+      "consoleErrorCount": 0,
+      "failedRequestCount": 0,
+      "pngSha256": "fa9bdc9d366606a1aa5a161383c2c4167a7221276497d89689313968ffeaf4d2",
+      "pngByteSize": 586385,
+      "pngWidth": 1440,
+      "pngHeight": 900,
+      "uniqueRgbColorCount": 19695,
+      "visualValidationPassed": true,
+      "failureReasons": []
+    },
+    {
+      "runId": "d0f6318f-746c-4f46-a565-94cedf621482",
+      "file": "desktop-ja-etchujima-suspended.png",
+      "publicUrl": "https://t14210184.github.io/tokyo-waterbus-map/?lang=ja&evidenceRun=d0f6318f-746c-4f46-a565-94cedf621482&v=674dd34&ts=1785726718944",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "locale": "ja",
+      "pierId": "etchujima",
+      "actualVisibleTexts": [
+        "碼頭詳細資訊 (PIER DETAILS)\n越中島碼頭\n越中島 / Etchujima Pier\n東京水辺ライン\n運休中\n營運商／觀光局資料\n⚠️\n東京水辺ライン：全便運休中\n2026年1月19日より当面全便運休中。運航再開時期は公式発表をご確認ください。現在この乗り場から東京水辺ラインにご乗船いただけません。ご出発前に公式告知をご確認ください。\n東京水辺ライン公式運航告知を開く\n官方確認提醒: 出發前請向營運商官方頁面確認當日實際營運班次與航線。\n可搭乘航線 (1 條)\n東京水辺ライン (廣域水路)\n鄰近交通車站\n•\nJR 京葉線 越中島站 (步行 5 分鐘)\n•\n東京 Metro 東陽町 "
+      ],
+      "normalOperationTextPresent": false,
+      "suspensionTextPresent": true,
+      "officialUrl": "https://www.tokyo-park.or.jp/water/waterbus/",
+      "boardNowImplicationPresent": false,
+      "activeVesselImplicationPresent": false,
+      "pageExceptionCount": 0,
+      "consoleErrorCount": 0,
+      "failedRequestCount": 0,
+      "pngSha256": "f034224d4aff98e345d1a0443e2d613a69c2c3ac7185c33c338df9e97e76c701",
+      "pngByteSize": 582324,
+      "pngWidth": 1440,
+      "pngHeight": 900,
+      "uniqueRgbColorCount": 18228,
+      "visualValidationPassed": true,
+      "failureReasons": []
+    },
+    {
+      "runId": "d0f6318f-746c-4f46-a565-94cedf621482",
+      "file": "mobile-ko-etchujima-suspended.png",
+      "publicUrl": "https://t14210184.github.io/tokyo-waterbus-map/?lang=ko&evidenceRun=d0f6318f-746c-4f46-a565-94cedf621482&v=674dd34&ts=1785726739799",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "locale": "ko",
+      "pierId": "etchujima",
+      "actualVisibleTexts": [
+        "碼頭詳細資訊 (PIER DETAILS)\n越中島碼頭\n越中島 / Etchujima Pier\n東京水辺ライン\n운휴 중\n營運商／觀光局資料\n⚠️\n도쿄 미즈베 라인: 운휴 중\n2026년 1월 19일부터 운휴 중이며 재개 일자는 공식 고지를 확인하세요. 현재 이 선착장에서 도쿄 미즈베 라인 승선이 불가능합니다. 출발 전 공식 공지를 확인해 주세요.\n도쿄 미즈베 라인 공식 공지 열기\n官方確認提醒: 出發前請向營運商官方頁面確認當日實際營運班次與航線。\n可搭乘航線 (1 條)\n東京水辺ライン (廣域水路)\n鄰近交通車站\n•\nJR 京葉線 越中島站 (步行 5 分鐘)\n"
+      ],
+      "normalOperationTextPresent": false,
+      "suspensionTextPresent": true,
+      "officialUrl": "https://www.tokyo-park.or.jp/water/waterbus/",
+      "boardNowImplicationPresent": false,
+      "activeVesselImplicationPresent": false,
+      "pageExceptionCount": 0,
+      "consoleErrorCount": 0,
+      "failedRequestCount": 0,
+      "pngSha256": "dcfd888f3f8d1a682d30f681ef3d6ddead268c1d7c65799e85959c6008dca5de",
+      "pngByteSize": 150262,
+      "pngWidth": 390,
+      "pngHeight": 844,
+      "uniqueRgbColorCount": 9639,
+      "visualValidationPassed": true,
+      "failureReasons": []
+    }
+  ],
+  "phaseGate": "PUBLIC_MIZUBE_PIER_STATUS_TRUTH_VERIFIED",
+  "verified": true
+}

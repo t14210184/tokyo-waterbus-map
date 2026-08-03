@@ -1,0 +1,17 @@
+{
+  "runId": "a4b5531f-db26-46cb-88b8-4c1dfdd7fc83",
+  "localHeadSha": "a5af928057b29abacedbcd97f9c5d7f4a4996ae6",
+  "originMainSha": "a5af928057b29abacedbcd97f9c5d7f4a4996ae6",
+  "repairCommitSha": "a5af928057b29abacedbcd97f9c5d7f4a4996ae6",
+  "repairCommitSubject": "docs: refine Mizube Line suspension copy for ja and ko locales",
+  "pagesWorkflowId": "30784028970",
+  "pagesWorkflowUrl": "https://github.com/t14210184/tokyo-waterbus-map/actions/runs/30784028970",
+  "pagesWorkflowHeadSha": "a5af928057b29abacedbcd97f9c5d7f4a4996ae6",
+  "pagesWorkflowConclusion": "success",
+  "publicIndexUrl": "https://t14210184.github.io/tokyo-waterbus-map/",
+  "publicIndexSha256": "8cf4461a3db1f1d7c2cfdf99d2134c2f3ba574f56f3e433263ea7142d98ee27c",
+  "publicJsUrl": "https://t14210184.github.io/tokyo-waterbus-map/assets/index-atlas.85de68e5.js",
+  "publicJsSha256": "85de68e58b1600d6aaecc39d8ae8cf1d4a3e903a496db60047c2b8b313de4c6b",
+  "publicBundleEmbeddedCommit": "a5af928",
+  "allIdentityFieldsConsistent": true
+}
