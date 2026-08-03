@@ -84,24 +84,20 @@ export const PIER_ARRIVAL_CARDS = {
     },
     nearestTransit: {
       'zh-TW': [
-        '百合海鷗號 日之出站 (步行 2 分鐘)',
-        'JR 山手線 / 京濱東北線 濱松町站 南口 (步行 8 分鐘)',
-        '都營淺草線 / 大江戶線 大門站 (步行 10 分鐘)'
+        '百合海鷗號 日之出站 (約步行 2 分鐘)',
+        'JR 山手線 / 京濱東北線 濱松町站 (約步行 8 分鐘)'
       ],
       'en': [
-        'Yurikamome Line Hinode Sta (2 min walk)',
-        'JR Yamanote / Keihin-Tohoku Line Hamamatsucho Sta South Exit (8 min walk)',
-        'Toei Asakusa / Oedo Line Daimon Sta (10 min walk)'
+        'Yurikamome Line Hinode Sta (Approx. 2 min walk)',
+        'JR Yamanote / Keihin-Tohoku Line Hamamatsucho Sta (Approx. 8 min walk)'
       ],
       'ja': [
-        'ゆりかもめ 日の出駅 (徒歩2分)',
-        'JR山手線・京浜東北線 浜松町駅 南口 (徒歩8分)',
-        '都営浅草線・大江戸線 大門駅 (徒歩10分)'
+        'ゆりかもめ 日の出駅 (徒歩約2分)',
+        'JR山手線・京浜東北線 浜松町駅 (徒歩約8分)'
       ],
       'ko': [
-        '유리카모메 히노데역 (도보 2분)',
-        'JR 야마노테선/케이힌토호쿠선 하마마츠초역 남쪽 출구 (도보 8분)',
-        '도에이 아사쿠사선/오에도선 다이몬역 (도보 10분)'
+        '유리카모메 히노데역 (도보 약 2분)',
+        'JR 야마노테선/케이힌토호쿠선 하마마츠초역 (도보 약 8분)'
       ]
     },
     officialPierUrl: 'https://www.suijobus.co.jp/en/cruise/hinode/',

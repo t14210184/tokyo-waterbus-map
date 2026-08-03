@@ -58,9 +58,15 @@ export function renderPierDetailDrawer(container, pier, onClose, onFocusPierOnMa
           ⚠️ ${t('arrival.accessibilityPendingNotice', '無障礙設施與照片導覽：待官方現場核驗 (PENDING)')}
         </div>
 
-        <div style="margin-top: 0.5rem;">
+        <div style="margin-top: 0.5rem; display: flex; gap: 0.4rem; flex-wrap: wrap;">
           <a href="${arrivalGuidance.officialBoardingUrl}" target="_blank" rel="noopener noreferrer" class="arrival-guidance-boarding-link btn btn-secondary" style="font-size: 0.72rem; text-decoration: none; color: #38bdf8; border-color: #38bdf8;">
             ${ICONS.externalLink} ${t('arrival.officialBoardingLink', 'TOKYO CRUISE 日之出碼頭官方乘車/導覽頁面')}
+          </a>
+          <a href="${arrivalGuidance.mapLinks.google}" target="_blank" rel="noopener noreferrer" class="arrival-guidance-google-map btn btn-secondary" aria-label="Google 地圖官方地址搜尋" style="font-size: 0.72rem; text-decoration: none; color: #34d399; border-color: #34d399;">
+            ${ICONS.externalLink} Google Maps (地圖搜尋)
+          </a>
+          <a href="${arrivalGuidance.mapLinks.apple}" target="_blank" rel="noopener noreferrer" class="arrival-guidance-apple-map btn btn-secondary" aria-label="Apple 地圖官方地址搜尋" style="font-size: 0.72rem; text-decoration: none; color: #a78bfa; border-color: #a78bfa;">
+            ${ICONS.externalLink} Apple Maps (地圖搜尋)
           </a>
         </div>
       </div>

@@ -1,5 +1,5 @@
 /**
- * Source-Aware Pier Arrival Guidance Registry (Phase 0 Stage 7)
+ * Source-Aware Pier Arrival Guidance Registry (Phase 0 Final Closure)
  * Strictly distinguishes verified arrival guidance fields from unsupported/pending fields.
  */
 
@@ -15,19 +15,18 @@ export const PIER_ARRIVAL_GUIDANCE = {
       ko: '히노데 선착장'
     },
     officialBoardingUrl: 'https://www.suijobus.co.jp/en/cruise/hinode/',
-    address: '2-7-10 Kaigan, Minato-ku, Tokyo 105-0022',
+    address: '2-7-104 Kaigan, Minato-ku, Tokyo 105-0022',
     nearestStations: [
       { name: 'Yurikamome Hinode Station', walkMinutes: 2 },
-      { name: 'JR Yamanote / Keihin-Tohoku Line Hamamatsucho Station (South Exit)', walkMinutes: 8 },
-      { name: 'Toei Asakusa / Oedo Line Daimon Station', walkMinutes: 10 }
+      { name: 'JR Yamanote / Keihin-Tohoku Line Hamamatsucho Station', walkMinutes: 8 }
     ],
     walkingGuidance: [
-      'From Yurikamome Hinode Station, exit towards Kaigan-dori and walk 2 minutes east directly to the pier terminal building.',
-      'From JR Hamamatsucho Station South Exit, follow the pedestrian walkway towards Hinode Pier.'
+      'From Yurikamome Hinode Station, exit towards Kaigan-dori and walk approx 2 minutes east directly to the pier terminal building.',
+      'From JR Hamamatsucho Station, follow the pedestrian route towards Hinode Pier (approx 8 minutes walk).'
     ],
     mapLinks: {
-      google: 'https://maps.google.com/?q=Hinode+Pier+Tokyo',
-      apple: 'https://maps.apple.com/?q=Hinode+Pier+Tokyo'
+      google: 'https://www.google.com/maps/search/?api=1&query=Hinode+Pier+Tokyo+2-7-104+Kaigan',
+      apple: 'https://maps.apple.com/?address=2-7-104,Kaigan,Minato-ku,Tokyo'
     },
     accessibility: {
       status: 'PENDING', // Not inferred from imagery, awaiting official accessibility audit

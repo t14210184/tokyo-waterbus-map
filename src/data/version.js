@@ -5,11 +5,11 @@
  */
 
 export const productVersion = '1.0.0';
-export const SHORT_SHA = 'e1b4064';
-export const FULL_SHA = 'e1b406467bd9df67cea6a76931b4e7f66079c6f4';
+export const SHORT_SHA = '8829629';
+export const FULL_SHA = '88296299eae4b5f85fe203242203c5064bf4a64e';
 export const BUILD_ENVIRONMENT = 'production';
-export const BUILD_TIMESTAMP = '2026-08-03T05:37:02.265Z';
-export const displayLabel = 'v1.0.0 · e1b4064';
+export const BUILD_TIMESTAMP = '2026-08-03T12:27:51.485Z';
+export const displayLabel = 'v1.0.0 · 8829629';
 
 export function getBuildMetadata() {
   return {
