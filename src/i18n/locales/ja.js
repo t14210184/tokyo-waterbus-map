@@ -82,5 +82,31 @@ export const ja = {
     officialPortal: '事業者公式ポータル',
     lastValidated: '最終検証:',
     secondaryReviewBtn: 'データ品質と検証 (RGR)'
+  },
+  confidence: {
+    officialConfirmed: '公式確認済み',
+    officialConfirmedDesc: '公式告知ページへの直接リンク。',
+    timetableEstimate: '時刻表参考',
+    timetableEstimateDesc: '公開時刻表に基づく参考案内、リアルタイム船位ではありません。',
+    offlineStoryDemo: 'オフラインデモ',
+    offlineStoryDemoDesc: '手動起動による概念アニメーション。',
+    suspendedOrUnknown: '運休中または未確認',
+    suspendedOrUnknownDesc: '全便運休中または未確認のデータ。'
+  },
+  provenance: {
+    officialSourceLink: '公式ソースページ ↗',
+    publishedAt: '公式発表日時',
+    checkedAt: '手動検証日時',
+    fetchedAt: '自動取得日時',
+    referenceOnly: '参考データ。ご出発前に事業者公式ページをご確認ください。',
+    defaultLimitation: 'リアルタイム GPS/AIS ではありません。観光参考情報です。'
+  },
+  arrival: {
+    title: '発着場アクセス案内',
+    addressLabel: '住所',
+    stationsLabel: '最寄り駅・徒歩案内',
+    officialBoardingLink: '公式のりば・案内ページ ↗',
+    accessibilityPendingNotice: 'バリアフリー・写真案内：公式現地確認待ち (PENDING)',
+    nonHinodePendingNotice: 'この発着場のバリアフリー詳細および写真案内は公式確認前のため PENDING 状態です。'
   }
 };

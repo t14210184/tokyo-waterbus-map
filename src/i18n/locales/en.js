@@ -82,5 +82,31 @@ export const en = {
     officialPortal: 'Official Operator Portals',
     lastValidated: 'Last Verified:',
     secondaryReviewBtn: 'Data Quality & Review (RGR)'
+  },
+  confidence: {
+    officialConfirmed: 'Official Confirmed',
+    officialConfirmedDesc: 'Direct link to official status announcements.',
+    timetableEstimate: 'Timetable Estimate',
+    timetableEstimateDesc: 'Service estimate based on public operator timetables, not live AIS/GPS.',
+    offlineStoryDemo: 'Offline Demo',
+    offlineStoryDemoDesc: 'Manually activated concept demonstration animation.',
+    suspendedOrUnknown: 'Suspended or Unconfirmed',
+    suspendedOrUnknownDesc: 'Official service suspension or unverified date.'
+  },
+  provenance: {
+    officialSourceLink: 'Official Source Page ↗',
+    publishedAt: 'Official Publication Time',
+    checkedAt: 'Manual Verification Time',
+    fetchedAt: 'Automated Retrieval Time',
+    referenceOnly: 'Reference data. Check official operator page before travel.',
+    defaultLimitation: 'Not live GPS/AIS tracking. Reference itinerary guide only.'
+  },
+  arrival: {
+    title: 'Pier Arrival Guidance',
+    addressLabel: 'Address',
+    stationsLabel: 'Nearest Stations & Walking Guidance',
+    officialBoardingLink: 'Official Boarding & Access Guide ↗',
+    accessibilityPendingNotice: 'Accessibility & photo guide: Pending official on-site verification (PENDING)',
+    nonHinodePendingNotice: 'Accessibility and photo navigation for this pier are not yet verified from official sources and remain PENDING.'
   }
 };

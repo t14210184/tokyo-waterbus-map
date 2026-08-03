@@ -1,16 +1,15 @@
 /**
- * Pier Detail Drawer Component for Tokyo Waterbus Atlas (Phase 4A.3 Display Integrity Audit)
- * 100% pure SVG vector icons. Uses centralized display formatters for zero user-facing 'undefined' or missing values.
+ * Pier Detail Drawer Component for Tokyo Waterbus Atlas
+ * Integrates Pier Arrival Guidance Registry & Provenance Formatter.
  */
 
 import { ICONS } from '../assets/icons.js';
 import { ROUTES } from '../data/routes.js';
 import { LANDMARKS } from '../data/landmarks.js';
-import { atlasStore } from '../core/store.js';
-import { PIER_ARRIVAL_CARDS } from '../data/pier-arrival-cards.js';
-import { renderPierArrivalCard } from './pier-arrival-card.js';
 import { t } from '../i18n/index.js';
 import { getPierDerivedStatus } from '../data/service-status.js';
+import { getPierArrivalGuidance } from '../data/pier-arrival-guidance.js';
+import { renderProvenanceHtml } from '../core/provenance-formatter.js';
 import {
   displayLocalizedName,
   displayOperator,
@@ -31,12 +30,53 @@ export function renderPierDetailDrawer(container, pier, onClose, onFocusPierOnMa
   const isTokyoCruise = opText.includes('TOKYO');
   const operatorBadgeClass = isTokyoCruise ? 'badge-tokyo-cruise' : 'badge-mizube-line';
 
-  const cardData = PIER_ARRIVAL_CARDS[pier.id];
-  let cardHtml = '';
-  if (cardData) {
-    const dummyEl = document.createElement('div');
-    renderPierArrivalCard(cardData, dummyEl);
-    cardHtml = dummyEl.innerHTML;
+  // Arrival Guidance Integration (Phase 0 Stage 7)
+  const arrivalGuidance = getPierArrivalGuidance(pier.id);
+  const isHinode = pier.id === 'hinode';
+
+  let arrivalGuidanceHtml = '';
+  if (isHinode) {
+    arrivalGuidanceHtml = `
+      <div class="arrival-guidance-card card" style="background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 6px; padding: 0.75rem; margin-bottom: 0.85rem;">
+        <div style="font-weight: 700; color: #38bdf8; font-size: 0.85rem; margin-bottom: 0.4rem; display: flex; align-items: center; justify-content: space-between;">
+          <span>📍 ${t('arrival.title', '碼頭到達指引 (VERIFIED)')}</span>
+          <span class="badge badge-confidence-official" style="font-size: 0.68rem;">🟢 官方核驗</span>
+        </div>
+
+        <div class="arrival-guidance-address" style="font-size: 0.76rem; color: #f8fafc; margin-bottom: 0.4rem;">
+          <strong>${t('arrival.addressLabel', '地址')}:</strong> ${arrivalGuidance.address}
+        </div>
+
+        <div class="arrival-guidance-stations" style="font-size: 0.74rem; color: #cbd5e1; margin-bottom: 0.4rem; line-height: 1.45;">
+          <strong>${t('arrival.stationsLabel', '鄰近車站與步行指引')}:</strong>
+          <ul style="margin: 0.25rem 0 0 1.2rem; padding: 0;">
+            ${arrivalGuidance.nearestStations.map(st => `<li>${st.name} (${st.walkMinutes} min)</li>`).join('')}
+          </ul>
+        </div>
+
+        <div class="arrival-guidance-accessibility-status" style="margin-top: 0.4rem; font-size: 0.72rem; color: #f59e0b; background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); padding: 0.3rem 0.5rem; border-radius: 4px;">
+          ⚠️ ${t('arrival.accessibilityPendingNotice', '無障礙設施與照片導覽：待官方現場核驗 (PENDING)')}
+        </div>
+
+        <div style="margin-top: 0.5rem;">
+          <a href="${arrivalGuidance.officialBoardingUrl}" target="_blank" rel="noopener noreferrer" class="arrival-guidance-boarding-link btn btn-secondary" style="font-size: 0.72rem; text-decoration: none; color: #38bdf8; border-color: #38bdf8;">
+            ${ICONS.externalLink} ${t('arrival.officialBoardingLink', 'TOKYO CRUISE 日之出碼頭官方乘車/導覽頁面')}
+          </a>
+        </div>
+      </div>
+    `;
+  } else {
+    arrivalGuidanceHtml = `
+      <div class="arrival-guidance-card card" style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 6px; padding: 0.65rem; margin-bottom: 0.85rem;">
+        <div class="arrival-guidance-status" style="font-size: 0.75rem; color: #94a3b8; display: flex; align-items: center; justify-content: space-between;">
+          <span>📍 ${t('arrival.title', '碼頭到達指引')}</span>
+          <span class="badge badge-confidence-suspended" style="font-size: 0.68rem;">🔴 待官方核驗 (PENDING)</span>
+        </div>
+        <div style="font-size: 0.72rem; color: #64748b; margin-top: 0.3rem;">
+          ${t('arrival.nonHinodePendingNotice', '本碼頭無障礙詳細資訊與照片導覽尚未經官方現場核驗，狀態維持 PENDING。')}
+        </div>
+      </div>
+    `;
   }
 
   const confidenceInfo = displayConfidence(pier.confidence || 'official-reference');
@@ -65,6 +105,18 @@ export function renderPierDetailDrawer(container, pier, onClose, onFocusPierOnMa
     </div>
   ` : '';
 
+  const pierProvenanceHtml = renderProvenanceHtml({
+    confidenceLevelId: isSuspended ? 'SUSPENDED_OR_UNKNOWN' : 'OFFICIAL_CONFIRMED',
+    sourceType: 'official-operator',
+    officialUrl: pier.officialUrl || 'https://www.tokyo-park.or.jp/water/waterbus/',
+    publishedAt: isSuspended ? '2026-01-19T00:00:00Z' : '2026-01-01T00:00:00Z',
+    checkedAt: '2026-08-03T00:00:00Z',
+    fetchedAt: null,
+    limitationText: isSuspended
+      ? t('pierCard.mizubeLimitation', '東京水辺ライン全線暫停營運。無登船 CTA、無船位預測。出發前請確認官方告示。')
+      : t('pierCard.generalLimitation', '碼頭營運與航班表以營運商官方最新公告為準。')
+  });
+
   container.innerHTML = `
     <div class="pier-drawer-wrapper card" style="
       background: var(--surface-dark);
@@ -92,145 +144,67 @@ export function renderPierDetailDrawer(container, pier, onClose, onFocusPierOnMa
         </button>
       </div>
 
-      ${cardHtml}
+      ${suspensionNoticeHtml}
+      ${arrivalGuidanceHtml}
 
       <!-- Metadata Badges & Notice -->
       <div style="display: flex; align-items: center; gap: 0.45rem; flex-wrap: wrap; margin-bottom: 0.75rem;">
         <span class="badge ${operatorBadgeClass}">${opText}</span>
         <span class="badge ${statusInfo.class}" aria-label="${statusInfo.ariaLabel}">
-          ${statusInfo.icon} ${statusInfo.text}
+          ${statusInfo.text}
         </span>
-        <span class="badge ${confidenceInfo.class}">
-          ${confidenceInfo.icon} ${confidenceInfo.text}
-        </span>
+        <span class="badge badge-confidence-official">${confidenceInfo.text}</span>
       </div>
 
-      ${suspensionNoticeHtml}
-
-      <div style="background: rgba(255, 92, 100, 0.1); border-left: 3px solid var(--coral-500); padding: 0.55rem 0.75rem; border-radius: 4px; font-size: 0.73rem; color: var(--coral-400); margin-bottom: 0.85rem; line-height: 1.4; display: flex; gap: 0.4rem; align-items: flex-start;">
-        <span style="flex-shrink: 0; margin-top: 2px;">${ICONS.alert}</span>
-        <div>
-          <strong>官方確認提醒:</strong> 出發前請向營運商官方頁面確認當日實際營運班次與航線。
-        </div>
-      </div>
-
-      <!-- Available Routes Section -->
-      <div style="margin-bottom: 0.85rem;">
-        <h4 style="font-size: 0.82rem; font-weight: 700; color: #ffffff; margin: 0 0 0.45rem 0; display: flex; align-items: center; gap: 0.35rem;">
-          ${ICONS.map} 可搭乘航線 (${availableRoutes.length} 條)
-        </h4>
-        <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
-          ${availableRoutes.map(rt => `
-            <button class="btn btn-secondary btn-drawer-route" data-route-id="${rt.id}" aria-label="查看 ${rt.name?.zhHant || rt.id} 航線" style="padding: 0.3rem 0.6rem; font-size: 0.73rem; border-color: ${rt.color}; color: #ffffff;">
-              <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: ${rt.color}; margin-right: 0.3rem;"></span>
-              ${rt.name?.zhHant || rt.id}
-            </button>
-          `).join('')}
-        </div>
+      <!-- Action Toolbar -->
+      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.95rem;">
+        <button id="btn-drawer-focus-map" class="btn btn-secondary" style="font-size: 0.76rem; padding: 0.35rem 0.65rem;">
+          ${ICONS.resetView} 在地圖上定位
+        </button>
+        <button id="btn-drawer-prefill-planner" class="btn btn-secondary" style="font-size: 0.76rem; padding: 0.35rem 0.65rem; background: rgba(56, 189, 248, 0.15); color: #38bdf8; border-color: #38bdf8;">
+          ${ICONS.compass} 從此碼頭規劃行程
+        </button>
+        ${pier.officialUrl ? `
+          <a href="${pier.officialUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="font-size: 0.76rem; padding: 0.35rem 0.65rem; text-decoration: none;">
+            ${ICONS.externalLink} 官方頁面
+          </a>
+        ` : ''}
       </div>
 
       <!-- Nearest Transit Section -->
-      <div style="margin-bottom: 0.85rem;">
-        <h4 style="font-size: 0.82rem; font-weight: 700; color: #ffffff; margin: 0 0 0.45rem 0; display: flex; align-items: center; gap: 0.35rem;">
-          ${ICONS.transit} 鄰近交通車站
-        </h4>
-        <div style="background: rgba(7, 25, 35, 0.6); padding: 0.55rem 0.75rem; border-radius: 6px; border: 1px solid var(--glass-border);">
-          ${transitList.map(t => `
-            <div style="font-size: 0.75rem; color: var(--ocean-200); margin-bottom: 0.25rem; display: flex; align-items: center; gap: 0.35rem;">
-              <span>•</span> <span>${t}</span>
-            </div>
-          `).join('')}
+      <div style="margin-bottom: 0.9rem;">
+        <div style="font-size: 0.75rem; font-weight: 600; color: var(--ocean-200); margin-bottom: 0.35rem;">
+          鄰近交通車站
+        </div>
+        <div style="font-size: 0.78rem; color: #cbd5e1; background: rgba(0, 0, 0, 0.3); padding: 0.5rem 0.65rem; border-radius: 4px; line-height: 1.45;">
+          ${transitList}
         </div>
       </div>
 
-      <!-- Nearby Landmarks Section -->
-      <div style="margin-bottom: 0.85rem;">
-        <h4 style="font-size: 0.82rem; font-weight: 700; color: #ffffff; margin: 0 0 0.45rem 0; display: flex; align-items: center; gap: 0.35rem;">
-          ${ICONS.compass} 周邊代表景點
-        </h4>
-        <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
-          ${nearbyLandmarks.map(lm => `
-            <span style="font-size: 0.72rem; color: var(--ocean-200); background: rgba(19, 185, 199, 0.1); padding: 0.2rem 0.5rem; border-radius: 4px; border: 1px solid rgba(19, 185, 199, 0.2); display: inline-flex; align-items: center; gap: 0.25rem;">
-              ${ICONS.pier} ${lm.name?.zhHant || lm.id}
-            </span>
-          `).join('')}
-        </div>
-      </div>
-
-      <!-- Prefill Planner Buttons -->
-      <div style="display: flex; gap: 0.45rem; margin-bottom: 0.75rem; border-top: 1px dashed var(--glass-border); padding-top: 0.75rem;">
-        <button id="btn-prefill-origin" class="btn btn-secondary" aria-label="將 ${nameInfo.main} 設為出發碼頭" style="flex: 1; font-size: 0.73rem; min-height: 34px; color: var(--emerald-500); border-color: rgba(22, 161, 91, 0.4);">
-          ${ICONS.origin} 設為出發碼頭
-        </button>
-        <button id="btn-prefill-dest" class="btn btn-secondary" aria-label="將 ${nameInfo.main} 設為抵達碼頭" style="flex: 1; font-size: 0.73rem; min-height: 34px; color: var(--coral-400); border-color: rgba(255, 92, 100, 0.4);">
-          ${ICONS.destination} 設為抵達碼頭
-        </button>
-      </div>
-
-      <!-- Action Buttons -->
-      <div style="display: flex; gap: 0.45rem; margin-top: 0.55rem;">
-        <button id="btn-drawer-focus-pier" class="btn btn-primary" aria-label="在地圖聚焦 ${nameInfo.main}" style="flex: 1; font-size: 0.75rem; min-height: 36px;">
-          ${ICONS.focus} 在地圖聚焦
-        </button>
-        <a href="${pier.officialUrl || 'https://www.suijobus.co.jp/en/'}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" aria-label="前往 ${opText} 官方網頁" style="flex: 1; text-decoration: none; font-size: 0.75rem; min-height: 36px;">
-          ${ICONS.externalLink} 官方頁面
-        </a>
-      </div>
-
-      <!-- Disclaimer Footer -->
-      <div style="font-size: 0.68rem; color: var(--ink-400); margin-top: 0.85rem; text-align: center; border-top: 1px dashed var(--glass-border); padding-top: 0.55rem;">
-        本頁為旅遊與路線規劃參考；季節、天候及營運調整請以官方公告為準。
-      </div>
+      ${pierProvenanceHtml}
     </div>
   `;
 
-  // Attach Event Listeners
+  // Bind Drawer Event Listeners
   const closeBtn = container.querySelector('#btn-close-pier-drawer');
   if (closeBtn) {
     closeBtn.addEventListener('click', () => {
-      atlasStore.setState({
-        pierExplorer: { ...atlasStore.getState().pierExplorer, selectedPierId: null, drawerOpen: false },
-        ui: { ...atlasStore.getState().ui, pierDrawerOpen: false, mobileSheetMode: 'none' }
-      });
-      if (onClose) onClose();
+      container.style.display = 'none';
+      if (typeof onClose === 'function') onClose();
     });
   }
 
-  const prefillOriginBtn = container.querySelector('#btn-prefill-origin');
-  if (prefillOriginBtn) {
-    prefillOriginBtn.addEventListener('click', () => {
-      atlasStore.setState({
-        planner: { ...atlasStore.getState().planner, originPierId: pier.id },
-        pierExplorer: { ...atlasStore.getState().pierExplorer, drawerOpen: false },
-        ui: { ...atlasStore.getState().ui, activeTab: 'guide', pierDrawerOpen: false, mobileSheetMode: 'planner' }
-      });
-      if (onPrefillPlanner) onPrefillPlanner('origin', pier.id);
+  const focusMapBtn = container.querySelector('#btn-drawer-focus-map');
+  if (focusMapBtn) {
+    focusMapBtn.addEventListener('click', () => {
+      if (typeof onFocusPierOnMap === 'function') onFocusPierOnMap(pier);
     });
   }
 
-  const prefillDestBtn = container.querySelector('#btn-prefill-dest');
-  if (prefillDestBtn) {
-    prefillDestBtn.addEventListener('click', () => {
-      atlasStore.setState({
-        planner: { ...atlasStore.getState().planner, destinationPierId: pier.id },
-        pierExplorer: { ...atlasStore.getState().pierExplorer, drawerOpen: false },
-        ui: { ...atlasStore.getState().ui, activeTab: 'guide', pierDrawerOpen: false, mobileSheetMode: 'planner' }
-      });
-      if (onPrefillPlanner) onPrefillPlanner('destination', pier.id);
+  const prefillPlannerBtn = container.querySelector('#btn-drawer-prefill-planner');
+  if (prefillPlannerBtn) {
+    prefillPlannerBtn.addEventListener('click', () => {
+      if (typeof onPrefillPlanner === 'function') onPrefillPlanner(pier);
     });
   }
-
-  const focusPierBtn = container.querySelector('#btn-drawer-focus-pier');
-  if (focusPierBtn) {
-    focusPierBtn.addEventListener('click', () => {
-      if (onFocusPierOnMap) onFocusPierOnMap(pier.id);
-    });
-  }
-
-  container.querySelectorAll('.btn-drawer-route').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      const rId = e.currentTarget.getAttribute('data-route-id');
-      if (onFocusRoute) onFocusRoute(rId);
-    });
-  });
 }

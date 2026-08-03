@@ -82,5 +82,31 @@ export const zhTW = {
     officialPortal: '官方營運資訊門戶',
     lastValidated: '最後資料校驗:',
     secondaryReviewBtn: '資料品質與審核 (RGR)'
+  },
+  confidence: {
+    officialConfirmed: '官方核驗',
+    officialConfirmedDesc: '直接連結當日官方營運及公告頁面。',
+    timetableEstimate: '時刻表參考',
+    timetableEstimateDesc: '依據公開官方班表推算之服務區間，非 AIS/GPS 即時船位。',
+    offlineStoryDemo: '離線示範',
+    offlineStoryDemoDesc: '使用者手動觸發之純概念幾何示範動畫。',
+    suspendedOrUnknown: '暫停或待確認',
+    suspendedOrUnknownDesc: '官方宣布暫停營運或缺乏當日驗證資料。'
+  },
+  provenance: {
+    officialSourceLink: '官方來源頁面 ↗',
+    publishedAt: '官方發布時間',
+    checkedAt: '人工校驗時間',
+    fetchedAt: '自動抓取時間',
+    referenceOnly: '參考資料。出發前請向營運商官方頁面確認當日實際營運班次與航線。',
+    defaultLimitation: '非即時 GPS/AIS 追蹤。資料僅供旅遊行程參考。'
+  },
+  arrival: {
+    title: '碼頭到達指引',
+    addressLabel: '地址',
+    stationsLabel: '鄰近車站與步行指引',
+    officialBoardingLink: '官方乘車/導覽頁面 ↗',
+    accessibilityPendingNotice: '無障礙設施與照片導覽：待官方現場核驗 (PENDING)',
+    nonHinodePendingNotice: '本碼頭無障礙詳細資訊與照片導覽尚未經官方現場核驗，狀態維持 PENDING。'
   }
 };

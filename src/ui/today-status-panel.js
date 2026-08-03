@@ -1,14 +1,42 @@
 /**
- * "Today Status" (今天狀態) Panel Renderer for Tokyo Waterbus Atlas (v1.1.0-RC.3.22)
+ * "Today Status" (今天狀態) Panel Renderer for Tokyo Waterbus Atlas
  * Truthful status layer with official operator links, timestamps, and service states.
+ * Consumes Information Confidence Model & Provenance Formatter.
  */
 
 import { ICONS } from '../assets/icons.js';
 import { SERVICE_STATUS_REGISTRY } from '../data/service-status.js';
+import { renderProvenanceHtml } from '../core/provenance-formatter.js';
+import { getConfidenceModel } from '../data/information-confidence.js';
 import { t } from '../i18n/index.js';
 
 export function renderTodayStatusPanel(container) {
+  if (!container) return;
+
   const mizubeStatus = SERVICE_STATUS_REGISTRY.operators['tokyo-mizube-line'];
+
+  const tokyoCruiseModel = getConfidenceModel('TIMETABLE_ESTIMATE');
+  const mizubeModel = getConfidenceModel('SUSPENDED_OR_UNKNOWN');
+
+  const tokyoCruiseProvenanceHtml = renderProvenanceHtml({
+    confidenceLevelId: 'TIMETABLE_ESTIMATE',
+    sourceType: 'official-operator',
+    officialUrl: 'https://www.suijobus.co.jp/guide/operation/',
+    publishedAt: '2026-01-01T00:00:00Z',
+    checkedAt: '2026-08-03T00:00:00Z',
+    fetchedAt: null,
+    limitationText: t('todayPanel.tokyoCruiseLimitation', '此為官方班表與營運連結參考，非即時 AIS/GPS 船位。')
+  });
+
+  const mizubeProvenanceHtml = renderProvenanceHtml({
+    confidenceLevelId: 'SUSPENDED_OR_UNKNOWN',
+    sourceType: 'official-operator',
+    officialUrl: mizubeStatus.sourceUrl,
+    publishedAt: '2026-01-19T00:00:00Z',
+    checkedAt: '2026-08-03T00:00:00Z',
+    fetchedAt: null,
+    limitationText: t('todayPanel.mizubeLimitation', '東京水辺ライン全線暫停營運。目前不提供即時船位、預測位置或登船 CTA。出發前請造訪官方營運公告。')
+  });
 
   container.innerHTML = `
     <div class="today-status-panel-wrapper" style="padding: 0.15rem 0;">
@@ -18,8 +46,8 @@ export function renderTodayStatusPanel(container) {
           <h2 style="font-size: 1rem; font-weight: 700; color: #ffffff; margin: 0; display: flex; align-items: center; gap: 0.4rem;">
             ${ICONS.ship} ${t('todayPanel.title', '今日營運狀態與官方連結')}
           </h2>
-          <span class="badge" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid #38bdf8;">
-            ${t('todayPanel.badge', 'OFFICIAL LINKS')}
+          <span class="badge ${tokyoCruiseModel.badgeClass}" style="font-size: 0.68rem; font-weight: 600;">
+            ${tokyoCruiseModel.symbol} ${t('todayPanel.badge', 'OFFICIAL LINKS')}
           </span>
         </div>
 
@@ -34,8 +62,8 @@ export function renderTodayStatusPanel(container) {
           <h3 style="font-size: 0.95rem; font-weight: 700; color: #ffffff; margin: 0;">
             ${t('todayPanel.tokyoCruiseTitle', 'TOKYO CRUISE (東京都觀光汽船)')}
           </h3>
-          <span class="badge" style="background: rgba(16, 185, 129, 0.18); color: #10b981; border: 1px solid #10b981; font-weight: 600;">
-            ${t('todayPanel.tokyoCruiseStatus', '正常狀態待官方確認')}
+          <span class="badge ${tokyoCruiseModel.badgeClass}" style="font-weight: 600;">
+            ${tokyoCruiseModel.symbol} ${t('todayPanel.tokyoCruiseStatus', '正常狀態待官方確認')}
           </span>
         </div>
 
@@ -43,11 +71,7 @@ export function renderTodayStatusPanel(container) {
           ${t('todayPanel.tokyoCruiseDesc', '隅田川線、淺草-台場直航線、日之出-台場線等常態航班，請點擊下方官方連結查看今日最新動態與航班表。')}
         </div>
 
-        <div style="font-size: 0.72rem; color: #94a3b8; margin-bottom: 0.6rem;">
-          ${t('todayPanel.checkBasis', '查核依據：公開時刻表與官方告示 ｜ 查核時間：2026-08-02')}
-        </div>
-
-        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.5rem;">
           <a href="https://www.suijobus.co.jp/guide/operation/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="font-size: 0.73rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.3rem; background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid #38bdf8;">
             ${ICONS.externalLink} ${t('todayPanel.tokyoCruiseAction', 'TOKYO CRUISE 今日運航狀況')}
           </a>
@@ -55,6 +79,8 @@ export function renderTodayStatusPanel(container) {
             ${ICONS.externalLink} ${t('todayPanel.tokyoCruiseTimetableAction', '官方時刻表與票價')}
           </a>
         </div>
+
+        ${tokyoCruiseProvenanceHtml}
       </div>
 
       <!-- Operator 2: 東京水辺ライン (SUSPENDED) -->
@@ -63,8 +89,8 @@ export function renderTodayStatusPanel(container) {
           <h3 style="font-size: 0.95rem; font-weight: 700; color: #ffffff; margin: 0;">
             ${mizubeStatus.name}
           </h3>
-          <span class="badge" style="background: rgba(239, 68, 68, 0.2); color: #ef4444; border: 1px solid #ef4444; font-weight: 600;">
-            ${t('todayPanel.mizubeStatusLabel', '暫停營運')}
+          <span class="badge ${mizubeModel.badgeClass}" style="font-weight: 600;">
+            ${mizubeModel.symbol} ${t('todayPanel.mizubeStatusLabel', '暫停營運')}
           </span>
         </div>
 
@@ -72,13 +98,11 @@ export function renderTodayStatusPanel(container) {
           ${mizubeStatus.publicMessage}
         </div>
 
-        <div style="font-size: 0.72rem; color: #94a3b8; margin-bottom: 0.6rem;">
-          生效日期：${mizubeStatus.effectiveFrom} ｜ 官方預計復航：${mizubeStatus.expectedResume} (待官方發布) ｜ 查核時間：2026-08-02
-        </div>
-
-        <a href="${mizubeStatus.sourceUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="font-size: 0.73rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.3rem; border-color: rgba(239, 68, 68, 0.4); color: #fca5a5;">
+        <a href="${mizubeStatus.sourceUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="font-size: 0.73rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.3rem; border-color: rgba(239, 68, 68, 0.4); color: #fca5a5; margin-bottom: 0.5rem;">
           ${ICONS.externalLink} ${t('todayPanel.mizubeAction', '點此開啟東京水辺ライン官方營運公告')}
         </a>
+
+        ${mizubeProvenanceHtml}
       </div>
 
       <!-- Footer Disclosure Statement -->

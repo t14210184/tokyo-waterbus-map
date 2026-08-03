@@ -82,5 +82,31 @@ export const ko = {
     officialPortal: '운항사 공식 포털',
     lastValidated: '최종 검증:',
     secondaryReviewBtn: '데이터 품질 및 검증 (RGR)'
+  },
+  confidence: {
+    officialConfirmed: '공식 확인됨',
+    officialConfirmedDesc: '공식 공지 페이지 직접 링크.',
+    timetableEstimate: '시각표 참고',
+    timetableEstimateDesc: '공개 시각표 기준 참고 안내, 실시간 선박 위치가 아닙니다.',
+    offlineStoryDemo: '오프라인 데모',
+    offlineStoryDemoDesc: '수동 실행 개념 데모 애니메이션.',
+    suspendedOrUnknown: '운휴 중 또는 미확인',
+    suspendedOrUnknownDesc: '운휴 중 또는 미확인 데이터.'
+  },
+  provenance: {
+    officialSourceLink: '공식 출처 페이지 ↗',
+    publishedAt: '공식 발표 일시',
+    checkedAt: '수동 검증 일시',
+    fetchedAt: '자동 수집 일시',
+    referenceOnly: '참고 데이터. 출발 전 운항사 공식 페이지를 확인하세요.',
+    defaultLimitation: '실시간 GPS/AIS 추적이 아닙니다. 여행 참고 정보입니다.'
+  },
+  arrival: {
+    title: '선착장 도착 안내',
+    addressLabel: '주소',
+    stationsLabel: '인근 역 및 도보 안내',
+    officialBoardingLink: '공식 승선·안내 페이지 ↗',
+    accessibilityPendingNotice: '배리어 프리·사진 안내: 공식 현장 검증 대기 (PENDING)',
+    nonHinodePendingNotice: '이 선착장의 배리어 프리 상세 및 사진 안내는 공식 확인 전이므로 PENDING 상태입니다.'
   }
-};
+ };
