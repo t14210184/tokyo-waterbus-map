@@ -5,8 +5,8 @@
  */
 
 export const VERSION = 'v1.1.0-RC.3.23';
-export const SHORT_SHA = '972871c';
-export const BUILD_TIMESTAMP = '2026-08-03T03:03:10.859Z';
+export const SHORT_SHA = '674dd34';
+export const BUILD_TIMESTAMP = '2026-08-03T04:17:30.327Z';
 export const ASSET_HASH = 'a420a80b';
 
 export function getFullVersionString() {
