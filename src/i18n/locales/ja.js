@@ -69,7 +69,14 @@ export const ja = {
     missedFallbackTitle: '乗り遅れ・運休時の迂回案内：',
     missedFallbackDesc: '公式告知をご確認の上、必要に応じて地下鉄またはJRをご利用ください。',
     provenanceTitle: 'データソース・検証日時：',
-    provenanceDesc: 'データ元：事業者公式告知 ｜ 最終検証日時：'
+    provenanceDesc: 'データ元：事業者公式告知 ｜ 最終検証日時：',
+    mizubeSuspensionTitle: '東京水辺ライン：全便運休中',
+    mizubeSuspensionBody: '2026年1月19日より当面全便運休中。運航再開時期は公式発表をご確認ください。現在この乗り場から東京水辺ラインにご乗船いただけません。ご出発前に公式告知をご確認ください。',
+    mizubeSuspensionLink: '東京水辺ライン公式運航告知を開く',
+    statusActive: '通常運航',
+    statusSuspended: '運休中',
+    statusPartial: '一部運航（運休路線を含む）',
+    statusVerify: '公式要確認'
   },
   footer: {
     officialPortal: '事業者公式ポータル',

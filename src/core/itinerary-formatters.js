@@ -5,6 +5,8 @@
 
 import { ICONS } from '../assets/icons.js';
 import { ROUTES } from '../data/routes.js';
+import { t } from '../i18n/index.js';
+import { getPierDerivedStatus } from '../data/service-status.js';
 
 /**
  * Safely format text value with fallback
@@ -54,18 +56,40 @@ export function displayComboboxLabel(pier) {
  * Format Pier Operation Status into localized badge metadata
  */
 export function displayPierStatus(pier) {
-  const status = displayText(pier?.status).toLowerCase();
+  const derived = getPierDerivedStatus(pier);
+  const rawStatus = displayText(pier?.status).toLowerCase();
 
-  if (status === 'active') {
+  if (derived.statusState === 'SUSPENDED' || rawStatus === 'suspended') {
+    const text = t('pierCard.statusSuspended', '暫停營運');
     return {
-      text: '常態營運',
-      class: 'status-active',
-      icon: ICONS.check,
-      ariaLabel: '狀態：常態營運'
+      text,
+      class: 'status-inactive',
+      icon: ICONS.alert,
+      ariaLabel: `狀態：${text}`
     };
   }
 
-  if (status === 'seasonal') {
+  if (derived.statusState === 'PARTIAL') {
+    const text = t('pierCard.statusPartial', '部分營運（包含暫停航線）');
+    return {
+      text,
+      class: 'status-seasonal',
+      icon: ICONS.alert,
+      ariaLabel: `狀態：${text}`
+    };
+  }
+
+  if (rawStatus === 'active' || derived.statusState === 'ACTIVE') {
+    const text = t('pierCard.statusActive', '常態營運');
+    return {
+      text,
+      class: 'status-active',
+      icon: ICONS.check,
+      ariaLabel: `狀態：${text}`
+    };
+  }
+
+  if (rawStatus === 'seasonal') {
     return {
       text: '季節性營運',
       class: 'status-seasonal',
@@ -74,26 +98,28 @@ export function displayPierStatus(pier) {
     };
   }
 
-  if (status === 'verification-needed' || status === 'verify' || status === 'unverified') {
+  if (rawStatus === 'verification-needed' || rawStatus === 'verify' || rawStatus === 'unverified') {
+    const text = t('pierCard.statusVerify', '請向官方確認');
     return {
-      text: '請向官方確認',
+      text,
       class: 'status-verify',
       icon: ICONS.alert,
-      ariaLabel: '狀態：請向官方確認'
+      ariaLabel: `狀態：${text}`
     };
   }
 
-  if (status === 'inactive' || status === 'historical') {
+  if (rawStatus === 'inactive' || rawStatus === 'historical') {
+    const text = t('pierCard.statusSuspended', '暫停／歷史碼頭');
     return {
-      text: '暫停／歷史碼頭',
+      text,
       class: 'status-inactive',
       icon: ICONS.alert,
-      ariaLabel: '狀態：暫停或歷史碼頭'
+      ariaLabel: `狀態：${text}`
     };
   }
 
   return {
-    text: '資料待確認',
+    text: t('pierCard.statusVerify', '資料待確認'),
     class: 'status-verify',
     icon: ICONS.alert,
     ariaLabel: '狀態：資料待確認'

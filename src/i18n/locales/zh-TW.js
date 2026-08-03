@@ -69,7 +69,14 @@ export const zhTW = {
     missedFallbackTitle: '錯過班次或臨時停航應變：',
     missedFallbackDesc: '請即時查看官方告示，並依需求改搭地下鐵或 JR 鐵路路線。',
     provenanceTitle: '資料來源與校驗：',
-    provenanceDesc: '資料來源：官方網站公告 ｜ 最後校驗時間：'
+    provenanceDesc: '資料來源：官方網站公告 ｜ 最後校驗時間：',
+    mizubeSuspensionTitle: '東京水辺ライン：暫停營運',
+    mizubeSuspensionBody: '自 2026 年 1 月 19 日起暫停營運，復航日期尚待官方公告。目前無法在此搭乘東京水辺ライン。出發前請查看官方公告。',
+    mizubeSuspensionLink: '開啟東京水辺ライン官方營運公告',
+    statusActive: '常態營運',
+    statusSuspended: '暫停營運',
+    statusPartial: '部分營運（包含暫停航線）',
+    statusVerify: '請向官方確認'
   },
   footer: {
     officialPortal: '官方營運資訊門戶',

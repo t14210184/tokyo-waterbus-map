@@ -10,6 +10,7 @@ import { atlasStore } from '../core/store.js';
 import { PIER_ARRIVAL_CARDS } from '../data/pier-arrival-cards.js';
 import { renderPierArrivalCard } from './pier-arrival-card.js';
 import { t } from '../i18n/index.js';
+import { getPierDerivedStatus } from '../data/service-status.js';
 import {
   displayLocalizedName,
   displayOperator,
@@ -23,6 +24,9 @@ export function renderPierDetailDrawer(container, pier, onClose, onFocusPierOnMa
 
   const nameInfo = displayLocalizedName(pier);
   const statusInfo = displayPierStatus(pier);
+  const derivedStatus = getPierDerivedStatus(pier);
+  const isSuspended = derivedStatus.statusState === 'SUSPENDED' || pier.status === 'suspended';
+
   const opText = displayOperator(pier);
   const isTokyoCruise = opText.includes('TOKYO');
   const operatorBadgeClass = isTokyoCruise ? 'badge-tokyo-cruise' : 'badge-mizube-line';
@@ -46,6 +50,20 @@ export function renderPierDetailDrawer(container, pier, onClose, onFocusPierOnMa
   });
 
   const transitList = displayTransit(pier.nearestTransit);
+
+  const suspensionNoticeHtml = isSuspended ? `
+    <div class="mizube-suspension-disclosure" style="background: rgba(239, 68, 68, 0.15); border: 1px solid #ef4444; border-radius: 6px; padding: 0.75rem; margin-bottom: 0.85rem;">
+      <div style="font-weight: 700; color: #ef4444; font-size: 0.85rem; margin-bottom: 0.35rem; display: flex; align-items: center; gap: 0.35rem;">
+        <span>⚠️</span> ${t('pierCard.mizubeSuspensionTitle', '東京水辺ライン：暫停營運')}
+      </div>
+      <div style="font-size: 0.76rem; color: #fca5a5; line-height: 1.5; margin-bottom: 0.5rem;">
+        ${t('pierCard.mizubeSuspensionBody', '自 2026 年 1 月 19 日起暫停營運，復航日期尚待官方公告。目前無法在此搭乘東京水辺ライン。出發前請查看官方公告。')}
+      </div>
+      <a href="${pier.officialUrl || 'https://www.tokyo-park.or.jp/water/waterbus/'}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="font-size: 0.73rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.3rem; border-color: rgba(239, 68, 68, 0.5); color: #fca5a5; background: rgba(239, 68, 68, 0.1);">
+        ${ICONS.externalLink} ${t('pierCard.mizubeSuspensionLink', '開啟東京水辺ライン官方營運公告')}
+      </a>
+    </div>
+  ` : '';
 
   container.innerHTML = `
     <div class="pier-drawer-wrapper card" style="
@@ -86,6 +104,8 @@ export function renderPierDetailDrawer(container, pier, onClose, onFocusPierOnMa
           ${confidenceInfo.icon} ${confidenceInfo.text}
         </span>
       </div>
+
+      ${suspensionNoticeHtml}
 
       <div style="background: rgba(255, 92, 100, 0.1); border-left: 3px solid var(--coral-500); padding: 0.55rem 0.75rem; border-radius: 4px; font-size: 0.73rem; color: var(--coral-400); margin-bottom: 0.85rem; line-height: 1.4; display: flex; gap: 0.4rem; align-items: flex-start;">
         <span style="flex-shrink: 0; margin-top: 2px;">${ICONS.alert}</span>

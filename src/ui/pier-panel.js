@@ -84,6 +84,7 @@ export function renderPierPanel(container, piers, onSelectPier, onFocusRoute) {
             <select id="select-status-filter" class="search-input" aria-label="依碼頭狀態篩選" style="flex: 1; padding: 0.3rem 0.5rem; font-size: 0.73rem; min-height: 34px;">
               <option value="all" ${statusFilter === 'all' ? 'selected' : ''}>所有營運狀態</option>
               <option value="active" ${statusFilter === 'active' ? 'selected' : ''}>常態營運碼頭</option>
+              <option value="suspended" ${statusFilter === 'suspended' ? 'selected' : ''}>暫停營運碼頭</option>
               <option value="verification-needed" ${statusFilter === 'verification-needed' ? 'selected' : ''}>季節性 / 需核驗</option>
             </select>
 

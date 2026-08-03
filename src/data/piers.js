@@ -154,7 +154,7 @@ export const PIERS = [
       en: 'Ryogoku River Center Pier'
     },
     operatorPierIds: ['mizube-ryogoku'],
-    status: 'active',
+    status: 'suspended',
     coordinates: [35.69615, 139.79280],
     routes: ['mizube-line'],
     nearestTransit: [
@@ -163,7 +163,7 @@ export const PIERS = [
     ],
     highlights: ['兩國國技館 (相撲大賽)', '江戶東京博物館', '兩國 River Center 複合館'],
     facilities: ['水辺ライン主要乘船大廳', '防災水邊碼頭處', '洗手洗手間與休息區'],
-    officialUrl: 'https://www.tokyo-park.or.jp/water/bus/',
+    officialUrl: 'https://www.tokyo-park.or.jp/water/waterbus/',
     confidence: 'operator-reference'
   },
   {
@@ -174,7 +174,7 @@ export const PIERS = [
       en: 'Sumida City Office Pier'
     },
     operatorPierIds: ['mizube-sumida-office'],
-    status: 'active',
+    status: 'suspended',
     coordinates: [35.71110, 139.80050],
     routes: ['mizube-line'],
     nearestTransit: [
@@ -183,7 +183,7 @@ export const PIERS = [
     ],
     highlights: ['墨田區役所大樓', '勝海舟銅像', '隅田公園櫻花名所'],
     facilities: ['親水公園步道', '無障礙通道'],
-    officialUrl: 'https://www.tokyo-park.or.jp/water/bus/',
+    officialUrl: 'https://www.tokyo-park.or.jp/water/waterbus/',
     confidence: 'operator-reference'
   },
   {
@@ -194,7 +194,7 @@ export const PIERS = [
       en: 'Asakusa Nitenmon Pier'
     },
     operatorPierIds: ['mizube-asakusa-nitenmon'],
-    status: 'active',
+    status: 'suspended',
     coordinates: [35.71380, 139.79980],
     routes: ['mizube-line'],
     nearestTransit: [
@@ -203,7 +203,7 @@ export const PIERS = [
     ],
     highlights: ['淺草寺二天門直達入口', '隅田川水岸步道', '東武鐵道橋景觀'],
     facilities: ['東京水辺ライン專用浮碼頭'],
-    officialUrl: 'https://www.tokyo-park.or.jp/water/bus/',
+    officialUrl: 'https://www.tokyo-park.or.jp/water/waterbus/',
     confidence: 'operator-reference'
   },
   {
@@ -214,7 +214,7 @@ export const PIERS = [
       en: 'Etchujima Pier'
     },
     operatorPierIds: ['mizube-etchujima'],
-    status: 'active',
+    status: 'suspended',
     coordinates: [35.66850, 139.78920],
     routes: ['mizube-line'],
     nearestTransit: [
@@ -223,7 +223,7 @@ export const PIERS = [
     ],
     highlights: ['越中島公園 (東京海洋大學周邊)', '晴海運河眺望點'],
     facilities: ['公園公共洗手間', '無障礙步道'],
-    officialUrl: 'https://www.tokyo-park.or.jp/water/bus/',
+    officialUrl: 'https://www.tokyo-park.or.jp/water/waterbus/',
     confidence: 'operator-reference'
   },
   {
@@ -234,7 +234,7 @@ export const PIERS = [
       en: "St. Luke's Garden Pier"
     },
     operatorPierIds: ['mizube-seiruka'],
-    status: 'active',
+    status: 'suspended',
     coordinates: [35.66690, 139.77580],
     routes: ['mizube-line'],
     nearestTransit: [
@@ -243,7 +243,7 @@ export const PIERS = [
     ],
     highlights: ['聖路加國際醫院與摩天樓群', '築地場外市場 (步行距離)'],
     facilities: ['明石町河岸公園設施'],
-    officialUrl: 'https://www.tokyo-park.or.jp/water/bus/',
+    officialUrl: 'https://www.tokyo-park.or.jp/water/waterbus/',
     confidence: 'operator-reference'
   },
   {
@@ -254,7 +254,7 @@ export const PIERS = [
       en: 'WATERS takeshiba Pier'
     },
     operatorPierIds: ['mizube-takeshiba'],
-    status: 'active',
+    status: 'suspended',
     coordinates: [35.65420, 139.76150],
     routes: ['mizube-line'],
     nearestTransit: [
@@ -263,7 +263,7 @@ export const PIERS = [
     ],
     highlights: ['WATERS takeshiba 綜合商業區', '劇團四季劇場', '濱離宮庭園水門視角'],
     facilities: ['無障礙水岸廣場', '複合餐飲中心'],
-    officialUrl: 'https://www.tokyo-park.or.jp/water/bus/',
+    officialUrl: 'https://www.tokyo-park.or.jp/water/waterbus/',
     confidence: 'operator-reference'
   },
   {
@@ -274,7 +274,7 @@ export const PIERS = [
       en: 'Kasai Rinkai Park Pier'
     },
     operatorPierIds: ['mizube-kasai-rinkai'],
-    status: 'active',
+    status: 'suspended',
     coordinates: [35.64100, 139.86050],
     routes: ['mizube-line'],
     nearestTransit: [
@@ -282,7 +282,7 @@ export const PIERS = [
     ],
     highlights: ['葛西臨海公園大觀覽車 (鑽石與花大摩天輪)', '葛西臨海水族園', '東京灣外海闊景'],
     facilities: ['水族園休息站', '公園大型遊客中心'],
-    officialUrl: 'https://www.tokyo-park.or.jp/water/bus/',
+    officialUrl: 'https://www.tokyo-park.or.jp/water/waterbus/',
     confidence: 'operator-reference'
   }
 ];

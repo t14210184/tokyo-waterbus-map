@@ -69,7 +69,14 @@ export const en = {
     missedFallbackTitle: 'Missed Service or Cancellation Fallback:',
     missedFallbackDesc: 'Check operator notices immediately and use standard railway or bus routes as needed.',
     provenanceTitle: 'Data Sources & Verification:',
-    provenanceDesc: 'Source: Official operator announcements | Last verified: '
+    provenanceDesc: 'Source: Official operator announcements | Last verified: ',
+    mizubeSuspensionTitle: 'Tokyo Mizube Line: Service Suspended',
+    mizubeSuspensionBody: 'Service suspended since January 19, 2026. Reopening date subject to official announcement. Boarding Tokyo Mizube Line is currently unavailable at this pier. Please check official announcements before departure.',
+    mizubeSuspensionLink: 'Open Tokyo Mizube Line Official Announcement',
+    statusActive: 'Operating normally',
+    statusSuspended: 'Service Suspended',
+    statusPartial: 'Partial Service (Contains Suspended Routes)',
+    statusVerify: 'Subject to Official Confirmation'
   },
   footer: {
     officialPortal: 'Official Operator Portals',

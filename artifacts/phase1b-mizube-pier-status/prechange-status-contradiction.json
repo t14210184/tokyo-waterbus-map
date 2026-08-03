@@ -1,0 +1,44 @@
+{
+  "timestampUtc": "2026-08-03T03:00:00.000Z",
+  "publicUrl": "https://t14210184.github.io/tokyo-waterbus-map/",
+  "officialSources": [
+    "https://www.tokyo-park.or.jp/water/waterbus/"
+  ],
+  "officialStatus": "SUSPENDED",
+  "officialEffectiveDate": "2026-01-19",
+  "affectedPiers": [
+    "etchujima",
+    "ryogoku",
+    "sumida-office",
+    "asakusa-nitenmon",
+    "seiruka-garden",
+    "waters-takeshiba",
+    "kasai-rinkai",
+    "odaiba-kaihinkouen"
+  ],
+  "visibleContradictions": [
+    {
+      "surface": "pier-list",
+      "selector": ".pier-card[data-pier-id=\"etchujima\"] .badge.status-active",
+      "visibleText": "常態營運",
+      "sourceFile": "src/data/piers.js",
+      "sourceFieldOrLogic": "PIERS[etchujima].status === 'active'"
+    },
+    {
+      "surface": "pier-drawer",
+      "selector": "#pier-detail-drawer .badge.status-active",
+      "visibleText": "常態營運",
+      "sourceFile": "src/core/itinerary-formatters.js",
+      "sourceFieldOrLogic": "displayPierStatus(pier) returns text: '常態營運' when pier.status === 'active'"
+    },
+    {
+      "surface": "pier-list",
+      "selector": "#select-status-filter option[value=\"active\"]",
+      "visibleText": "常態營運碼頭",
+      "sourceFile": "src/ui/pier-panel.js",
+      "sourceFieldOrLogic": "Legacy statusFilter logic defaults all Mizube piers to active"
+    }
+  ],
+  "currentPublicBuildCommit": "4d8328e",
+  "geometryFilesUntouched": true
+}

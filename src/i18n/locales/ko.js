@@ -69,7 +69,14 @@ export const ko = {
     missedFallbackTitle: '결항 또는 승선 미달 시 대처:',
     missedFallbackDesc: '공식 고지를 즉시 확인하고 필요 시 지하철 또는 JR 철도를 이용하세요.',
     provenanceTitle: '데이터 출처 및 검증 일시:',
-    provenanceDesc: '출처: 운항사 공식 공지 ｜ 최종 검증: '
+    provenanceDesc: '출처: 운항사 공식 공지 ｜ 최종 검증: ',
+    mizubeSuspensionTitle: '도쿄 미즈베 라인: 운휴 중',
+    mizubeSuspensionBody: '2026년 1월 19일부터 운휴 중이며 재개 일자는 공식 고지를 확인하세요. 현재 이 선착장에서 도쿄 미즈베 라인 승선이 불가능합니다. 출발 전 공식 공지를 확인해 주세요.',
+    mizubeSuspensionLink: '도쿄 미즈베 라인 공식 공지 열기',
+    statusActive: '정상 운항',
+    statusSuspended: '운휴 중',
+    statusPartial: '부분 운항 (운휴 노선 포함)',
+    statusVerify: '공식 확인 필요'
   },
   footer: {
     officialPortal: '운항사 공식 포털',

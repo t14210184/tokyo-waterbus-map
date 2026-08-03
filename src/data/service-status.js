@@ -168,3 +168,64 @@ export function getRouteOperationalState(routeId, referenceTimeMs = Date.now()) 
     publicMessage: '日間營運中 (待官方班表確認)'
   };
 }
+
+/**
+ * Derived Operational Status for a Pier based on its serving operators & routes.
+ */
+export function getPierDerivedStatus(pier) {
+  if (!pier) {
+    return { statusState: 'UNKNOWN', activeOperators: [], suspendedOperators: [] };
+  }
+
+  const routes = pier.routes || [];
+  const operatorIds = new Set();
+
+  for (const routeId of routes) {
+    const routeMeta = SERVICE_STATUS_REGISTRY.routes[routeId];
+    if (routeMeta && routeMeta.operatorId) {
+      operatorIds.add(routeMeta.operatorId);
+    }
+  }
+
+  if (operatorIds.size === 0) {
+    if (pier.status === 'suspended') {
+      return { statusState: 'SUSPENDED', activeOperators: [], suspendedOperators: ['tokyo-mizube-line'] };
+    }
+    return { statusState: pier.status === 'active' ? 'ACTIVE' : 'UNKNOWN', activeOperators: [], suspendedOperators: [] };
+  }
+
+  const activeOperators = [];
+  const suspendedOperators = [];
+
+  for (const opId of operatorIds) {
+    const op = SERVICE_STATUS_REGISTRY.operators[opId];
+    if (op && op.serviceState === 'SUSPENDED') {
+      suspendedOperators.push(op);
+    } else {
+      activeOperators.push(op || { operatorId: opId });
+    }
+  }
+
+  if (activeOperators.length === 0 && suspendedOperators.length > 0) {
+    return {
+      statusState: 'SUSPENDED',
+      activeOperators: [],
+      suspendedOperators,
+      primarySuspendedOperator: suspendedOperators[0]
+    };
+  }
+
+  if (activeOperators.length > 0 && suspendedOperators.length > 0) {
+    return {
+      statusState: 'PARTIAL',
+      activeOperators,
+      suspendedOperators
+    };
+  }
+
+  return {
+    statusState: 'ACTIVE',
+    activeOperators,
+    suspendedOperators: []
+  };
+}
